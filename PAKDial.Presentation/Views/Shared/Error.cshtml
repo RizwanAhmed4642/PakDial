@@ -1,0 +1,65 @@
+﻿@*@model ErrorViewModel
+    @{
+        ViewData["Title"] = "Error";
+    }
+
+    <h1 class="text-danger">Error.</h1>
+    <h2 class="text-danger">An error occurred while processing your request.</h2>
+
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+
+    <h3>Development Mode</h3>
+    <p>
+        Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    </p>
+    <p>
+        <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+    </p>*@
+
+@{
+    ViewData["Title"] = "Error";
+    Layout = null;
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pakdial - Local Search, Social, News, Videos, Shopping</title>
+    <meta name="Title" content="Pakdial - Local Search, Social, News, Videos, Shopping">
+    <meta name="description" content="Pakdial, pakistan's local search engine, provides Best Deals, Shop Online, Ticket Booking for Flights, Hotels, Movies, Buses and Cabs. You can also Order Food, Book Restaurant Table, View Menu, Book Doctors’ Appointments. Pakdial curates Social content, News, Videos &amp; more from Top Publishers on all Trending Topics.">
+    <meta name="keywords" content="Pakdial, local search, travel, order food, grocery, medicines, online shopping, book tickets, movies, bus, flights, hotels, events, search plus services, local businesses, online yellow pages, pakistan trade directory, city yellow pages, pakistan search engine, Pakdial customer care, customer support">
+
+    <link rel="stylesheet" href="~/PakDial-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/PakDial-assets/css/style.css">
+    <!-- BEGIN: Vendor CSS-->
+
+
+</head>
+<body style="background: #ffffff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div class="exception-text">
+                    <h2>Sorry for the inconvenience</h2>
+                    <p>Looks like something went wrong, we are working on it.</p>
+                    <a href="~/"><button class="btn-home btn-primary-lst">Go Home</button></a>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="working">
+                    <img src="~/PakDial-assets/images/error-page.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/app-assets/js/core/libraries/jquery.min.js"></script>
+    <script src="~/PakDial-assets/js/bootstrap.min.js"></script>
+</body>
+</html>

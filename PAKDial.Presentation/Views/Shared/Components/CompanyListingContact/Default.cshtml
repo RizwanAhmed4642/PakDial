@@ -1,0 +1,11 @@
+﻿@model PAKDial.Domains.UserEndViewModel.CompanyListingContact
+<li class="profile-location-info pd-primary-font">
+    @if (@Model.Number != string.Empty && @Model.Number != null)
+    {
+        <i class="fa fa-phone"></i>
+    }
+    <span style="word-wrap:break-word;">
+        @Model.Number
+    </span>
+</li>
+    

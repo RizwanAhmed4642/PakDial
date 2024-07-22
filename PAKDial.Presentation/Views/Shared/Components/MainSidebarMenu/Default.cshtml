@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.MainSideBarMenu>
+@{
+    var Counter = 1;
+    var objects = Model.Where(c => c.Id == 50).FirstOrDefault();
+}
+<a href="/Home/Info" class="covidfont"><li class="nav-link nav-linkhome" style="border: 1px solid red;color: red"><img src="~/PakDial-assets/images/corona-virus.png" asp-append-version="true" alt="COVID-19 Helpline" />COVID-19 Helpline</li></a>
+@if (objects != null)
+{
+    <li data-value="@objects.Id**@objects.Name" class="nav-link nav-linkhome mainmenu"><img src="@objects.WebDir" alt="@objects.Name" asp-append-version="true" >@objects.Name</li>
+}
+@foreach (var item in Model)
+{
+    if (item.Id != 50)
+    {
+    <li data-value="@item.Id**@item.Name" class="nav-link nav-linkhome mainmenu"><img src="@item.WebDir"  alt="@item.Name" asp-append-version="true">@item.Name</li>
+    }
+    @*<li data-value="@item.Id/@item.Name" onclick="LoadSubCategory(@item.Id,'@item.Name');" class="nav-link nav-linkhome pp"><img src="@item.WebDir">@item.Name</li>*@
+}

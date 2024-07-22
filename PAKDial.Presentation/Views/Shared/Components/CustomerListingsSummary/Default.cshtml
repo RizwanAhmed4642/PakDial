@@ -1,0 +1,61 @@
+﻿@model PAKDial.Domains.StoreProcedureModel.Sp_GetClientSummaryResults
+
+<div class="user-info-box row">
+    <div class="col-8">
+        <span class="total-info">Total Listings</span><br>
+        <p class="total-detail">YOUR TOTAL NUMBER OF LISTINGS</p>
+    </div>
+    <div class="stat-info col-4">
+        <div class="stat-count"><span>@Model.TotalListings</span></div>
+    </div>
+</div>
+<div class="user-info-box row">
+    <div class="col-8">
+        <span class="total-info">Free Listings</span><br>
+        <p class="total-detail">YOUR TOTAL NUMBER OF Free LISTINGS</p>
+    </div>
+    <div class="stat-info col-4">
+        <div class="stat-count"><span>@Model.FreeListings</span></div>
+    </div>
+</div>
+<div class="user-info-box row">
+    <div class="col-8">
+        <span class="total-info">Premium Listings</span><br>
+        <p class="total-detail">YOUR TOTAL NUMBER OF Premium LISTINGS</p>
+    </div>
+    <div class="stat-info col-4">
+        <div class="stat-count"><span>@Model.PremiumListings</span></div>
+    </div>
+</div>
+<div class="user-info-box row">
+    <div class="col-8">
+        <span class="total-info">Total Ratings</span><br>
+        <p class="total-detail">YOUR TOTAL NUMBER OF RATINGS</p>
+    </div>
+    <div class="stat-info col-4">
+        <div class="stat-count"><span>@Model.TotalRatings</span></div>
+    </div>
+</div>
+<div class="user-info-box row">
+    <div class="col-8">
+        <span class="total-info">Total Requests</span><br>
+        <p class="total-detail">TOTAL NUMBER OF REQUESTS LANDED</p>
+    </div>
+    <div class="stat-info col-4">
+        <div class="stat-count-price"><span>@Model.TotalRequests</span></div>
+    </div>
+</div>
+<div class="user-info-box row">
+    <div class="col-8">
+        <span class="total-info">Total Served</span><br>
+        <p class="total-detail">YOUR AMOUNT OF MONEY YOU HAVE SERVED</p>
+    </div>
+    <div class="stat-info col-4">
+        <div class="stat-count-price"><span id="SetCurrentFormate"> @Model.TotalServed</span></div>
+    </div>
+</div>
+
+
+
+
+

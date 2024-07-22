@@ -1,0 +1,191 @@
+﻿<div class="modal fade text-left show" id="UpdateEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Edit Employee</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateEmployee_Submit_Form" enctype="multipart/form-data">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <input type="hidden" id="UEmpId" />
+                                    <input type="hidden" id="UUserId" />
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Profile Image</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-12 d-flex justify-content-center">
+                                                <div class="w-25">
+                                                    @*<img src="~/app-assets/images/portrait/small/avatar-s-19.jpg" />*@
+                                                    @*<img class="border border-primary w-100" src="/mis/Images/Update_Image.png">*@
+                                                    <img class="border border-primary w-100" id="UtargetImg">
+                                                    <label class="btn btn-primary w-100 mt-1" for="Uimagefiles">Thumbnail</label>
+                                                    <input type="file" accept="image/*" class="upload" style="display:none" id="Uimagefiles">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Personal Information</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>First Name<span class="text-danger">*</span></label>
+                                                    <input id="UEmpFirstName" name="UEmpFirstName" type="text" placeholder="First Name" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Last Name<span class="text-danger">*</span></label>
+                                                    <input id="UEmpLastName" name="UEmpLastName" type="text" placeholder="Last Name" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Date Of Birth<span class="text-danger">*</span></label>
+                                                    <input id="UEmpDob" name="UEmpDob" type="date" placeholder="DOB" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="form-group position-relative">
+                                                        <label>CNIC<span class="text-danger">*</span></label>
+                                                        <input id="UEmpCnic" name="UEmpCnic" type="text" placeholder="CNIC" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Passport</label>
+                                                    <input id="UEmpPassport" name="UEmpPassport" type="text" placeholder="Passport" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative pt-lg-3 pt-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="EUIsActive">
+                                                        <label class="form-check-label" for="EUIsActive">
+                                                            IsActive
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                @*<div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="EUIsActive">
+                                                    <label class="form-check-label" for="EUIsActive">
+                                                        IsActive
+                                                    </label>
+                                                </div>*@
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Contact Information</h4></legend>
+                                        <div class="control-group row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Contact Number<span class="text-danger">*</span></label>
+                                                    <input id="UEmpContactNumber" name="UEmpContactNumber" type="text" placeholder="Contact Number" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="position-relative ">
+                                                        <label>Phone Number</label>
+                                                        <input type="text" id="UEmpPhoneNumber" name="UEmpPhoneNumber" class="form-control" placeholder="Phone Number">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Residential Information</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Country<span class="text-danger">*</span></label>
+                                                    <select id="UEmpCountry" name="UEmpCountry" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Status<span class="text-danger">*</span></label>
+                                                    <select id="UEmpStatus" name="UEmpStatus" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>City<span class="text-danger">*</span></label>
+                                                    <select id="UEmpCity" name="UEmpCity" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>City Area<span class="text-danger">*</span></label>
+                                                    <select id="UEmpCityArea" name="UEmpCityArea" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <label>Address<span class="text-danger">*</span></label>
+                                                <textarea id="UEmpAddress" rows="5" class="form-control" name="UEmpAddress" placeholder="About Address"></textarea>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Credentials Information</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="position-relative ">
+                                                        <label>Role<span class="text-danger">*</span></label>
+                                                        <select id="UEmpRole" name="UEmpRole" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="position-relative ">
+                                                        <label>Designation<span class="text-danger">*</span></label>
+                                                        <select id="UEmpDesignation" name="UEmpDesignation" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+
+                                   
+                                </div>
+                                <div id="UpdateEmpShowButtons" class="modal-footer employeemodalfooter">
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                                <div id="UpdateEmpShowLoader" class="modal-footer employeemodalfooter" style="display:none">
+                                    <button class="btn btn-primary" type="button" disabled="">
+                                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                        Results Saving...
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

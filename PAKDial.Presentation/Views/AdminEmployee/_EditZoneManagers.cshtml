@@ -1,0 +1,61 @@
+﻿<div class="modal fade text-left show" id="AddUpdateZoneManagers" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Employee Other Info</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <form id="AddUpdateZoneManagers_Submit_Form">
+                <input type="hidden" id="AUZoneMgerEmpId" />
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <fieldset>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Reporting To:</label>
+                                                    <select id="AUZoneMgerMangerId" name="AUZoneMgerMangerId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>City:</label>
+                                                    <select id="AUZoneMgerCityId" name="AUZoneMgerCityId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Zone:</label>
+                                                    <select id="AUZoneMgerZoneId" name="AUZoneMgerZoneId" class="form-control" data-toggle="tooltip" data-trigger="hover" style="width:100%" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="AUZoneMgerShowButtons" class="modal-footer">
+                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                    <div id="AUZoneMgerShowLoader" class="modal-footer" style="display:none">
+                        <button class="btn btn-primary" type="button" disabled="">
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            Updating Results...
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

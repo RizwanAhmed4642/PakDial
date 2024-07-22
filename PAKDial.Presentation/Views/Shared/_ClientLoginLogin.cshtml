@@ -1,0 +1,42 @@
+﻿<div class="modal fade" id="ClientLoginsModel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content login-popup">
+            <div class="modal-body pd-popup-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-3 login-logo">
+                            <img src="~/PakDial-assets/images/popup-logo.png" class="login-logo-title" asp-append-version="true">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-9 login-btn">
+                            <h6 class="login-head-title">Member Login</h6>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <span id="LoginWrongpassword" name="LoginWrongpassword" class="text-danger">Please Enter Correct Username & Password</span>
+                            <form id="ClientLogin_Submit" name="ClientLogin_Submit">
+                                <div class="col form-col">
+                                    <input type="text" class="form-control" id="ClientLoginEmail" name="ClientLoginEmail" placeholder="Username">
+                                </div>
+                                <div class="col form-col">
+                                    <input id="ClientLoginPassword" name="ClientLoginPassword" style="-webkit-text-security: disc;" class="form-control" placeholder="Password" autocomplete="off">
+                                </div>
+                                <div class="row form-col">
+                                    <div class="col-6">
+                                        <label class="remember-checkbox">
+                                            <input type="checkbox" name="ClientLoginremember" id="ClientLoginremember"><span> Remember me</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="forgot-password" id="ClientForgetBtn" name="ClientForgetBtn">Forgot Password?</a>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary-lst">LogIn</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </div>
+</div>

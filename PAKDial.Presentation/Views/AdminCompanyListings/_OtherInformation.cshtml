@@ -1,0 +1,133 @@
+﻿<div class="card">
+    <div class="card-header inner-card">
+        <h4 class="card-title" id="basic-layout-form">Other Information</h4>
+        <a class="heading-elements-toggle">
+            <i class="la la-ellipsis-v font-medium-3"></i>
+        </a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li>
+                    <a href="#ACOtherInformation" data-toggle="collapse" data-target="#ACOtherInformation" aria-expanded="false" aria-controls="ACOtherInformation">
+                        </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="card-content  collapse" id="ACOtherInformation" data-parent="#ListingData">
+        <div class="card-body">
+            @await Html.PartialAsync("~/Views/AdminCompanyListings/_AddCompanyTimingView.cshtml")
+            <hr />
+            <!--Company Information-->
+            <hr />
+            <h4 class="card-title" id="file-repeater">Company Information</h4>
+            <div class="form-body">
+
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Year Of Establishment :</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="Text" class="form-control" id="ACLstYears" placeholder="1995">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="Text" class="form-control" id="ACLstAnnualTurnover" placeholder="Annual Turnover">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select class="form-control" name="no_of_employee" id="ACLstNoEmployee">
+                            <option value="">Select No of Employees</option>
+                            <option value="Less than 10">Less than 10</option>
+                            <option value="10-100">10-100</option>
+                            <option value="100-500">100-500</option>
+                            <option value="500-1000">500-1000</option>
+                            <option value="1000-2000">1000-2000</option>
+                            <option value="2000-5000">2000-5000</option>
+                            <option value="5000-10000">5000-10000</option>
+                            <option value="More than 10000">More than 10000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Professional Associations :</label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <input type="Text" class="form-control" id="ACLstProfAss" placeholder="Professional Associations">
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Certifications  :</label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <input type="Text" class="form-control" id="ACLstCertifications" placeholder="Certifications ">
+                    </div>
+                </div>
+
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Brief About  :</label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <textarea type="Text" class="form-control" id="ACLstBreifAbout" placeholder="Brief About "></textarea>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Product And Services  :</label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <textarea type="Text" class="form-control" id="ACLstProductAndServices" placeholder="Product And Services"></textarea>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Location and Overview  :</label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <textarea type="Text" class="form-control" id="ACLstLocationOverview" placeholder="Location and Overview  "></textarea>
+                    </div>
+                </div>
+
+                <!-- Payment Modes and Products and Services offered-->
+                <hr />
+                <h4 class="card-title" id="file-repeater">Payment Modes and Services offered</h4>
+                <div class="control-group row">
+
+                    <div class="col-md-6">
+                        <label>Payment Modes</label>
+                        <div class="form-group position-relative">
+                            <select id="ACLstPaymentsModes" name="ACLstPaymentsModes" class="form-control" style="width:100%" data-toggle="tooltip" data-trigger="hover" data-placement="top" multiple="multiple"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Services Type</label>
+                        <div class="form-group position-relative">
+                            <select id="ACLstServicetypes" name="ACLstServicetypes" class="form-control" style="width:100%" data-toggle="tooltip" data-trigger="hover" data-placement="top" multiple="multiple"></select>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!--bussiness TypesMode-->
+                <h4 class="card-title" id="file-repeater">Business Types</h4>
+                <div class="control-group row">
+
+                    <div class="col-md-6">
+                        <label>Business Types</label>
+                        <div class="form-group position-relative">
+                            <select id="ACLstBusinessTypes" name="ACLstBusinessTypes" class="form-control" style="width:100%" data-toggle="tooltip" data-trigger="hover" data-placement="top" multiple="multiple"></select>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Social Media-->
+                <hr />
+                <h4 class="card-title" id="file-repeater">Social Media Links</h4>
+                <div class="form-body" id="AddSocialMediaModesIds">
+                    <!--Adding Social Media Modes Using Jquery-->
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>

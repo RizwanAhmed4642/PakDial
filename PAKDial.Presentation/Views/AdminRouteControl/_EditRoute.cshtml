@@ -1,0 +1,67 @@
+﻿<div class="modal fade text-left show" id="UpdateRoute" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Edit Routes</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateRoute_Submit_Form">
+                <div class="modal-body">
+                    <input type="hidden" id="URouteId" />
+
+                    <label>Modules: </label>
+                    <div class="form-group position-relative">
+                        <select id="UModuleId" name="UModuleId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                    </div>
+
+                    <label>MenuName: </label>
+                    <div class="form-group position-relative">
+                        <input id="URouteMenuName" name="URouteMenuName" type="text" placeholder="Menu Display Name" class="form-control">
+                    </div>
+
+                    <label>Description: </label>
+                    <div class="form-group position-relative">
+                        <input id="URouteDescription" name="URouteDescription" type="text" placeholder="Description" class="form-control">
+                    </div>
+
+                    <label>Controller: </label>
+                    <div class="form-group position-relative">
+                        <input id="URouteController" name="URouteController" type="text" placeholder="Controller Name" class="form-control">
+                    </div>
+
+                    <label>Action: </label>
+                    <div class="form-group position-relative">
+                        <input id="URouteAction" name="URouteAction" type="text" placeholder="Action Name" class="form-control">
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="URouteStatus">
+                        <label class="form-check-label" for="URouteStatus">
+                            IsActive
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="URouteIsShown">
+                        <label class="form-check-label" for="URouteIsShown">
+                            IsShown
+                        </label>
+                    </div>
+
+                </div>
+                <div id="UpdateRouteShowButtons" class="modal-footer">
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+                <div id="UpdateRouteShowLoader" class="modal-footer" style="display:none">
+                    <button class="btn btn-primary" type="button" disabled="">
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Updating Results...
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

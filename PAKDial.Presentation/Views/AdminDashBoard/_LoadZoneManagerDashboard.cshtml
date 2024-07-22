@@ -1,0 +1,291 @@
+﻿@*Listing Order*@
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <div class="card card-esc">
+            <div class="card-header card-esc-title-head p-1">
+                <h4 class="card-title card-esc-title float-left">Listings <span class="blue-grey lighten-2 font-small-3 mb-0" Id="ADbDateTime"></span></h4>
+
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-footer text-center p-1">
+                    <div class="row">
+                        @*<div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                <p class="blue-green-esc lighten-2 mb-0" id="ADbTotalCount">Total</p>
+                                <p class="font-medium-5 text-esc-bold">0</p>
+                            </div>*@
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Yearly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbYearlyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Monthly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbMonthlyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Weekly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbWeeklyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Day</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbDayCount">0</p>
+                        </div>
+                    </div>
+                    <span class="text-muted"><a href="#" class="danger darken-2"></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+        <div class="card pull-up bg-gradient-directional-esc">
+            <div class="card-header bg-hexagons-esc">
+                <h4 class="card-title white">Total Listings</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li>
+                            @*<a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="#" target="_blank">Report <i class="ft-bar-chart pl-1"></i></a>*@
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show bg-hexagons-esc">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="align-self-center width-100">
+                            <div id="Analytics-donut-chart" class="height-100 donutShadow"></div>
+                        </div>
+                        <div class="media-body text-right mt-1">
+                            <h3 class="font-large-2 white" id="ADbTotalCount">000</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*Deposit Order*@
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <div class="card card-esc">
+            <div class="card-header card-esc-title-head p-1">
+                <h4 class="card-title card-esc-title float-left">Deposited <span class="blue-grey lighten-2 font-small-3 mb-0" Id="ADbDateTime"></span></h4>
+
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-footer text-center p-1">
+                    <div class="row">
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Yearly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbDYearlyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Monthly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbDMonthlyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Weekly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbDWeeklyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Day</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbDDayCount">0</p>
+                        </div>
+                    </div>
+                    <span class="text-muted"><a href="#" class="danger darken-2"></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+        <div class="card pull-up bg-gradient-directional-esc">
+            <div class="card-header bg-hexagons-esc">
+                <h4 class="card-title white">Total Deposited</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li>
+                            @*<a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="#" target="_blank">Report <i class="ft-bar-chart pl-1"></i></a>*@
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show bg-hexagons-esc">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="align-self-center width-100">
+                            <div id="Analytics-donut-chart" class="height-100 donutShadow"></div>
+                        </div>
+                        <div class="media-body text-right mt-1">
+                            <h3 class="font-large-2 white" id="ADbDTotalCount">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*Approved Order*@
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <div class="card card-esc">
+            <div class="card-header card-esc-title-head p-1">
+                <h4 class="card-title card-esc-title float-left">Approved <span class="blue-grey lighten-2 font-small-3 mb-0" Id="ADbDateTime"></span></h4>
+
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-footer text-center p-1">
+                    <div class="row">
+                        @*<div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                <p class="blue-green-esc lighten-2 mb-0" id="ADbTotalCount">Total</p>
+                                <p class="font-medium-5 text-esc-bold">0</p>
+                            </div>*@
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Yearly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbAYearlyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Monthly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbAMonthlyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Weekly</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbAWeeklyCount">0</p>
+                        </div>
+                        <div class="col-md-2 col-12 text-center">
+                            <p class="blue-green-esc lighten-2 mb-0">Day</p>
+                            <p class="font-medium-5 text-esc-bold" id="ADbADayCount">0</p>
+                        </div>
+                    </div>
+                    <span class="text-muted"><a href="#" class="danger darken-2"></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+        <div class="card pull-up bg-gradient-directional-esc">
+            <div class="card-header bg-hexagons-esc">
+                <h4 class="card-title white">Total Approved</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li>
+                            @*<a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="#" target="_blank">Report <i class="ft-bar-chart pl-1"></i></a>*@
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show bg-hexagons-esc">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="align-self-center width-100">
+                            <div id="Analytics-donut-chart" class="height-100 donutShadow"></div>
+                        </div>
+                        <div class="media-body text-right mt-1">
+                            <h3 class="font-large-2 white" id="ADbATotalCount">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*Month wise Order*@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Monthly Orders Bar Chart</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <div class="height-400">
+                        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                            <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                </div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                <div style="position:absolute;width:200%;height:200%;left:0; top:0">
+                                </div>
+                            </div>
+                        </div>
+                        <canvas id="column-chart" width="1539" height="400" class="chartjs-render-monitor" style="display: block; width: 1539px; height: 400px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*pia chart by Monthly*@
+<div class="row">
+    <!-- Simple Pie Chart -->
+    <div class="col-md-6 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Monthly Orders Pie Chart</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <div class="height-400">
+                        <div class="chartjs-size-monitor" style="left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; visibility: hidden; position: absolute; z-index: -1; pointer-events: none;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                        <canvas width="734" height="400" class="chartjs-render-monitor" id="simple-pie-chart" style="width: 734px; height: 400px; display: block;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Doughnut Chart -->
+    <div class="col-md-6 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Monthly Orders Doughnut Chart</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <div class="height-400">
+                        <div class="chartjs-size-monitor" style="left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; visibility: hidden; position: absolute; z-index: -1; pointer-events: none;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                        <canvas width="734" height="400" class="chartjs-render-monitor" id="simple-doughnut-chart" style="width: 734px; height: 400px; display: block;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

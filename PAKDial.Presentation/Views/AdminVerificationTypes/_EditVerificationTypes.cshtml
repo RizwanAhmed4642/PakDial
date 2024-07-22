@@ -1,0 +1,64 @@
+﻿<div class="modal fade text-left show" id="UpdateVerificationTypes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Edit Verification Types</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateVerificationTypes_Submit_Form">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Profile Image</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-12 d-flex justify-content-center">
+                                                <div class="w-50">
+                                                    <img class="border border-primary w-100" id="UtargetImg">
+                                                    <label class="btn btn-primary w-100 mt-1" for="Uimagefiles">Thumbnail</label>
+                                                    <input type="file" accept="image/*" class="upload" style="display:none" id="Uimagefiles">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+
+                                    <input type="hidden" id="UVerificationTypesId" />
+
+                                    <label>Name: </label>
+                                    <div class="form-group position-relative">
+                                        <input id="UVerificationTypesName" name="UVerificationTypesName" type="text" placeholder="Name" class="form-control">
+                                    </div>
+
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="UVerificationTypesIsActive">
+                                        <label class="form-check-label" for="UVerificationTypesIsActive">
+                                            IsActive
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div id="UpdateVerificationTypesShowButtons" class="modal-footer">
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                                <div id="UpdateVerificationTypesShowLoader" class="modal-footer" style="display:none">
+                                    <button class="btn btn-primary" type="button" disabled="">
+                                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                        Updating Results...
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+</form>
+        </div>
+    </div>
+</div>

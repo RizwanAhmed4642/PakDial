@@ -1,0 +1,145 @@
+﻿
+<div class="card">
+    <div class="card-header inner-card">
+        <h4 class="card-title" id="basic-layout-form">Company Details</h4>
+        <a class="heading-elements-toggle">
+            <i class="la la-ellipsis-v font-medium-3"></i>
+        </a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li>
+                    <a href="#UACcompanyDetail" data-toggle="collapse" data-target="#UACcompanyDetail" aria-expanded="false" aria-controls="UACcompanyDetail">
+                    </a>
+                </li>
+                <li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-content collapse show" id="UACcompanyDetail" data-parent="#EditListingData" >
+        <div class="card-body">
+
+            <div class="form-body">
+                <input type="hidden" id="UCompListingsId" />
+                <div class="form-group" id="UCLstCust" style="display:none">
+                    <label>Customer</label>
+                    <div class="form-group position-relative">
+                        <select id="UCLstCustomer" name="UCLstCustomer" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                    </div>
+                </div>
+
+                <div class="control-group row">
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Listing Type<span class="text-danger">*</span></label>
+                            <select id="UCLstListingType" name="UCLstListingType" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Company Name<span class="text-danger">*</span></label>
+                            <input id="UCLstCompanyName" name="UCLstCompanyName" type="text" placeholder="Company Name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group row">
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>First Name<span class="text-danger">*</span></label>
+                            <input id="UCLstFirstName" name="UCLstFirstName" type="text" placeholder="First Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Last Name<span class="text-danger">*</span></label>
+                            <input id="UCLstLastName" name="UCLstLastName" type="text" placeholder="Last Name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group row">
+
+                    <div class="col-md-6" id="ErrorShow">
+                        <label>Mobile Number<span class="text-danger">*</span></label>
+                        <div class="input-group mb-1" data-repeater-item="" style="">
+                            <input type="text" placeholder="+92 000 000" class="form-control" id="UCLstMobileNumber" maxlength="11">
+                            <span class="input-group-append" id="button-addon2">
+                                <button class="btn btn-primary" id="btnAddMobile" type="button" data-repeater-delete="">
+                                    <i class="ft-plus"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Land Line Number</label>
+                        <div class="input-group mb-1" data-repeater-item="" style="">
+                            <input type="text" placeholder="0423-000000" class="form-control" id="UCLstLandLineNumber" maxlength="11">
+                            <span class="input-group-append" id="button-addon2">
+                                <button class="btn btn-primary" id="btnAddLandNo" type="button" data-repeater-delete="">
+                                    <i class="ft-plus"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group row" id="AddPhoneNoAndLandNo">
+
+                    <div class="col-md-6" id="UAddMobileNumber">
+                        @*<div class="input-group mb-1" data-repeater-item="" style="">
+                    <input type="text" placeholder="+92 000 000" class="form-control" id="ACLstMobileNumber">
+                    <span class="input-group-append" id="button-addon2">
+                        <button class="btn btn-danger" type="button" data-repeater-delete="">
+                            <i class="ft-minus"></i>
+                        </button>
+                    </span>
+                </div>*@
+                    </div>
+
+                    <div class="col-md-6" id="UAddLandNumber">
+                        @*<div class="input-group mb-1" data-repeater-item="" style="" >
+                    <input type="text" placeholder="0423-000000" class="form-control" id="ACLstLandLineNumber">
+                    <span class="input-group-append" id="button-addon2">
+                        <button class="btn btn-danger" type="button" data-repeater-delete="">
+                            <i class="ft-minus"></i>
+                        </button>
+                    </span>
+                </div>*@
+                    </div>
+
+                </div>
+
+                <div class="control-group row">
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Web site</label>
+                            <input id="UCLstWebSite" name="UCLstWebSite" type="text" placeholder="Web Site" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Meta Title</label>
+                            <input id="UCLstMetaTitle" name="UCLstMetaTitle" type="text" placeholder="Meta Title" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group position-relative">
+                        <label>Meta Keyword</label>
+                        <input id="UCLstMetaKeyword" name="UCLstMetaKeyword" type="text" placeholder="Meta Keyword" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Meta Description</label>
+                    <textarea id="UCLstMetaDescription" rows="5" class="form-control" name="UCLstMetaDescription" placeholder="Meta Description"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

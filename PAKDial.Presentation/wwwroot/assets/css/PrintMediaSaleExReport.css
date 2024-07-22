@@ -1,0 +1,15 @@
+﻿@media print {
+    #SaleExReportPrintBtn, #SaleExReportPrintBtnBack {
+        display: none;
+    }
+
+    #OrderTellerReportPrintBtn, #OrderTellerReportPrintBtnBack {
+        display: none;
+    }
+    #SaleCcReportPrintBtn, #SaleCcReportPrintBtnBack {
+        display: none;
+    }
+    #SubSaleReportPrintBtn, #SubSaleReportPrintBtnBack {
+        display: none;
+    }
+}

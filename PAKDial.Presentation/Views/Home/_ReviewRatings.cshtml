@@ -1,0 +1,56 @@
+﻿<div class="col-12 ">
+    <form id="reviewRatingSbmit" name="reviewRatingSbmit">
+        <div class="text-rate-box-wrapper">
+            <span class="rate-box-text">Rate this</span>
+            <div class="rate-box">
+                <span class="rate-box-1 rate-boxes" id="Rb1" data-value="1"></span>
+                <span class="rate-box-2 rate-boxes" id="Rb2" data-value="2"></span>
+                <span class="rate-box-3 rate-boxes" id="Rb3" data-value="3"></span>
+                <span class="rate-box-4 rate-boxes" id="Rb4" data-value="4"></span>
+                <span class="rate-box-5 rate-boxes" id="Rb5" data-value="5"></span>
+            </div>
+        </div>
+        <div class="pd-box-shadow">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form_main">
+                        <div class="text-review-wrapper">
+                            <span class="text-review-left pull-left"> Add Review </span>
+                             <span class="text-review-right pull-right pd-primary-font" data-toggle="modal" data-target="#Modalreview">
+                                    Review Guidelines
+                             </span>
+                        </div>
+                        <!-- The Modal -->
+                        <partial name="_ReviewGuideline" />
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-wrapper-inner">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-12 form-col">
+                                        <input type="text" class="form-control" id="RatingName" name="RatingName" placeholder="Name">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12 form-col">
+                                        <input type="text" class="form-control" id="RatingMobile" name="RatingMobile" placeholder="Mobile">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12 form-col">
+                                        <input type="text" class="form-control" id="RatingEmail" name="RatingEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="row form-col">
+                                    <textarea id="RatingDesc" class="form-control add-review-box" placeholder="Be specific and relevant to the place you’r reviewing and describe what other visitor are likely to experience. Be authentic and describe why you liked or dislike the place. Include aspects like the ambiance, service quality, value for  money, credibility of the vendor, timely delivery.">
+                                                                                    </textarea>
+                                </div>
+                              
+                                    <button type="submit" class="btn btn-primary-lst">Submit</button>
+                            
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <partial name="_ReviewRatingsOtp" />
+</div>

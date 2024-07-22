@@ -1,0 +1,70 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@model LoginViewModel
+@inject SignInManager<PAKDial.Domains.IdentityManagement.ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/_LayoutUser1.cshtml";
+
+}
+<!-- Header -->
+@await Html.PartialAsync("~/Views/Shared/_CommonBottomHeader.cshtml")
+<!-- End Header -->
+<div class="container ">
+    <div class="row">
+        <div class="col-12">
+            <div class="box-wrapper reset-password-wrapper">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="user-image-box">
+                            <img src="~/PakDial-assets/images/user-login.png" asp-append-version="true">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-7 col-12 reset-form-box">
+                        <div class="pd-form-title">
+                            <h2 class="form-title-head">User Login</h2>
+                        </div>
+                        <div class="form-wrapper">
+                            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+
+                                <div class="row">
+                                    <div class="col form-col">
+                                        <input asp-for="Email" class="form-control" placeholder="Username" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col form-col">
+                                        <input asp-for="Password" class="form-control" placeholder="Password" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label asp-for="RememberMe" class="remember-checkbox">
+                                            <input asp-for="RememberMe" />
+                                            @Html.DisplayNameFor(m => m.RememberMe)
+                                        </label>
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="forgot-password" id="ClientForgetBtn" name="ClientForgetBtn">Forgot Password?</a>
+                                    </div>
+                                </div>
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="row submit-btn">
+                                    <div class="col form-col">
+                                        <button type="submit" class="edit-listing btn-primary-lst btn-submit">LogIn</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="marginDiv"></div>

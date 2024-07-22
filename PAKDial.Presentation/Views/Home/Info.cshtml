@@ -1,0 +1,317 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>COVID-19</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true">
+    <link href="~/PakDial-assets/css/covid.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/PakDial-assets/css/style.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PakDial-assets/css/bootstrap.min.css" asp-append-version="true">
+    <link href="~/PakDial-assets/css/font-awesome.min.css" rel="stylesheet" asp-append-version="true" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB8VEQNMVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PB8VEQNMVM');
+    </script>
+</head>
+<body class="covid-body">
+    <!-- Header -->
+    <header>
+        <div class="covid-top">
+            <div class="head-left">
+                <a href="/"><img src="~/PakDial-assets/images/back.png" asp-append-version="true" /></a>
+
+            </div>
+            <div class="covid-middle">
+                <span class="hdrlogo"></span>
+            </div>
+
+
+        </div>
+    </header>
+
+    <section id="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 ">
+                    <nav>
+                        <div class="nav nav-tabs covid-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link covid-link  active" id="nav-help-tab" data-toggle="tab" href="#nav-help" role="tab" aria-selected="true">Helpline & Test Center</a>
+                            <a class="nav-item nav-link covid-link" id="nav-do-tab" data-toggle="tab" href="#nav-do" role="tab" aria-selected="false">Do's & Dont's</a>
+                            <a class="nav-item nav-link covid-link" id="nav-symp-tab" data-toggle="tab" href="#nav-symp" role="tab" aria-selected="false">Symptoms</a>
+                        </div>
+                    </nav>
+                    <div class="divider"></div>
+                    <div class="covid-content">
+                        <div class="tab-content" id="nav-tabContent">
+                            <!-- HelpLine -->
+                            <div class="tab-pane fade show active" id="nav-help" role="tabpanel" aria-labelledby="nav-help-tab">
+                                <div class="covid19_textbox fadeInUp">
+                                    To contain the spread of novel Corona Virus (Covid-19), Ministry of National Health Services
+                                    has provided these helpline numbers of States.
+                                </div>
+                                <div class="covid19_helplist nav nav-tabs " id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link helpline active" id="nav-helpline-tab" data-toggle="tab" href="#nav-helpline" role="tab" aria-selected="true">Helpline</a>
+                                    <a class="nav-item nav-link helpline" id="nav-testcenter-tab" data-toggle="tab" href="#nav-testcenter" role="tab" aria-selected="false">Test Centres</a>
+                                </div>
+                                <div class="tab-content" id="nav-tabContent">
+                                    <!-- Inner Helpline -->
+                                    <div class="tab-pane fade show active" id="nav-helpline" role="tabpanel" aria-labelledby="nav-helpline-tab">
+                                        <div class="covid19_states fadeInUp">
+                                            <h6>States</h6>
+                                            <div class="divider"></div>
+                                            <ul class="state-list">
+                                                <p>
+                                                    Emergency helplines numbers for reporting Covid-19
+                                                </p>
+                                                <li>01. Punjab <span class="pull-right"><strong>+92-304-1112101</strong></span></li>
+                                                <li>02. Sindh <span class="pull-right"><strong>021-111-467-911</strong></span></li>
+                                                <li>03. Balochistan <span class="pull-right"><strong>1190</strong> </span></li>
+                                                <li>04. AJK <span class="pull-right"><strong>+92-304-1112101</strong> </span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Test Center -->
+                                    <div class="tab-pane fade" id="nav-testcenter" role="tabpanel" aria-labelledby="nav-testcenter-tab">
+                                        <div class="">
+                                            <!-- <p>Pakistan is one of those countries in the world, to acquire coronavirus diagnostic kits available.
+                                                There are 14 laboratories in the country where these kits are provided and Covid-19 tests are conducted absolutely free of cost. </p>
+                                            <p><strong>Below is the list of those 14 labs:</strong></p> -->
+                                            <!--Accordion wrapper-->
+                                            <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                                                <!-- Accordion card -->
+                                                <div class="card covid-card">
+
+                                                    <!-- Card header -->
+                                                    <div class="card-header" role="tab" id="headingOne1">
+                                                        <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                                                           aria-controls="collapseOne1">
+                                                            <h6 class="mb-0">
+                                                                Punjab <i class="fa fa-angle-down rotate-icon"></i>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+
+                                                    <!-- Card body -->
+                                                    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                                                         data-parent="#accordionEx">
+                                                        <div class="card-body">
+                                                            <ul class="warnlist">
+                                                                <li>National Institute of Health (NIH) Islamabad (051-9255881)</li>
+                                                                <li>Armed Forces Institute of Pathology (AFIP) (051-5176419)</li>
+                                                                <li>Punjab AIDS Lab Lahore (042-37802425)</li>
+                                                                <li>Shaukat Khanum Memorial Hospital Lahore (042-35905000)</li>
+                                                                <li>Nishtar Hospital Multan (061-9330153)</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Accordion card -->
+                                                <div class="card covid-card">
+
+                                                    <!-- Card header -->
+                                                    <div class="card-header" role="tab" id="headingTwo2">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                                                           aria-expanded="false" aria-controls="collapseTwo2">
+                                                            <h6 class="mb-0">
+                                                                Sindh <i class="fa fa-angle-down rotate-icon"></i>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+
+                                                    <!-- Card body -->
+                                                    <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                                         data-parent="#accordionEx">
+                                                        <div class="card-body">
+                                                            <ul class="warnlist">
+                                                                <li>Aga Khan University Hospital Karachi (021-111911911)</li>
+                                                                <li>Civil Hospital Karachi (021-99215740)</li>
+                                                                <li>Ojha Institute Karachi (021-32745824)</li>
+                                                                <li>Indus Hospital (021-35112709)</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Accordion card -->
+                                                <div class="card covid-card">
+
+                                                    <!-- Card header -->
+                                                    <div class="card-header" role="tab" id="headingThree3">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                                                           aria-expanded="false" aria-controls="collapseThree3">
+                                                            <h6 class="mb-0">
+                                                                KPK<i class="fa fa-angle-down rotate-icon"></i>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+
+                                                    <!-- Card body -->
+                                                    <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+                                                         data-parent="#accordionEx">
+                                                        <div class="card-body">
+                                                            <ul class="warnlist">
+                                                                <li>Punjab Health Laboratory Peshawar</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- Accordion card -->
+                                                <div class="card covid-card">
+
+                                                    <!-- Card header -->
+                                                    <div class="card-header" role="tab" id="headingfour4">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapsefour4"
+                                                           aria-expanded="false" aria-controls="collapsefour4">
+                                                            <h6 class="mb-0">
+                                                                Balochistan<i class="fa fa-angle-down rotate-icon"></i>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+
+                                                    <!-- Card body -->
+                                                    <div id="collapsefour4" class="collapse" role="tabpanel" aria-labelledby="headingfour4"
+                                                         data-parent="#accordionEx">
+                                                        <div class="card-body">
+                                                            <ul class="warnlist">
+                                                                <li>Fatima Jinnah Hospital Quetta</li>
+                                                                <li>Mobile Diagnostic Unit Taftan</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- Accordion card -->
+                                                <div class="card covid-card">
+
+                                                    <!-- Card header -->
+                                                    <div class="card-header" role="tab" id="headingfive5">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapsefive5"
+                                                           aria-expanded="false" aria-controls="collapsefive5">
+                                                            <h6 class="mb-0">
+                                                                AJK<i class="fa fa-angle-down rotate-icon"></i>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+
+                                                    <!-- Card body -->
+                                                    <div id="collapsefive5" class="collapse" role="tabpanel" aria-labelledby="headingfive5"
+                                                         data-parent="#accordionEx">
+                                                        <div class="card-body">
+                                                            <ul class="warnlist">
+                                                                <li>Muzaffarabad Medical Science Institute (058224-39306)</li>
+                                                                <li>DHQ Hospital Gilgit (058119-20253)</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <!-- Accordion wrapper -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!-- Do's Dont's -->
+                            <div class="tab-pane fade" id="nav-do" role="tabpanel" aria-labelledby="nav-do-tab">
+
+                                <h5>How To Prevent</h5>
+                                <div class="row dorow">
+                                    <div class="col-6 dolist">
+                                        <div class="dodicn washicn"></div>
+                                        <p class="text-center"><span class="pd-primary-font">Wash</span> your hands well and often to avoid contamination</p>
+                                    </div>
+                                    <div class="col-6 dolist">
+                                        <div class="dodicn sneezeicn"></div>
+                                        <p class="text-center"><span class="pd-primary-font">Cover</span> your mouth and nose while coughing or sneezing</p>
+                                    </div>
+                                    <div class="col-6 dolist">
+                                        <div class="dodicn germsicn"></div>
+                                        <p class="text-center"><span class="pd-primary-font">Avoid</span> touching eyes, nose or mouth with unwashed hands</p>
+                                    </div>
+                                    <div class="col-6 dolist">
+                                        <div class="dodicn antiicn"></div>
+                                        <p class="text-center"> <span class="pd-primary-font">Clean</span> and disinfect frequently touched objects and surfaces</p>
+                                    </div>
+                                    <div class="col-6 dolist">
+                                        <div class="dodicn handsicn">
+                                            <img src="~/PakDial-assets/images/covid/hand-shake.png" asp-append-version="true" />
+                                        </div>
+                                        <p class="text-center"><span class="pd-primary-font">Stop</span> hugging or shaking hands while greeting</p>
+                                    </div>
+                                    <div class="col-6 dolist">
+                                        <div class="dodicn distanceicn">
+                                            <img src="~/PakDial-assets/images/covid/distance.png" asp-append-version="true" />
+                                        </div>
+                                        <p class="text-center"> <span class="pd-primary-font">Distance</span> yourself at least 2 meters from people </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Symptoms -->
+                            <div class="tab-pane fade" id="nav-symp" role="tabpanel" aria-labelledby="nav-symp-tab">
+                                <h5>Watch For Symptoms</h5>
+                                <p>The following symptoms may appear 2-14 days after exposure.</p>
+                                <div class="row dorow">
+                                    <div class="col-4 symplist">
+                                        <div class="dodicn fevericn"></div>
+                                        <p class="text-center">Fever</p>
+                                    </div>
+                                    <div class="col-4 symplist">
+                                        <div class="dodicn coughicn"></div>
+                                        <p class="text-center">Cough</p>
+                                    </div>
+                                    <div class="col-4 symplist">
+                                        <div class="dodicn breathicn"></div>
+                                        <p class="text-center">Shortness of breath</p>
+                                    </div>
+                                    <p class="notp">If you develop emergency warning signs for COVID-19 get medical attention immediately. </p>
+
+                                </div>
+
+                                <div>
+                                    <h6 class="pd-primary-font">For any guidance call: 1166</h6>
+                                    <div class="divider"></div>
+                                    <ul class="warnlist">
+                                        <li>Dry Cough, high Fever, Shortness of breath (rare) </li>
+                                        <li>
+                                            If these symptoms appear, then you should get your Covid test done and until you are not negative, make sure to keep yourself in quarantine.
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    @await Html.PartialAsync("~/Views/Shared/_PureChat.cshtml")
+    <script src="~/app-assets/js/core/libraries/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/PakDial-assets/js/bootstrap.min.js" asp-append-version="true"></script>
+
+</body>
+</html>

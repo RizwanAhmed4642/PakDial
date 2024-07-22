@@ -1,0 +1,628 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pakdial</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true">
+    <link href="~/PakDial-assets/css/font-awesome.min.css" asp-append-version="true" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="css/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="css/animate.css" asp-append-version="true">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top pd-primary-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 email-wrapper">
+                        <ul class="top-contact">
+                            <li>
+                                <a href="#" class="pd-secondary-font">
+                                    <i class="fa fa-envelope"></i>Contact@pakdial.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 signup-wrapper">
+                        <ul class="nav justify-content-end top-links">
+                            <li class="nav-item">
+                                <a class="nav-link head-about pd-secondary-font" href="#">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pd-secondary-font" href="#" data-toggle="modal"
+                                   data-target="#myModal"><i class="fa fa-user"></i>Login / Sign Up</a>
+                                <!--Popup -->
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header text-center">
+                                                <div class="user-login">
+                                                    <div class="modal-title w-100">
+                                                        <img src="images/logo.png"
+                                                             class="mb-3">
+                                                        <h5>Makes your life easy</h5>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">
+                                                    &times;
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/action_page.php">
+                                                    <div class="form-col">
+                                                        <input type="email" class="form-control" id="email"
+                                                               placeholder="Name" name="email">
+                                                    </div>
+                                                    <div class="form-col">
+                                                        <input type="password" class="form-control" id="pwd"
+                                                               placeholder="Mobile Number" name="pswd">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal-button pd-primary-bg"
+                                                        data-dismiss="modal">
+                                                    Send OTP
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Popup -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 logo-wrapper">
+                        <div class="menu-icon" data-toggle="collapse" data-target="#NavbarOther">
+                            <div class="menu-icon-top pd-primary-bg"></div>
+                            <div class="menu-icon-middle"></div>
+                            <div class="menu-icon-top pd-primary-bg"></div>
+                        </div>
+                        <!--  Menu -->
+                        <ul class="navbar-nav nav-mobile-sec">
+                            <div class="sidebar-sec navbar-collapse collapse" id="NavbarOther">
+                                <img src="images/arrow-03.png">
+                                <div class="side-nav" id="side-other-nav">
+                                    <li class="nav-link nav-linkhome first-pd-li">
+                                        <a href="">
+                                            <img src="images/icons/icons-18.png">TV Shows
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-34.png">B2B
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-35.png">Real Estate
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-36.png">Wedding
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-38.png">Jewellery
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-40.png">Loans and credit cards
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-60.png">Language Classes
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/Icons-61.png">Labs
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-62.png">Jobs
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-70.png">Internet
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-69.png">SIM Cards
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-68.png">Train
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-08.png">Interior Designer
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-17.png">Insurance
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-07.png">Industrials Products
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-15.png">House Keeping
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-24.png">Modular Kitchen
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-25.png">Movies
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-26.png">On
+                                            Demand Services
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-27.png">Sports Goods
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-32.png">Sports Coach
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-55.png">Shopping
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-58.png">Security Services
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-59.png">Shop Online
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-63.png">Repairs
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-67.png">Travel
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-64.png">Restaurants
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-66.png">Play School
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-46.png">Pet and Pet Care
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-44.png">Pest Control
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-43.png">Personal Care
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-42.png">Party
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-41.png">Packers and Movers
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-45.png">Hotels
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-14.png">Hospitals
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-13.png">Cabs and Car Rentals
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-06.png">Bus
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-19.png">Books
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-22.png">Bill and Recharges
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-66.png">Banquets
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-23.png">Baby Care
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-28.png">Automobiles
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-29.png">Autocare
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-52.png">Apply for Loans
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-57.png">Anything on hire
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-56.png">Air Tickets
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-53.png">Training Institute
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-54.png">Caterers
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-65.png">Chemists
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-01.png">Civil Contractors
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-02.png">Home Improvements
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-03.png">Home Decor
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-04.png">Flowers
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-10.png">Foreign Exchange
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-11.png">Flights
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-05.png">Fitness
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-20.png">Events Organizer
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-30.png">Entertainment
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-31.png">Emergency
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-37.png">Education
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-51.png">Transportation
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-50.png">Dance and Music
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-49.png">Daily Needs
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-48.png">Couriers
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-linkhome">
+                                        <a href="">
+                                            <img src="images/icons/icons-47.png">Doctor
+                                        </a>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                        <!-- end  menu -->
+
+                        <div class="page-logo">
+                            <a href="#"><img src="images/page2logo.png" /></a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7 header-search">
+                        <div id="searchbar" class="input-group">
+                            <div class="search-city">
+                                <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <input type="text" id="search-by-city" class="input-control" placeholder="Lahore"
+                                       value="Lahore">
+                                <span id="city-list-drop" class="city-search-drop" style="display: none;">
+                                    <ul id="">
+                                        <li id=""><a class="" id="" href="#">Karachi</a></li>
+                                        <li id=""><a class="" id="" href="#">Islamabad</a></li>
+                                        <li id=""><a class="" id="" href="#">Quetta</a></li>
+                                        <li id=""><a class="" id="" href="#">Karachi</a></li>
+                                        <li id=""><a class="" id="" href="#">Islamabad</a></li>
+                                        <li id=""><a class="" id="" href="#">Quetta</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="search-listing">
+                                <input type="text" name="search" value="" id="pd-srchbx" class="form-control input-lg">
+                                <a id="cross_S" class="cross-srch" style="display: none;">×</a>
+                                <div class="pd-srch-rslt">
+                                    <span id="pd-srchbx-drop" style="display: none;">
+                                        <ul id="auto">
+                                            <li class="nav-link">
+                                                <a href="">test</a><br>
+                                                <span class="srch-area-rslt">460 Centres in Mumbai</span>
+                                                <span class="srch-area-more">[+]</span>
+                                            </li>
+                                            <li class="nav-link"><a href="">test</a></li>
+                                            <li class="nav-link"><a href="">test</a></li>
+                                            <li class="nav-link"><a href="">test</a></li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="btn-search">
+                                <button type="button" id="search-field-input" value="Remove"
+                                        class="icon-search-mobile btn btn-default btn-lg pd-primary-font active">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <div class="search-mobile search input-group form-col d-sm-block d-md-none d-lg-none"
+                                     style="display: block;">
+                                    <div class="row search-mobile-wrapper">
+                                        <input class="col-4 search-city-mobile form-control" type="text"
+                                               id="search-mob-city" placeholder="Lahore" value="Lahore">
+                                        <input class="col-8 search-listing-mobile form-control" type="text"
+                                               name="search" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="contact-info">
+                            <img src="images/headoffice.png">
+                            <div class="office-detail">
+                                <h6>Head Office</h6>
+                                <span>203-984-1278</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- End Header -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="foot-layer row">
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 footer-logo">
+                        <div class="company">
+                            <img src="images/logo.png">
+                            <p class="collapse" id="aim-text" aria-expanded="false">
+                                Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.Excepteur sint occae cat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est
+                                laborum.sunt in culpa qui officia deserunt sunt in culpa qui officia deserunt.
+                            </p>
+                            <a role="button" class="collapsed" data-toggle="collapse" href="#aim-text"
+                               aria-expanded="false" aria-controls="aim-text"></a>
+                        </div>
+                        <div class="social">
+                            <ul class="nav social-links">
+                                <li class="footyoutube">
+                                    <a href="#" class="pd-primary-font">
+                                        <i class="fab fa-youtube"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="foottwitter">
+                                    <a href="#" class="pd-primary-font">
+                                        <i class="fab fa-twitter"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="footfb">
+                                    <a href="#" class="pd-primary-font">
+                                        <i class="fab fa-facebook-f"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="footinstagram">
+                                    <a href="#" class="pd-primary-font">
+                                        <i class="fab fa-instagram"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="footlinkedin">
+                                    <a href="#" class="pd-primary-font">
+                                        <i class="fab fa-linkedin"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="footer-pakdial d-flex">
+                            <ul>
+                                <li class="headline">PakDial</li>
+                                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">We're Hiring</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Feedback</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="footer-pakdial d-flex">
+                            <ul>
+                                <li class="headline">Support</li>
+                                <li class="nav-item"><a class="nav-link" href="#">Help &amp; Suppport</a> </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Privacy Policy</a> </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Customer Care</a> </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Investor Relation</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                        <div class="footer-pakdial">
+                            <ul class="footer-contact-top">
+                                <li class="headline">Contact Us</li>
+                                <li class="nav-item footer-contact">
+                                    <a class="nav-link" href="#">
+                                        <i class="fa fa-phone-alt fa-rotate-90"
+                                           aria-hidden="true"></i><span> 03 111 444 506</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item footer-contact">
+                                    <a class="nav-link" href="#">
+                                        <img src="images/whatsapp.png"><span>
+                                            03000 200
+                                            234
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright pd-primary-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <span class="pd-secondary-font">
+                            Copyright © 2020. All rights reserved by <a href="#"
+                                                                        class="pd-secondary-font">Pakdial.com</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" asp-append-version="true"></script>
+    <script src="js/bootstrap.min.js" asp-append-version="true"></script>
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+﻿@{
+    ViewData["Title"] = "ListingDescription";
+    Layout = null;
+    ViewData["SbCName"] = ViewBag.CompanyName;
+}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @await Component.InvokeAsync("ListingMetaDesc", new { Location = ViewBag.location, SubCatId = ViewBag.ListingId })
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true">
+
+    <link href="~/PakDial-assets/css/Listingdescriptionstyle.min.css" rel="stylesheet" asp-append-version="true" />
+    @*<link href="~/PakDial-assets/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/PakDial-assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/PakDial-assets/css/style.css">
+        <link rel="stylesheet" href="~/PakDial-assets/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/extensions/toastr.css">*@
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB8VEQNMVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PB8VEQNMVM');
+    </script>
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    <input type="hidden" id="ListingId" name="ListingId" value="@ViewBag.ListingId" />
+    <input type="hidden" id="ArName1" name="ArName1" value="@ViewBag.CityArea" />
+    <input type="hidden" id="LastCatesearchbycity" name="LastCatesearchbycity" value="@ViewBag.location" />
+    <!--BEGIN: Top Header-->
+    @await Component.InvokeAsync("Commonheader")
+    <!--END: Top Header-->
+    <div class="app-content content">
+        <!-- Header -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 logo-wrapper">
+                        <div class="menu-icon" data-toggle="collapse" data-target="#NavbarOther">
+                            <div class="menu-icon-top pd-primary-bg"></div>
+                            <div class="menu-icon-middle"></div>
+                            <div class="menu-icon-top pd-primary-bg"></div>
+                        </div>
+                        <!--  Menu -->
+                        <ul class="navbar-nav nav-mobile-sec">
+                            <div class="sidebar-sec navbar-collapse collapse" id="NavbarOther">
+                                <img src="~/PakDial-assets/images/arrow-03.png" asp-append-version="true">
+                                <div class="side-nav" id="side-other-nav">
+                                    @await Component.InvokeAsync("MainSidebarMenuReplica")
+                                </div>
+                            </div>
+                        </ul>
+                        <!-- end  menu -->
+                        <div class="page-logo">
+                            <a href="~/"><img src="~/PakDial-assets/images/page2logo.png" asp-append-version="true" alt="Logo" /></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 header-search">
+                        <div id="searchbar" class="input-group">
+                            <div class="search-city">
+                                <span class="location-icon"><i class="fa fa-map-marker"></i></span>
+                                <input type="text" id="Finalsearchbycity" class="input-control">
+                                <span id="Finalcitylistdrop" class="city-search-drop" style="display: none;">
+                                    <ul id="FinalUserLocation">
+                                        @await Component.InvokeAsync("LoadCities")
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="search-listing">
+                                <input type="text" name="search" id="FinalCatepdsrchbx" placeholder="Search Anytime Anywhere in Pakistan" class="form-control input-lg">
+                                <a id="FinalCatecross_S" class="cross-srch" style="display: none;">×</a>
+                                <div class="pd-srch-rslt">
+                                    <span id="FinalCatepdsrchbxdrop" style="display: none;">
+                                        <ul id="FinalCateauto"></ul>
+                                    </span>
+                                </div>
+                            </div>
+
+                            @* Mobile Search *@
+                            <div class="btn-search">
+                                <button type="button" id="search-field-input" value="search" class="icon-search-mobile btn btn-default btn-lg pd-primary-font">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <div id="search-mobile-id" class="search-mobile search input-group form-group d-sm-block d-md-none d-lg-none">
+                                    <div class="row search-mobile-wrapper">
+
+                                        <input class="col-4 search-city-mobile form-control" type="text"
+                                               id="MobFinalsearchbycity" placeholder="Lahore" value="Lahore">
+
+                                        <input class="col-8 search-listing-mobile form-control" placeholder="Search Anytime Anywhere in Pakistan" type="text"
+                                               id="MobFinalCatepdsrchbx" name="MobFinalCatepdsrchbx">
+                                    </div>
+                                    <div class="pd-srch-rslt">
+                                        <div id="MobFinalCatepdsrchbxdrop" style="display: none;">
+                                            <ul id="MobFinalCateauto"></ul>
+                                        </div>
+                                    </div>
+                                    <div id="MobFinalcitylistdrop" class="city-search-drop" style="display: none;">
+                                        <ul id="MobFinalUserLocation">
+                                            @await Component.InvokeAsync("LoadCities")
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            @*<div class="btn-search">
+                                    <button type="button" id="search-field-input" value="Remove" class="icon-search-mobile btn btn-default btn-lg pd-primary-font active"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <div class="search-mobile search input-group form-group d-sm-block d-md-none d-lg-none" style="display: block;">
+                                        <div class="row search-mobile-wrapper">
+                                            <input class="col-4 search-city-mobile form-control" type="text" id="search-mob-city" placeholder="Lahore" value="Lahore">
+                                            <input class="col-8 search-listing-mobile form-control" type="text" name="search" value="">
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="contact-info">
+                            <img src="~/PakDial-assets/images/headoffice.png" asp-append-version="true" alt="head-office">
+                            <div class="office-detail">
+                                <h6>Customer Care</h6>
+                                <span>0304-1111-245</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header -->
+        <!-- Banner -->
+
+        @await Component.InvokeAsync("CompanyListingProfileHeader", ViewBag.ListingId)
+        <!-- End Banner -->
+        <!-- Mobile -->
+        <div class="d-sm-block d-md-none d-lg-none">
+            <div class="list-sm-info-box">
+
+                @await Component.InvokeAsync("CompanyListingDesMobView", ViewBag.ListingId)
+
+                @await Component.InvokeAsync("SocialconForMobView", ViewBag.ListingId)
+                <!-- Floating Social Media bar Ends -->
+            </div>
+        </div>
+        <!-- End Mobile -->
+        <!-- Main Content -->
+        <div class="main container listing-wrapper">
+            <div class="row">
+                <div class="offset-lg-3 col-lg-9 col-md-12">
+                    <div class="nav-tab-container">
+                        <ul class="nav nav-tabs listingpage-navtab">
+                            <li><a id="active-tab-1" data-toggle="" href="#Aboutus" class="active">About Us</a></li>
+                            <li><a data-toggle="" href="#Products">Gallery</a></li>
+                            <li><a data-toggle="" href="#Reviews">Reviews</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="sidebar-left">
+                        <div class="sidebar listing-profile-nav">
+
+                            <div class="profile-address">
+                                <h6 class="txt-head-lst">Contact Info</h6>
+                                <ul>
+                                    @await Component.InvokeAsync("CompanyListingContact", ViewBag.ListingId)
+
+                                    <li class="profile-location-info pd-primary-font">
+                                        @await Component.InvokeAsync("CompanyListingAddress", ViewBag.ListingId)
+                                    </li>
+                                    @await Component.InvokeAsync("CateAlsoListedForReplica", new { ListingId = ViewBag.ListingId, Location = ViewBag.location })
+
+                                    @await Component.InvokeAsync("CompanyListingEmailSite", ViewBag.ListingId)
+                                </ul>
+                            </div>
+
+                            <div class="profile-open-hours">
+                                <h6 class="txt-head-lst">Hours of Operation </h6>
+                                <ul>
+                                    @await Component.InvokeAsync("CompanyListingTiming", ViewBag.ListingId)
+                                </ul>
+                            </div>
+
+                            <div class="profile-open-hours">
+                                <h6 class="left-thumb-head">Also listed in</h6>
+                                <ul>
+                                    @await Component.InvokeAsync("CateAlsoListedFor", new { ListingId = ViewBag.ListingId, Location = ViewBag.location })
+
+                                </ul>
+                            </div>
+                            <div class="profile-payment-mode">
+                                <h6 class="txt-head-lst">Modes of Payments</h6>
+                                <ul class="payPlan">
+                                    @await Component.InvokeAsync("CompListingModeOfPayments", ViewBag.ListingId)
+
+                                </ul>
+                            </div>
+
+                            <div class="profile-open-hours">
+                                <h6 class="txt-head-lst">Year Of Establishment</h6>
+                                <ul>
+                                    @await Component.InvokeAsync("CompListingEstablishedYear", ViewBag.ListingId)
+                                </ul>
+                            </div>
+
+                            <div class="social">
+                                <h6 class="txt-head-lst">Join Us</h6>
+                                <ul class="nav social-links mt-2">
+                                    @await Component.InvokeAsync("CompanyListingsocialMedia", ViewBag.ListingId)
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="">
+                        <!-- About us -->
+                        <div class="profile-tabs box-wrapper" id="aboutus">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="profile-head-text">About Us</h3>
+                                    @await Component.InvokeAsync("CompanyListingBriefAbout", ViewBag.ListingId)
+                                </div>
+                            </div>
+                        </div>
+                        <!--End About us -->
+
+                        @await Component.InvokeAsync("CompanyListingImageGallery", ViewBag.ListingId)
+
+                        <div class="profile-tabs box-wrapper" id="Reviews">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="profile-head-text">Review & Write a Review</h3>
+                                    <div class="row">
+                                        <div class="col-12 ">
+                                            <nav>
+                                                <div class="nav nav-tabs nav-fill write-review" id="nav-tab"
+                                                     role="tablist">
+                                                    <a class="nav-item nav-link active pd-primary-font"
+                                                       id="nav-home-tab" data-toggle="tab" href="#nav-profile"
+                                                       role="tab" aria-controls="nav-home" aria-selected="true">
+                                                        <i class="fa fa-pencil"></i> Write a Review
+                                                    </a>
+                                                    <a class="nav-item nav-link pd-primary-font "
+                                                       id="nav-profile-tab" data-toggle="tab" href="#nav-home"
+                                                       role="tab" aria-controls="nav-profile"
+                                                       aria-selected="false">
+                                                        <i class='fa fa-comment'></i> Review
+                                                        & Ratings
+                                                    </a>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content py-3 px-sm-0" id="nav-tabContent">
+                                                <div class="tab-pane fade show active" id="nav-profile"
+                                                     role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <!-- write Reviews -->
+                                                    <partial name="_ReviewRatings" />
+                                                    <!-- End write Reviews -->
+                                                </div>
+                                                <div class="tab-pane fade " id="nav-home" role="tabpanel"
+                                                     aria-labelledby="nav-home-tab">
+                                                    <!-- comments section -->
+                                                    @await Component.InvokeAsync("ListingRatingComponent", ViewBag.ListingId)
+                                                    <!-- end comment section -->
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="marginDiv"></div>
+
+        <!-- End Main Content -->
+    </div>
+    @*Generic Query form*@
+    <partial name="_FillGenericCateDescription" view-data="ViewData">
+
+        <!-- BEGIN: Footer-->
+        @await Component.InvokeAsync("CommonFooter")
+        @await Html.PartialAsync("~/Views/Shared/_ClientLoginOtpLogin.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ClientOtpCodeOtp.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ChangeMobileNumber.cshtml")
+
+        @*@await Html.PartialAsync("~/Views/Shared/_ClientLoginLogin.cshtml")
+            @await Html.PartialAsync("~/Views/Shared/_ClientForgotPassword.cshtml")*@
+        @await Html.PartialAsync("~/Views/Shared/_ClientSignUp.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_PureChat.cshtml")
+        <script src="~/PakDial-assets/assets/Listingdescriptionscripts.min.js" asp-append-version="true"></script>
+        @*<script src="~/app-assets/js/core/libraries/jquery.min.js"></script>
+            <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+            <script src="~/PakDial-assets/js/bootstrap.min.js"></script>
+            <script src="~/PakDial-assets/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="~/PakDial-assets/js/jquery.waypoints.min.js"></script>
+            <script src="~/PakDial-assets/js/jquery.stellar.min.js"></script>
+            <script src="~/PakDial-assets/js/owl.carousel.min.js"></script>
+            <script src="~/PakDial-assets/js/aos.js"></script>
+            <script src="~/PakDial-assets/js/scrollax.min.js"></script>
+            <script src="~/PakDial-assets/js/main.js"></script>
+            <script src="~/app-assets/vendors/js/extensions/toastr.min.js" type="text/javascript"></script>
+            <script src="~/PakDial-assets/assets/ClientCommonFunction.js"></script>
+            <script src="~/PakDial-assets/assets/DetailCompanyListingModel.js"></script>
+            <script src="~/PakDial-assets/assets/DetailCompanyListingPage.js"></script>
+            <script src="~/PakDial-assets/assets/ClientLoginModel.js" type="text/javascript"></script>
+            <script src="~/PakDial-assets/assets/ClientLoginModelScript.js" type="text/javascript"></script>
+            <script src="~/PakDial-assets/assets/ClientForget.js"></script>
+            <script src="~/PakDial-assets/assets/ClientSignUpModel.js"></script>
+            <script src="~/PakDial-assets/assets/ClientSignUpModelScript.js"></script>
+            <script src="~/PakDial-assets/js/tooltipster.bundle.min.js"></script>*@
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if ($(window).width() > 600) {
+                    $('#active-tab-1').addClass("active");
+                }
+                else {
+                    $('#active-tab-1').removeClass("active");
+                }
+                if ($(window).width() < 600) {
+                }
+            });
+
+            $activeTabs = $('.listingpage-navtab li a').click(function () {
+                if ($(window).width() > 600) {
+                    $activeTabs.removeClass("active");
+                    $(this).addClass("active");
+                }
+                else {
+                    $activeTabs.removeClass("active");
+                }
+            });
+            $('#website-lst').tooltipster({ trigger: 'click' });
+            $("#cllTo").on("click", function () {
+                $('#overlay-pd-mask').css('display', 'block');
+                $("#pf-js-model").show();
+            });
+            $("#payPlan-lst").on("click", function () {
+                $('#overlay-pd-mask').css('display', 'block')
+                $("#pf-js-model1").show();
+            });
+            $("#timing-lst").on("click", function () {
+                $('#overlay-pd-mask').css('display', 'block')
+                $("#pf-js-model2").show();
+            });
+
+            $("#email-lst").on("click", function () {
+                $('#overlay-pd-mask').css('display', 'block');
+                $("#pf-js-model3").show();
+                //$("#pf-js-model3").append('<div> <div class="calpop1"> <div class="calwpr1 dt"><div class="tbcalWpr"></div> <ul class="calnbrwp">  <li><span class="icnwdt"><i class="fab fa-facebook-f"></i></span><span class="sharepopupcell font15">Facebook</span></li> <li><span class="icnwdt"><i class="fab fa-twitter"></i></span><span class="sharepopupcell font15">Twitter</span></li> <li><span class="icnwdt"><i class="fa fa-copy"></i></span><span class="sharepopupcell font15">Copy</span></li> </ul> </div></div> </div> </div>');
+            });
+
+            function Hide() {
+                $('#pf-js-model').hide();
+                $('#pf-js-model1').hide();
+                $("#pf-js-model2").hide();
+                $("#pf-js-model3").hide();
+            }
+
+            $("body").mouseup(function () {
+                $('#overlay-pd-mask').css('display', 'none');
+                $('#pf-js-model').hide();
+                $('#pf-js-model1').hide();
+                $("#pf-js-model2").hide();
+                $("#pf-js-model3").hide();
+                $('.collapse').collapse('hide');
+            });
+
+
+            //
+
+
+            let modalId = $('#image-gallery');
+
+            $(document).ready(function () {
+
+                loadGallery(true, 'a.thumbnail');
+
+                //This function disables buttons when needed
+                function disableButtons(counter_max, counter_current) {
+                    $('#show-previous-image, #show-next-image')
+                        .show();
+                    if (counter_max === counter_current) {
+                        $('#show-next-image')
+                            .hide();
+                    } else if (counter_current === 1) {
+                        $('#show-previous-image')
+                            .hide();
+                    }
+                }
+
+
+                function loadGallery(setIDs, setClickAttr) {
+                    let current_image,
+                        selector,
+                        counter = 0;
+
+                    $('#show-next-image, #show-previous-image')
+                        .click(function () {
+                            if ($(this)
+                                .attr('id') === 'show-previous-image') {
+                                current_image--;
+                            } else {
+                                current_image++;
+                            }
+
+                            selector = $('[data-image-id="' + current_image + '"]');
+                            updateGallery(selector);
+                        });
+
+                    function updateGallery(selector) {
+                        let $sel = selector;
+                        current_image = $sel.data('image-id');
+                        $('#image-gallery-title')
+                            .text($sel.data('title'));
+                        $('#image-gallery-image')
+                            .attr('src', $sel.data('image'));
+                        disableButtons(counter, $sel.data('image-id'));
+                    }
+
+                    if (setIDs == true) {
+                        $('[data-image-id]')
+                            .each(function () {
+                                counter++;
+
+                                $(this)
+                                    .attr('data-image-id', counter);
+                            });
+                    }
+                    $(setClickAttr)
+                        .on('click', function () {
+                            updateGallery($(this));
+                        });
+                }
+            });
+
+            // build key actions
+            $(document)
+                .keydown(function (e) {
+                    switch (e.which) {
+                        case 37: // left
+                            if ((modalId.data('bs.modal') || {})._isShown && $('#show-previous-image').is(":visible")) {
+                                $('#show-previous-image')
+                                    .click();
+                            }
+                            break;
+
+                        case 39: // right
+                            if ((modalId.data('bs.modal') || {})._isShown && $('#show-next-image').is(":visible")) {
+                                $('#show-next-image')
+                                    .click();
+                            }
+                            break;
+
+                        default:
+                            return; // exit this handler for other keys
+                    }
+                    e.preventDefault(); // prevent the default action (scroll / move caret)
+                });
+
+        </script>
+        <!-- END: Footer-->
+</body>
+</html>
+
+

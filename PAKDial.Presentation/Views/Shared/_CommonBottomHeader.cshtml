@@ -1,0 +1,84 @@
+﻿<div class="header-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 logo-wrapper">
+                <div class="menu-icon" data-toggle="collapse" data-target="#NavbarOther">
+                    <div class="menu-icon-top pd-primary-bg"></div>
+                    <div class="menu-icon-middle"></div>
+                    <div class="menu-icon-top pd-primary-bg"></div>
+                </div>
+                <!--  Menu -->
+                <ul class="navbar-nav nav-mobile-sec">
+                    <div class="sidebar-sec navbar-collapse collapse" id="NavbarOther">
+                        <img src="~/PakDial-assets/images/arrow-03.png" asp-append-version="true">
+                        <div class="side-nav" id="side-other-nav">
+                            @await Component.InvokeAsync("MainSidebarMenuReplica")
+                        </div>
+                    </div>
+                </ul>
+                <!-- end  menu -->
+                <div class="page-logo">
+                    <a href="~/"><img src="~/PakDial-assets/images/page2logo.png" asp-append-version="true" alt="Logo"/></a>
+                </div>
+            </div>
+            <div class="col-sm-7 header-search">
+                <div id="searchbar" class="input-group">
+                    <div class="search-city">
+                        <span class="location-icon"><i class="fa fa-map-marker"></i></span>
+                        <input type="text" id="Commonsearchbycity" class="input-control" value="Lahore">
+                        <span id="Commoncitylistdrop" class="city-search-drop" style="display: none;">
+                            <ul id="CommonUserLocation">
+                                @await Component.InvokeAsync("LoadCities")
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="search-listing">
+                        <input type="text" name="search" id="CommonCatepdsrchbx" placeholder="Search Anytime Anywhere in Pakistan" class="form-control input-lg">
+                        <a id="CommonCatecross_S" class="cross-srch" style="display: none;">×</a>
+                        <div class="pd-srch-rslt">
+                            <span id="CommonCatepdsrchbxdrop" style="display: none;">
+                                <ul id="CommonCateauto"></ul>
+                            </span>
+                        </div>
+                    </div>
+                    @* Mobile Search *@
+                    <div class="btn-search">
+                        <button type="button" id="search-field-input" value="search" class="icon-search-mobile btn btn-default btn-lg pd-primary-font">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <div id="search-mobile-id" class="search-mobile search input-group form-group d-sm-block d-md-none d-lg-none">
+                            <div class="row search-mobile-wrapper">
+                                <input class="col-4 search-city-mobile form-control" type="text"
+                                       id="MobCommonsearchbycity" placeholder="Lahore" value="Lahore">
+
+                                <input class="col-8 search-listing-mobile form-control" type="text" placeholder="Search Anytime Anywhere in Pakistan"
+                                       id="MobCommonCatepdsrchbx" name="MobCommonCatepdsrchbx">
+                            </div>
+                            <div class="pd-srch-rslt">
+                                <div id="MobCommonCatepdsrchbxdrop" style="display: none;">
+                                    <ul id="MobCommonCateauto"></ul>
+                                </div>
+                            </div>
+                            <div id="MobCommoncitylistdrop" class="city-search-drop" style="display: none;">
+                                <ul id="MobCommonUserLocation">
+                                    @await Component.InvokeAsync("LoadCities")
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="contact-info">
+                    <img src="~/PakDial-assets/images/headoffice.png" asp-append-version="true" alt="head-office">
+                    <div class="office-detail">
+                        <h6>Customer Care</h6>
+                        <span>0304-1111-245</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

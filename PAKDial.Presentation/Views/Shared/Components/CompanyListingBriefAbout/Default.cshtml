@@ -1,0 +1,28 @@
+﻿@model PAKDial.Domains.DomainModels.CompanyListingProfile
+<p>
+    @if (Model.BriefAbout != null)
+    {
+        <strong>Brief About</strong><br>
+        @Model.BriefAbout<br><br>
+    }
+    @if (Model.LocationOverview != null)
+    {
+        <strong>Location & Overview</strong><br>
+        @Model.LocationOverview<br><br>
+    }
+    @if (Model.ProductAndServices != null)
+    {
+        <strong>Product & Services</strong><br>
+        @Model.ProductAndServices<br><br>
+    }
+    @if (Model.Certification != null)
+    {
+        <strong>Certifications</strong><br>
+        @Model.Certification<br><br>
+    }
+    @if (Model.ProfessionalAssociation != null)
+    {
+        <strong>Professional Association</strong><br>
+        @Model.ProfessionalAssociation<br><br>
+    }
+</p>

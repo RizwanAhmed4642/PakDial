@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.LoadSubCategoryModel>
+
+@if (Model.Where(c => c.IsPopular == true).Count() > 0)
+{
+        @foreach (var item in Model.Where(c => c.IsPopular == true))
+        {
+            <li class="nav-link">
+                <a class="sub-cat-list-a submainmenu" data-value="@item.MainCategoryId**@item.SubCatId**@item.Name**@item.IsLastNode">
+                    <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                    <span class="subcat-text">@item.Name</span>
+                    <span class="subcat-icon">
+                        <i class="fa fa-angle-right fa-2x">
+                        </i>
+                    </span>
+                </a>
+            </li>
+        }
+        <li class="a2z-li"><span class="a2z-span">Explore more A to Z</span></li>
+}
+
+

@@ -1,0 +1,60 @@
+﻿<div class="tab-pane fade" id="Gallery" role="tabpanel" aria-labelledby="contact-tab">
+
+    <div class="card-body">
+        <h6>Gallery</h6>
+        <div class="form-body">
+            <!--Banner Image-->
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Upload Banner Image</label>
+                </div>
+                <div class="form-col col-md-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="Aimagefiles"
+                               name="Aimagefiles" accept=".jfif,.jpg,.jpeg,.png,.gif">
+                        <label class="lbl-from-col custom-file-label" for="Aimagefiles">
+                            Upload Banner
+                            Image
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Preview </label>
+                </div>
+                <div class="form-col col-md-9" id="ACLTDeleteBannerImage">
+                    <div class="row">
+                        <figure class="col-lg-12 col-md-12 col-sm-12 col-xs-12" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">
+                            <img class="img-fluid" itemprop="thumbnail" alt="Image description" id="AtargetImg" asp-append-version="true">
+                            <button class="close" onclick="RemoveBannerImage()">X</button>
+                        </figure>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Choose file </label>
+                </div>
+                <div class="form-col col-md-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="AMimagefiles" name="AMimagefiles" multiple="" accept=".jfif,.jpg,.jpeg,.png,.gif">
+                        <label class="lbl-from-col custom-file-label" for="AMimagefiles">Choose file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Selected Images </label>
+                </div>
+                <div class="form-col col-md-9">
+                    <div class="row" id="AMImageLink" style="margin-left:3px">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PAKDial.Domains.DomainModels.CompanyListingTimming>
+@if (Model.Count() > 0 && Model != null)
+{
+
+    @foreach (var item in Model)
+    {
+        <li class="category-timings">
+            <span class="open-day">@item.DaysName</span>
+            <span class=" ">@item.TimeFrom - @item.TimeTo</span>
+        </li>
+
+    }
+}
+else
+{
+    <li class="category-timings">
+        <span class="open-day">Monday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+
+    <li class="category-timings">
+        <span class="open-day">Tuesday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+    <li class="category-timings">
+        <span class="open-day">Tuesday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+    <li class="category-timings">
+        <span class="open-day">Tuesday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+    <li class="category-timings">
+        <span class="open-day">Tuesday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+    <li class="category-timings">
+        <span class="open-day">Tuesday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+    <li class="category-timings">
+        <span class="open-day">Tuesday</span>
+        <span class=" ">9:30 am - 9:30 pm</span>
+    </li>
+}
+
+
+
+

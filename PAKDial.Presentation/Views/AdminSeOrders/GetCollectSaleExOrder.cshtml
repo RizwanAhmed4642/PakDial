@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewData["Title"] = "GetCollectSaleExOrder";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Manage Orders</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Manage Orders</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Collect Payment</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Collect Payment</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show">
+                            <div class="child-card">
+                                <form id="UpdateCollectSeOrder_Submit_Form" name="UpdateCollectSeOrder_Submit_Form">
+                                    <input id="AUCSeOrderInvoiceId" name="AUCSeOrderInvoiceId" type="hidden" value="@ViewBag.InvoiceId">
+                                    <input id="UCSeOrderInvoiceId" name="UCSeOrderInvoiceId" type="hidden">
+                                    <div class="form-body">
+                                        <div class="card">
+                                            <div class="card-content collapse show">
+                                                <div class="card-body">
+                                                    <div class="form-body">
+                                                        <fieldset>
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Areas:</label>
+                                                                        <input id="UCSeOrderCombineAreas" name="UCSeOrderCombineAreas" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Company:</label>
+                                                                        <input id="UCSeOrderCompanyName" name="UCSeOrderCompanyName" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Package</label>
+                                                                        <input id="UCSeOrderPackage" name="UCSeOrderPackage" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>PaymentMode</label>
+                                                                        <select id="UCSeOrderPaymentId" name="ASeOrderPaymentId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="control-group row" id="UCSeOrderBankChequeOnlineId" style="display:none">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Bank Name</label>
+                                                                        <input id="UCSeOrderBankName" name="UCSeOrderBankName" type="text" placeholder="Bank Name" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Cheque No</label>
+                                                                        <input id="UCSeOrderChqueNo" name="UCSeOrderChqueNo" type="text" placeholder="Cheque No" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div id="UCSeOrderShowButtons" class="modal-footer">
+                                            <button type="reset" class="btn btn-info" onclick="location.href='/AdminSeOrders/Index'">Back to List</button>
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                        <div id="UCSeOrderShowLoader" class="modal-footer" style="display:none">
+                                            <button class="btn btn-primary" type="button" disabled="">
+                                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                                Updating Results...
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminSeOrdersComponent/AdminSeOrdersModel.js"></script>
+    <script src="~/assets/js/AdminSeOrdersComponent/AdminSeOrderUpdateViewModel.js"></script>
+}
+

@@ -1,0 +1,67 @@
+﻿@model PAKDial.Domains.UserEndViewModel.MainandChildWrapper
+@{ 
+    var counter1 = 0;
+    var counter2 = 0;
+ }
+<div class="row">
+    <div class="col-lg-12 ftco-animate app-banner">
+        <a href="/Common/ComingSoon">
+            <img src="~/PakDial-assets/images/App-banner.png" asp-append-version="true" alt="Comming Soon">
+        </a>
+    </div>
+</div>
+<div class="foot-title pt-2  foot-title-top">
+    <div class="row">
+        <ul>
+            @await Html.PartialAsync("~/Views/Shared/_FooterInfoPages.cshtml")
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="markt-sec col-sm-7 col-md-7">
+        <ul>
+            <li><a href="/Common/ComingSoon"><img src="~/PakDial-assets/images/google.png" asp-append-version="true" alt="google Play"></a></li>
+            <li><a href="/Common/ComingSoon"><img src="~/PakDial-assets/images/apple.png" asp-append-version="true" alt="App Store"></a></li>
+            <li><a href="/Common/ComingSoon"><img src="~/PakDial-assets/images/backberry.png" asp-append-version="true" alt="Black Berry"></a></li>
+
+        </ul>
+    </div>
+    <div class="social-sec col-sm-5 col-md-5 pull-right">
+        <ul class="pull-right">
+            <li><a href="https://www.facebook.com/PakDialMedia"><img src="~/PakDial-assets/images/facebook.png" asp-append-version="true" alt="Facebook"></a></li>
+            <li><a href="https://www.instagram.com/pakdialmedia/"><img src="~/PakDial-assets/images/instagram.png" asp-append-version="true" alt="Instagram"></a></li>
+            <li><a href="https://twitter.com/PakdialMedia"><img src="~/PakDial-assets/images/twitter.png" asp-append-version="true" alt="Twitter"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCTGPB_t8Qhw2QADwCakBhAA"><img src="~/PakDial-assets/images/youtube.png" asp-append-version="true" alt="Youtube"></a></li>
+            <li><a href="https://www.linkedin.com/in/pakdial-media-684743198/"><img src="~/PakDial-assets/images/linkendin.png" asp-append-version="true" alt="Linkden"/></a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="footer-section">
+    <div class="row">
+        <ul>
+            @foreach (var item in Model.MainSideBarMenu.Take(21))
+            {
+                <li><a data-value="@item.Id**@item.Name" class="mainmenu">@item.Name</a> /</li>
+            }
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            @foreach (var item in Model.MainSideBarMenu.Skip(21))
+            {
+                <li><a data-value="@item.Id**@item.Name" class="mainmenu">@item.Name</a> /</li>
+            }
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            @foreach (var item in Model.MainMenuSubMenu)
+            {
+                <li><a class="submainmenu" data-value="@item.CatId**@item.Id**@item.Name**@item.IsLastNode">@item.Name</a>/</li>
+            }
+        </ul>
+    </div>
+</div>

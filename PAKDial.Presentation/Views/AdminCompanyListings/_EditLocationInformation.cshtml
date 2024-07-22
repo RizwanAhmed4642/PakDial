@@ -1,0 +1,102 @@
+﻿<div class="card">
+    <div class="card-header inner-card">
+        <h4 class="card-title" id="basic-layout-form">Location Information</h4>
+        <a class="heading-elements-toggle">
+            <i class="la la-ellipsis-v font-medium-3"></i>
+        </a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li>
+                    <a href="#UACLocationInfo" data-toggle="collapse" data-target="#UACLocationInfo" aria-expanded="false" aria-controls="UACLocationInfo">
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="card-content collapse" id="UACLocationInfo" data-parent="#EditListingData" >
+        <div class="card-body">
+            <div class="form-body">
+                <input type="hidden" id="UAddressId"/>
+                <div class="control-group row">
+                    <div class="col-md-6">
+                        <label>State<span class="text-danger">*</span></label>
+                        <div class="form-group position-relative">
+                            <select id="UCLstState" name="UCLstState" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>City<span class="text-danger">*</span></label>
+                        <div class="form-group position-relative">
+                            <select id="UCLstCity" name="UCLstCity" class="form-control" style="width:100%" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group row">
+                    <div class="col-md-6">
+                        <label>City Area<span class="text-danger">*</span></label>
+                        <div class="form-group position-relative">
+                            <select id="UCLstCityArea" name="UCLstCityArea" class="form-control" style="width:100%" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Building Address</label>
+                            <input id="UCLstBuildingAddress" name="UCLstBuildingAddress" type="text" placeholder="Building Address" class="form-control">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="control-group row">
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Street Address</label>
+                            <input id="UCLstStreetAddress" name="UCLstStreetAddress" type="text" placeholder="Street Address" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Land Mark</label>
+                            <input id="UCLstLandMark" name="UCLstLandMark" type="text" placeholder="Land Mark" class="form-control">
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <div class="control-group row">
+                    @*<div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Area</label>
+                            <input id="UCLstArea" name="UCLstArea" type="text" placeholder="Area" class="form-control">
+                        </div>
+                    </div>*@
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Latitude</label>
+                            <input id="UCLstLatitude" name="UCLstLatitude" type="text" placeholder="Latitude" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group position-relative">
+                            <label>Longitude</label>
+                            <input id="UCLstLongitude" name="UCLstLongitude" type="text" placeholder="Longitude" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Address<span class="text-danger">*</span></label>
+                    <textarea id="UCLstAddress" rows="5" class="form-control" name="UCLstAddress" placeholder="Address"></textarea>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

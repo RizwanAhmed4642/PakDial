@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Configurations</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Configurations</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Listing Types</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        <!-- server-side table -->
+        @await Html.PartialAsync("~/Views/AdminListingTypes/_ListingTypesList.cshtml")
+        <!--/ server-side table -->
+    </div>
+
+</div>
+@await Html.PartialAsync("~/Views/AdminListingTypes/_AddListingTypes.cshtml")
+@await Html.PartialAsync("~/Views/AdminListingTypes/_EditListingTypes.cshtml")
+@await Html.PartialAsync("~/Views/AdminListingTypes/_DeleteListingTypes.cshtml")
+
+
+@section scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminListingTypesComponent/AdminListingTypesModel.js"></script>
+    <script src="~/assets/js/AdminListingTypesComponent/AdminListingTypesViewModel.js"></script>
+
+}
+

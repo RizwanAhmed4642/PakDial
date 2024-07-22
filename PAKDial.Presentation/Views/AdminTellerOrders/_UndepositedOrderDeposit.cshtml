@@ -1,0 +1,86 @@
+﻿<div class="modal fade text-left show" id="UpdateUnDepToDep" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Clear UnDeposited Order</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateUnDepToDep_Submit_Form">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <input type="hidden" id="UtellerInvoiceId" />
+                                    <fieldset>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Area</label>
+                                                    <input id="UtellerCombineArea" name="UtellerCombineArea" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Company</label>
+                                                    <input id="UtellerCompanyName" name="UtellerCompanyName" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Package</label>
+                                                    <input id="UtellerPackageName" name="UtellerPackageName" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Mode</label>
+                                                    <input id="UtellerModeName" name="UtellerModeName" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row" id="UtellerBanksSystem">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>BankName</label>
+                                                    <input id="UtellerBankName" name="UtellerPackageName" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" id="UtellerBanksCheq">
+                                                <div class="form-group position-relative">
+                                                    <label>ChequeNo</label>
+                                                    <input id="UtellerChqNo" name="UtellerChqNo" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" id="UtellerBanksAcc">
+                                                <div class="form-group position-relative">
+                                                    <label>AccountNo</label>
+                                                    <input id="UtellerAccNo" name="UtellerAccNo" type="text" readonly class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="UpdateUTellerShowButtons" class="modal-footer pr-2 pl-2">
+                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Deposit</button>
+                    </div>
+                    <div id="UpdateUTellerShowLoader" class="modal-footer pr-2 pl-2" style="display:none">
+                        <button class="btn btn-primary" type="button" disabled="">
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                             Depositing Order...
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

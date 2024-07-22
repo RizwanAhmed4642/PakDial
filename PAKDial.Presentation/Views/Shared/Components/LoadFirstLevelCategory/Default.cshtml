@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.LoadSubCategoryModel>
+
+@if (Model.Count() > 0)
+{
+    if (Model.FirstOrDefault().MainCategoryId == 5)
+    {
+        <li class="nav-link">
+            <a class="sub-cat-list-a mainmenu" data-value="3**Chemists">
+                <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                <span class="subcat-text">Chemists</span>
+                <span class="subcat-icon">
+                    <i class="fa fa-angle-right fa-2x">
+                    </i>
+                </span>
+            </a>
+        </li>
+    }
+    if (Model.FirstOrDefault().MainCategoryId == 4)
+    {
+        <li class="nav-link">
+            <a class="sub-cat-list-a submainmenu" data-value="6**5594**Construction Machinery & Supplies**False">
+                <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                <span class="subcat-text">Construction Machinery & Supplies</span>
+                <span class="subcat-icon">
+                    <i class="fa fa-angle-right fa-2x">
+                    </i>
+                </span>
+            </a>
+        </li>
+    }
+    if (Model.FirstOrDefault().MainCategoryId == 46)
+    {
+        <li class="nav-link">
+            <a class="sub-cat-list-a submainmenu" data-value="35**3433**Vehicles Transporters**True">
+                <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                <span class="subcat-text">Vehicles Transporters</span>
+                <span class="subcat-icon">
+                    <i class="fa fa-angle-right fa-2x">
+                    </i>
+                </span>
+            </a>
+        </li>
+    }
+    @foreach (var item in Model)
+    {
+        if (item.SubCatId == 21396)
+        {
+            <li class="nav-link">
+                <a class="sub-cat-list-a submainmenu" data-value="11**21392**@item.Name**False">
+                    <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                    <span class="subcat-text">@item.Name</span>
+                    <span class="subcat-icon">
+                        <i class="fa fa-angle-right fa-2x">
+                        </i>
+                    </span>
+                </a>
+            </li>
+        }
+        else if (item.SubCatId == 21394)
+        {
+            <li class="nav-link">
+                <a class="sub-cat-list-a submainmenu" data-value="11**21392**@item.Name**False">
+                    <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                    <span class="subcat-text">@item.Name</span>
+                    <span class="subcat-icon">
+                        <i class="fa fa-angle-right fa-2x">
+                        </i>
+                    </span>
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-link">
+                <a class="sub-cat-list-a submainmenu" data-value="@item.MainCategoryId**@item.SubCatId**@item.Name**@item.IsLastNode">
+                    <span class="subcat-img"><img src="~/PakDial-assets/images/subcat-icon.png" asp-append-version="true"></span>
+                    <span class="subcat-text">@item.Name</span>
+                    <span class="subcat-icon">
+                        <i class="fa fa-angle-right fa-2x">
+                        </i>
+                    </span>
+                </a>
+            </li>
+        }
+
+    }
+}
+
+

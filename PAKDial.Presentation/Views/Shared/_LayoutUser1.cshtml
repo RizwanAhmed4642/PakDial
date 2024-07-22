@@ -1,0 +1,104 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pakdial - Local Search, Social, News, Videos, Shopping</title>
+    <meta name="Title" content="Pakdial - Local Search, Social, News, Videos, Shopping">
+    <meta name="description" content="Pakdial, pakistan's local search engine, provides Best Deals, Shop Online, Ticket Booking for Flights, Hotels, Movies, Buses and Cabs. You can also Order Food, Book Restaurant Table, View Menu, Book Doctors’ Appointments. Pakdial curates Social content, News, Videos &amp; more from Top Publishers on all Trending Topics.">
+    <meta name="keywords" content="Pakdial, local search, travel, order food, grocery, medicines, online shopping, book tickets, movies, bus, flights, hotels, events, search plus services, local businesses, online yellow pages, pakistan trade directory, city yellow pages, pakistan search engine, Pakdial customer care, customer support">
+    <link href="~/PakDial-assets/css/Layoutuser1style.min.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true">
+
+    @*<link href="~/PakDial-assets/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/PakDial-assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/PakDial-assets/css/style.css">
+        <link rel="stylesheet" href="~/PakDial-assets/css/animate.css">*@
+    <!-- BEGIN: Vendor CSS-->
+    @*<link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/datatables.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/forms/selects/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/extensions/toastr.css">
+        <link rel="stylesheet" type="text/css" href="~/app-assets/css/plugins/extensions/toastr.css">*@
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB8VEQNMVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PB8VEQNMVM');
+    </script>
+    @RenderSection("Style", required: false)
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '221142962342306');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=221142962342306&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    <!--BEGIN: Top Header-->
+    @await Component.InvokeAsync("Commonheader")
+    <!--END: Top Header-->
+    <div class="app-content content">
+        @RenderBody()
+    </div>
+
+    <!-- BEGIN: Footer-->
+    @await Component.InvokeAsync("CommonFooter")
+    @*@await Html.PartialAsync("~/Views/Shared/_ClientLoginLogin.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ClientForgotPassword.cshtml")*@
+    @await Html.PartialAsync("~/Views/Shared/_ClientLoginOtpLogin.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ClientOtpCodeOtp.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ChangeMobileNumber.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ClientSignUp.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_PureChat.cshtml")
+    <script src="~/PakDial-assets/assets/Layoutuser1scripts.min.js" asp-append-version="true"></script>
+
+    @*<script src="~/app-assets/js/core/libraries/jquery.min.js"></script>
+        <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+        <script src="~/PakDial-assets/js/bootstrap.min.js"></script>
+        <script src="~/PakDial-assets/js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="~/PakDial-assets/js/jquery.waypoints.min.js"></script>
+        <script src="~/PakDial-assets/js/jquery.stellar.min.js"></script>
+        <script src="~/PakDial-assets/js/owl.carousel.min.js"></script>
+        <script src="~/PakDial-assets/js/aos.js"></script>
+        <script src="~/PakDial-assets/js/scrollax.min.js"></script>
+        <script src="~/PakDial-assets/js/main.js"></script>
+        <script src="~/app-assets/vendors/js/forms/select/select2.min.js"></script>
+        <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+
+
+        <script src="~/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+        <script src="~/app-assets/vendors/js/extensions/toastr.min.js" type="text/javascript"></script>
+        <script src="~/app-assets/js/scripts/extensions/toastr.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/CommonBottomHeader.js"></script>
+        <script src="~/PakDial-assets/assets/UserCommonRoutes.js"></script>
+        <script src="~/PakDial-assets/assets/ClientCommonFunction.js"></script>
+        <script src="~/PakDial-assets/assets/ClientLoginModel.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/ClientLoginModelScript.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/ClientForget.js"></script>
+        <script src="~/PakDial-assets/assets/ClientSignUpModel.js"></script>
+        <script src="~/PakDial-assets/assets/ClientSignUpModelScript.js"></script>*@
+    @RenderSection("Scripts", required: false)
+
+    <!-- END: Footer-->
+</body>
+</html>

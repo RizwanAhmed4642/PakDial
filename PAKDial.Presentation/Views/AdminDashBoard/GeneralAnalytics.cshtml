@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+    </div>
+    <div class="content-body">
+
+        @await Html.PartialAsync("~/Views/AdminDashBoard/_ECLGenaralTotalCount.cshtml")
+
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/assets/js/AdminDashboardComponent/GeneralDashBoardViewModel.js"></script>
+}

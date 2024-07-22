@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.MainSideBarMenu>
+
+@foreach (var item in Model)
+{
+    <li data-value="@item.Id**@item.Name" >
+        <div>
+            <b>
+                <img src="@item.WebDir" asp-append-version="true">
+                <span >@item.Name</span> 
+            </b>
+        </div>
+    </li>
+}

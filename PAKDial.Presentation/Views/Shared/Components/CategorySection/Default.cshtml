@@ -1,0 +1,199 @@
+﻿@model IEnumerable<PAKDial.Domains.SqlViewModels.VLoadHomePopularService>
+
+<div class="main container">
+    <div class="row">
+        <div class="offset-lg-3 col-lg-9 col-md-12">
+
+            <!-- End Popular Service -->
+            <div class="popular-service">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h2 class="head-text">
+                            @if (Model.Count() > 0)
+                            {
+                                @Model.Where(c => c.HomeSection.ToLower() == "Popular Services".ToLower()).FirstOrDefault().HomeSection
+                            }
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @foreach (var Cat in Model.Where(c => c.HomeSection.ToLower() == "Popular Services".ToLower() && c.IsNested == true))
+                    {
+                        <div class="content-wrapper col-lg-6 col-md-6 col-sm-12 col-xs-12 ftco-animate">
+                            <div class="content-box box">
+                                <div class="content-img">
+                                    <img src="@Cat.CatFeatureImage" width="150" height="150" asp-append-version="true" alt="@Cat.CatName">
+                                </div>
+                                <div class="content-detail">
+                                    <a data-value="@Cat.CatId**@Cat.CatName" class="mainmenu"><span>@Cat.CatName</span></a>
+                                    <ul class="sub-content">
+                                        @await Component.InvokeAsync("CategoryHomeSubSection", Cat.CatId)
+                                    </ul>
+                                    <a class="pd-secondary-font mainmenu" data-value="@Cat.CatId**@Cat.CatName">
+                                        <div class="content-button pd-primary-bg pd-btn">
+                                            Show More<span><i class="fa fa-caret-right"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <!-- End Popular Service -->
+            <!-- Top Category -->
+            <div class="top-category">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h2 class="head-text">
+                            @if (Model.Count() > 0)
+                            {
+                                @Model.Where(c => c.HomeSection.ToLower() == "Business & Services".ToLower()).FirstOrDefault().HomeSection
+                            }
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach (var Cat in Model.Where(c => c.HomeSection.ToLower() == "Business & Services".ToLower() && c.IsNested == false))
+                    {
+                        <div class="cat-sec-wrapper col-lg-3 col-md-6 col-6 col-xs-6 ftco-animate">
+                            <a class="cat-sec-wrapper mainmenu" data-value="@Cat.CatId**@Cat.CatName">
+                                <div class="cat-box box">
+                                    <div class="cat-icon">
+                                        <img src="@Cat.Web_Dir" asp-append-version="true" alt="@Cat.CatName">
+                                    </div>
+                                    <div class="textholder text-center">
+                                        <h4>@Cat.CatName</h4>
+                                        <p>@Html.Raw((Cat.CatDescription.Length > 70 ? Cat.CatDescription.Substring(0, 70) + " " + "<text>...</text>" : Cat.CatDescription)) </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- End Top Category -->
+            <!-- Latest Category -->
+            <div class="latest-category">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h2 class="head-text">
+                            @if (Model.Count() > 0)
+                            {
+                                @Model.Where(c => c.HomeSection.ToLower() == "Whats Trending?".ToLower() && c.IsNested == false).FirstOrDefault().HomeSection
+                            }
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach (var Cat in Model.Where(c => c.HomeSection.ToLower() == "Whats Trending?".ToLower() && c.IsNested == false))
+                    {
+                        <div class="category-section col-lg-3 col-md-3 col-6 col-xs-6 ftco-animate ">
+                            <div class="latest-category-box box ">
+                                <a class="category-img mainmenu" data-value="@Cat.CatId**@Cat.CatName">
+                                    <img class="img-fluid" src="@Cat.CatFeatureImage" asp-append-version="true" alt="@Cat.CatName">
+                                    <div class="overlay"></div>
+                                </a>
+                                <div class="text-center view overlay zoom lt-title ">
+                                    <a class="mainmenu" data-value="@Cat.CatId**@Cat.CatName"><strong>@Cat.CatName</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- End Latest Category -->
+            <!-- shop -->
+            <div class="latest-category">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h2 class="head-text">Shop Now</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-6 col-xs-6 ftco-animate ">
+                        <div class="latest-category-box box ">
+                            <a href="/Products/Lahore/6/5642/Air_Conditioners_Coolers_&_Heaters_" class="shop-img">
+                                <img class="img-fluid" src="~/PakDial-assets/images/shop/ac.png" alt="Air Conditioner" asp-append-version="true">
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text-center ">
+                                <span class="shop-heading">Air Conditioner</span>
+                                <div class="shop-now"><a href="/Common/ComingSoon">Shop Now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-6 col-xs-6 ftco-animate ">
+                        <div class="latest-category-box box ">
+                            <a href="/Products/Lahore/6/5663/Camera_&_Photography_Equipments_" class="shop-img">
+                                <img class="img-fluid" src="~/PakDial-assets/images/shop/camera.png" alt="Digital Camera" asp-append-version="true">
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text text-center">
+                                <span class="shop-heading">Digital Camera</span>
+                                <div class="shop-now"><a href="/Common/ComingSoon">Shop Now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-6 col-xs-6 ftco-animate ">
+                        <div class="latest-category-box  box">
+                            <a href="/Products/Lahore/6/5680/Mobile_Phone_&_Accessories_" class="shop-img">
+                                <img class="img-fluid" src="~/PakDial-assets/images/shop/mobiles.png" alt="Mobile Phones" asp-append-version="true">
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text text-center  ">
+                                <span class="shop-heading">Mobile Phones </span>
+                                <div class="shop-now"><a href="/Common/ComingSoon">Shop Now</a></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-6 col-xs-6 ftco-animate ">
+                        <div class="latest-category-box box ">
+                            <a href="/Products/Lahore/6/5674/Freezers,_Refrigerators_&_Chillers_" class="shop-img">
+                                <img class="img-fluid" src="~/PakDial-assets/images/shop/refrigirator.png" alt="Refrigerator" asp-append-version="true">
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text text-center  ">
+                                <span class="shop-heading">Refrigerator </span>
+                                <div class="shop-now"><a href="/Common/ComingSoon">Shop Now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-6 col-xs-6 ftco-animate ">
+                        <div class="latest-category-box box ">
+                            <a href="/Products/Lahore/6/7092/Tablet" class="shop-img">
+                                <img class="img-fluid" src="~/PakDial-assets/images/shop/tablets.png" alt="Tablets" asp-append-version="true">
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text text-center  ">
+                                <span class="shop-heading">Tablets </span>
+                                <div class="shop-now"><a href="/Common/ComingSoon">Shop Now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-6 col-xs-6 ftco-animate ">
+                        <div class="latest-category-box box ">
+                            <a href="/Products/Lahore/6/5679/LED,_LCD_TV_And_Monitors_" class="shop-img">
+                                <img class="img-fluid" src="~/PakDial-assets/images/shop/tv.png" alt="Television Sets" asp-append-version="true">
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text text-center  ">
+                                <span class="shop-heading">Television Sets  </span>
+                                <div class="shop-now"><a href="/Common/ComingSoon">Shop Now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Company -->
+            @await Component.InvokeAsync("HomeFooterComponent")
+            
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("HomeFooter2Component")

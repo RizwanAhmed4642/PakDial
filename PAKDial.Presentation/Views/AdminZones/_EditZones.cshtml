@@ -1,0 +1,31 @@
+﻿<div class="modal fade text-left show" id="UpdateZones" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Edit Zone</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateZones_Submit_Form">
+                <div class="modal-body">
+                    <input type="hidden" id="UZoneId" />
+                    <label>Name: </label>
+                    <div class="form-group position-relative">
+                        <input id="UZoneName" name="UZoneName" type="text" placeholder="Zone Name" class="form-control">
+                    </div>
+                </div>
+                <div id="UpdateZoneShowButtons" class="modal-footer">
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+                <div id="UpdateZoneShowLoader" class="modal-footer" style="display:none">
+                    <button class="btn btn-primary" type="button" disabled="">
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Updating Results...
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

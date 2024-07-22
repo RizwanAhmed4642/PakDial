@@ -1,0 +1,47 @@
+﻿@model PAKDial.Domains.UserEndViewModel.ListingRatingWrapperModel
+@{ 
+    var ListingValues = Model.IncrementalCount + "," + Model.RowCount;
+}
+@foreach (var item in Model.ListingRating)
+{
+    <div class="row rating-box">
+        <div class="rating-box-inner col-12">
+            <div class="rating-box-lft">
+                <div class="">
+                    <img class="review-img" width="50px" height="50px" src="~/PakDial-assets/images/user-image.png" alt="" asp-append-version="true">
+                </div>
+            </div>
+            <div class="rating-box-rgt">
+                <span class="rating-user">
+                    <span class="rating-user-name">@item.Name</span>
+                    <span class="rating-user-star">
+                        @for (var i = 1; i <= item.Rating; i++)
+                        {
+                            <img src="~/PakDial-assets/images/starsize-04.png" asp-append-version="true" />
+                        }
+                        @for (var i = (item.Rating + 1); i <= 5; i++)
+                        {
+                            <img src="~/PakDial-assets/images/starsize-05.png" asp-append-version="true" />
+                        }
+                    </span>
+                </span>
+                <span class="rating-date pull-right">@item.CreatedDate.ToString("dd MMM yyyy")</span>
+                <div>
+                    <p class="rating-comments">
+                        @item.RatingDesc
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+<div id="loadingBtnRating" class="loading-btn-sec">
+    <span class="load-wrapper">
+        <input type="hidden" id="RatingBtnValue" value="@ListingValues" />
+        <span id="RatingBtn" class="load-more-btn">
+            <span id="gifRatingImg" class="load-gif" style="display:none"></span>
+            <span class="">Load More Reviews</span>
+        </span>
+    </span>
+</div>

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+<div class="body-content">
+    <!-- server-side table -->
+    @await Html.PartialAsync("~/Views/ClientListing/_ClientCompanyListing.cshtml")
+    <!--/ server-side table -->
+</div>
+
+@section scripts{
+    <script src="~/PakDial-assets/assets/Cicustomerlistingscripts.min.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#ClientCompanyListings_length").parent().removeClass('col-sm-12');
+            $("#ClientCompanyListings_length").parent().addClass('col-6');
+            $("#ClientCompanyListings_filter").parent().removeClass('col-sm-12');
+            $("#ClientCompanyListings_filter").parent().addClass('col-6');
+            $("#ClientCompanyListings_length").children('label').remove();
+            $("#ClientCompanyListings_length").append('<label>Show <select name="ClientCompanyListings_length" aria-controls="ClientCompanyListings" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label>');
+
+            $("#ClientCompanyListings_length").parent().addClass('form-col list-search');
+            $("#ClientCompanyListings_filter").parent().addClass('form-col list-search');
+            $("#ClientCompanyListings_info").parent().css({ "margin-bottom": "20px" });
+            $("#ClientCompanyListings_paginate").parent().css({ "margin-bottom": "20px" });
+
+        });
+    </script>
+}
+

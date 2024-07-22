@@ -1,0 +1,79 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using PAKDial.Domains.IdentityManagement
+@model PAKDial.Presentation.Models.AccountViewModels.LoginViewModel
+@inject SignInManager<PAKDial.Domains.IdentityManagement.ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutAdminLogin.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+    </div>
+    <div class="content-body">
+        <section class="flexbox-container">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-6 col-10 box-shadow-2 p-0">
+                    <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                        <div class="card-header border-0">
+                            <div class="text-center mb-1">
+                                <img src="~/app-assets/images/logo/logo.png" alt="branding logo">
+                            </div>
+                            <div class="font-large-1  text-center" style="color:#057C55">
+                                Employee Login
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="card-body">
+                                <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" novalidate>
+                                    <fieldset class="form-group text-lg-center text-md-center text-sm-center">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger" style="font-weight: bold"></div>
+                                    </fieldset>
+                                    <fieldset class="form-group position-relative has-icon-left">
+                                        <input asp-for="Email" placeholder="Username" class="form-control round" id="Email" required>
+                                        <div class="form-control-position">
+                                            <i class="ft-user"></i>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="form-group position-relative has-icon-left">
+                                        <input asp-for="Password" type="password" class="form-control round" id="password" placeholder="Password" required>
+                                        <div class="form-control-position">
+                                            <i class="ft-lock"></i>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-group row">
+                                        <div class="col-md-6 col-12 text-center text-sm-left">
+                                            <label class="rememberme mt-checkbox mt-checkbox-outline font-medium-1">
+                                                <input asp-for="RememberMe" type="checkbox"> Remember me
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="~/Account/ForgotPassword" class="card-link">Forgot Password?</a></div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn round btn-block btn-glow btn-bg-gradient-x-custom-green col-12 mr-1 mb-1" style="color:#fff">Login</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Email').first().focus();
+        })
+    </script>
+}

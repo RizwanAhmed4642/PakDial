@@ -1,0 +1,25 @@
+﻿@model PAKDial.Domains.DomainModels.Customers
+
+<div class="pd-profile-header">
+    <div class="listing-banner" style="background-image:url(/PakDial-assets/images/banner3.png)">
+    </div>
+    <div class="listing-banner-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-1 offset-md-1">
+                    <div class="listing-profile-media">
+                        @if (Model.ImagePath != null && Model.ImagePath != "")
+                        {
+                            <img src="@Model.ImagePath" class="img-fluid" asp-append-version="true" />
+                        }
+                        else
+                        {
+                            <img src="~/PakDial-assets/images/user-d.png" class="img-fluid" asp-append-version="true">
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

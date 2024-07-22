@@ -1,0 +1,77 @@
+﻿<div class="card">
+    <div class="card-header inner-card">
+        <h4 class="card-title" id="basic-layout-form">Create Your Gallery</h4>
+        <a class="heading-elements-toggle">
+            <i class="la la-ellipsis-v font-medium-3"></i>
+        </a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li>
+                    <a href="#UACEditGallery" data-toggle="collapse" data-target="#UACEditGallery" aria-expanded="false" aria-controls="UACEditGallery">
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="card-content collapse" id="UACEditGallery" data-parent="#EditListingData" >
+        <div class="card-body">
+            <div class="form-body">
+                <!--Banner Image-->
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Upload Banner Image</label>
+                    </div>
+                    <div class="form-col col-md-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="Uimagefiles"
+                                   name="Uimagefiles" accept=".jfif,.jpg,.jpeg,.png,.gif">
+                            <label class="custom-file-label" for="Uimagefiles">
+                                Upload Banner
+                                Image
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Preview </label>
+                    </div>
+                    <div class="form-group col-md-9" id="UCLTDeleteBannerImage">
+                        <div class="row">
+                            <figure class="col-lg-12 col-md-12 col-sm-12 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                   <div class="parent">
+                                        <img class="img-fluid" itemprop="thumbnail" alt="Image description" id="UtargetImg" />
+                                        <button class="close" onclick="RemoveBannerImage()">X</button>
+                                    </div>
+                             </figure>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Choose file </label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="UMimagefiles" name="UMimagefiles" multiple accept=".jfif,.jpg,.jpeg,.png,.gif">
+                            <label class="custom-file-label" for="UMimagefiles">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Selected Images </label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <div class="row" id="UMImageLink" style="margin-left:3px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

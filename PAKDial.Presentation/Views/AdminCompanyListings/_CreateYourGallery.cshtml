@@ -1,0 +1,72 @@
+﻿<div class="card">
+    <div class="card-header inner-card">
+        <h4 class="card-title" id="basic-layout-form">Create Your Gallery</h4>
+        <a class="heading-elements-toggle">
+            <i class="la la-ellipsis-v font-medium-3"></i>
+        </a>
+        <div class="heading-elements">
+            <ul class="list-inline mb-0">
+                <li>
+                    <a href="#ACCreateGallery" data-toggle="collapse" data-target="#ACCreateGallery" aria-expanded="false" aria-controls="ACCreateGallery">
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="card-content  collapse" id="ACCreateGallery" data-parent="#ListingData">
+        <div class="card-body">
+            <div class="form-body">
+                <!--Banner Image-->
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Upload Banner Image</label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="Aimagefiles" name="Aimagefiles" accept=".jfif,.jpg,.jpeg,.png,.gif"  >
+                            <label class="custom-file-label" for="Aimagefiles">Upload Banner Image</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Preview </label>
+                    </div>
+                    <div class="form-group col-md-9" id="ACLTDeleteBannerImage">
+                        <div class="row">
+                            <figure class="col-lg-12 col-md-12 col-sm-12 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                <img class="img-fluid" itemprop="thumbnail" alt="Image description" id="AtargetImg" />
+                                <button class="close" onclick="RemoveBannerImage()">X</button>
+                            </figure>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Choose file </label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="AMimagefiles" name="AMimagefiles" multiple accept=".jfif,.jpg,.jpeg,.png,.gif" >
+                            <label class="custom-file-label" for="AMimagefiles">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-md-3">
+                        <label>Selected Images </label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <div class="row" id="AMImageLink" style="margin-left:3px">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

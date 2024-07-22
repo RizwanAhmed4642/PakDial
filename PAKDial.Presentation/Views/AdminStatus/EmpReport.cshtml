@@ -1,0 +1,84 @@
+﻿@model IEnumerable<PAKDial.Domains.StoreProcedureModel.EmployeeCountStateReport>
+@{
+    ViewData["Title"] = "EmpReport";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+    </div>
+    <div class="content-body">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="card card-esc">
+                        <div class="card-header card-esc-title-head p-1">
+                            <h4 class="card-title card-esc-title float-left">@item.TableName <span class="blue-grey lighten-2 font-small-3 mb-0"></span></h4>
+
+                        </div>
+                        <div class="card-content collapse show">
+                            <div class="card-footer text-center p-1">
+                                <div class="row">
+                                    @*<div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                        <p class="blue-green-esc lighten-2 mb-0" id="ADbTotalCount">Total</p>
+                                        <p class="font-medium-5 text-esc-bold">0</p>
+                                    </div>*@
+                                    <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                        <p class="blue-green-esc lighten-2 mb-0">Yearly</p>
+                                        <p class="font-medium-5 text-esc-bold">@item.YearlyCount</p>
+                                    </div>
+                                    <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                        <p class="blue-green-esc lighten-2 mb-0">Monthly</p>
+                                        <p class="font-medium-5 text-esc-bold">@item.MonthyCount</p>
+                                    </div>
+                                    <div class="col-md-2 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                        <p class="blue-green-esc lighten-2 mb-0">Weekly</p>
+                                        <p class="font-medium-5 text-esc-bold">@item.WeeklyCount</p>
+                                    </div>
+                                    <div class="col-md-2 col-12 text-center">
+                                        <p class="blue-green-esc lighten-2 mb-0">Day</p>
+                                        <p class="font-medium-5 text-esc-bold">@item.DailyCount</p>
+                                    </div>
+                                </div>
+                                <span class="text-muted"><a href="#" class="danger darken-2"></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-4">
+                    <div class="card pull-up bg-gradient-directional-esc">
+                        <div class="card-header bg-hexagons-esc">
+                            <h4 class="card-title white">Total @item.TableName</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li>
+                                        @*<a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="#" target="_blank">Report <i class="ft-bar-chart pl-1"></i></a>*@
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show bg-hexagons-esc">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center width-100">
+                                        <div id="Analytics-donut-chart" class="height-100 donutShadow"></div>
+                                    </div>
+                                    <div class="media-body text-right mt-1">
+                                        <h3 class="font-large-2 white">@item.TotalCount</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+

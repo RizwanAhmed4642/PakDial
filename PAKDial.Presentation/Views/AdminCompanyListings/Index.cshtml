@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Manage Listings</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Manage Listings</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Company Listings</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        <!-- server-side table -->
+        @await Html.PartialAsync("~/Views/AdminCompanyListings/_CompanyListingsList.cshtml")
+        <!--/ server-side table -->
+    </div>
+
+</div>
+@*@await Html.PartialAsync("~/Views/AdminCompanyListings/_AddCompanyListing.cshtml")
+    @await Html.PartialAsync("~/Views/AdminCompanyListings/_EditCompanyListings.cshtml")*@
+@await Html.PartialAsync("~/Views/AdminCompanyListings/_DeleteCompanyListings.cshtml")
+@await Html.PartialAsync("~/Views/AdminCompanyListings/_UpdateTransferOwnerShip.cshtml")
+
+@section scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminCompanyListigscomponent/AdminCompanyListingsModal.js"></script>
+    <script src="~/assets/js/AdminCompanyListigscomponent/AdminCompanyListingsViewModal.js"></script>
+}
+

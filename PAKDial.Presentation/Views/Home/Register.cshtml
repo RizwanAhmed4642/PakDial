@@ -1,0 +1,368 @@
+﻿@model RegistersViewModel
+
+@{
+    ViewData["Title"] = "LoadFreeListing";
+    Layout = "~/Views/Shared/_LayoutUser1.cshtml";
+}
+<!-- Header -->
+@await Html.PartialAsync("~/Views/Shared/_CommonBottomHeader.cshtml")
+
+<div class="container-fluid lst-box-wrapper d-flex">
+    <div class="video-popup hide-vid">
+        <i id="popClose" class="fa fa-close"></i>
+        <iframe class="vid-hero" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    </div>
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-7 col-md-6 col-12 lst-left" id="hero-videoP">
+                <h1 class="pd-secondary-font hero-title">Attract new customers on </br>PakDial</h1>
+                <h6 class="pd-secondary-font">Connect with targeted customers for greater business conversion</h6>
+                <div class="play-icon">
+                    <div href="#" class="icon-play">
+                        <img src="~/PakDial-assets/images/wrk-ply.png">
+                    </div>
+                    <div class="play-text">Watch Full Video<span>How Pakdial works</span></div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-12">
+                <div class="lst-form">
+                    <div class="form-title">
+                        <h4>Build a Professional Profile</h4>
+                    </div>
+                    <div class="lst-form-wrapper">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col lst-form-col">
+                                    <input asp-for="FirstName" class=" wrk-frm form-control" placeholder="What service do you provide?*">
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col lst-form-col">
+                                    <input asp-for="MobileNo" class=" wrk-frm form-control" placeholder="Mobile Number*">
+                                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col lst-form-col">
+                                    <input asp-for="Email" class=" wrk-frm form-control" placeholder="Email*">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col lst-form-col">
+                                    <input asp-for="Password" class=" wrk-frm form-control" placeholder="Password*">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col form-col">
+                                    <button type="submit" class="pd-primary-bg btn-lst">SUBMIT</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-col">
+                                    <span>Already registered?</span>
+                                    <span class="wrk-lgn"><a id="RegClientLogins">Sign In</a></span>
+                                    <div class="pd-primary-font wrk-fgr">50,000+</div>
+                                    <div class="wrk-txthed">Customers are awaiting services</div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stretch aim-line">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="wrkflw-title-sec">
+                    <span class="wrkflw-title">How Pakdial Works?</span>
+                    <span class="wrkflw-border"></span>
+                </div>
+                <span class="wrkflw-line"></span>
+                <ul class="wrkflw-process ">
+                    <li>
+                        <i class="animated bounceIn delay-1s"></i><span>Get Customer details</span>
+                        <p>Receive customers contact details and requirement/need summary through SMS.</p>
+                    </li>
+                    <li>
+                        <i class="animated bounceIn delay-2s"></i><span>Quickly call customers</span>
+                        <p>
+                            Customers tend to be active for a few hours after they post a need. Call customers
+                            quickly, follow up through chats, get your job done faster.
+                        </p>
+                    </li>
+                    <li>
+                        <i class="animated bounceIn delay-3s"></i><span>Enrich your profile with customer reviews and portfolio</span>
+                        <p>
+                            Customers engage with businesses that have a rich profile page. Add work photos, reviews
+                            and bolster your profile page.
+                        </p>
+                    </li>
+                    <li>
+                        <i class="animated bounceIn delay-4s"></i><span>Continue expanding your business on Pakdial</span>
+                        <p>Join the 3 million+ network, reach out to more customers and grow your business.</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stretch-transparent  ftco-animate">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="wrkflw-title-sec">
+                    <span class="wrkflw-title">PakDial is not just an App - Search Anything Anytime Anywhere</span>
+                    <span class="wrkflw-border"></span>
+                </div>
+                <iframe class="wrkflw-video" src="https://www.youtube.com/embed/kqGxBMKqRG4" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stretch">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="wrkflw-title-sec">
+                    <span class="wrkflw-title">Frequently Asked Questions</span>
+                    <span class="wrkflw-border"></span>
+                </div>
+                <div class="faq-wrapper">
+                    <div class="box-wrapper">
+                        <div class="faq-box">
+                            <h4>How does it work on Pakdial?</h4>
+                            <p>
+                                First, we find customers who looking for help and collect information & verify their
+                                requirements. Pakdial’s matchmaking platform identifies relevant businesses based
+                                on the service type, location preference, and other factors. Once the match is
+                                found,
+                                we send the customers information to the matched businesses. The businesses can
+                                contact the customers directly and convert them to customers.
+                                Pakdial will also help you build your brand by enriching your business profile with
+                                customer reviews and portfolios to help attract more customers to your business.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="box-wrapper">
+                        <div class="faq-box">
+                            <h4>Why should I register my business on Pakdial?</h4>
+                            <p>
+                                Today, the market is seeing cut-throat competition between small businesses while
+                                big
+                                companies are attracting customers with their marketing resources. Pakdial is the
+                                best
+                                option for small business owners to get genuine leads and grow their business into a
+                                brand. Sign up today by clicking on the link below.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="box-wrapper">
+                        <div class="faq-box">
+                            <h4>How much control do I have over the leads I receive?</h4>
+                            <p>
+                                Pakdial's business app gives you full control. You can define your services
+                                in-depth,
+                                locality preferences to ensure you receive leads matched as you want. If you are
+                                busy
+                                you can pause the lead flow and restart anytime. Sign up today to learn more!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="box-wrapper">
+                        <div class="faq-box">
+                            <div class="faq-signup">
+                                <div class="signup-txt">Ready to Let Us Help You Grow Your Business?</div>
+                                <a class="btn pd-primary-bg" id="RegClientSignUpBtn">Sign Up Today</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stretch-transparent">
+    <div class="container-fluid container-stretch">
+        <div class="row">
+            <div class="col-12">
+                <div class="wrkflw-title-sec">
+                    <span class="wrkflw-title">High demand services in market</span>
+                    <span class="wrkflw-border"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="srvin-dmd">
+                    @await Component.InvokeAsync("RegisterPageCategory")
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stretch-transparent">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="wrkflw-title-sec">
+                    <span class="wrkflw-title">Customer Success Stories</span>
+                    <span class="wrkflw-border"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4  col-12 sucstory-box">
+                <div class="sucs-stry">
+                    <span class="label">Video</span>
+                    <span class="pd-secondary-font">Pakdial Service Partner Awards, Lahore</span>
+                    <span class="sucs-icn"><i class="fa fa-arrow-right pd-secondary-font"></i></span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12 sucstory-box">
+                <div class="sucs-stry">
+                    <span class="label">Video</span>
+                    <span class="pd-secondary-font">Pakdial Service Partner Awards, Karachi</span>
+                    <span class="sucs-icn"><i class="fa fa-arrow-right pd-secondary-font"></i></span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4  col-12 sucstory-box">
+                <div class="sucs-stry">
+                    <span class="label">Video</span>
+                    <span class="pd-secondary-font">Pakdial Service Partner Awards, Islamabad</span>
+                    <span class="sucs-icn"><i class="fa fa-arrow-right pd-secondary-font"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-stretch-transparent">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="wrkflw-title-sec">
+                    <span class="wrkflw-title">Benefits of Partnering with Pakdial</span>
+                    <span class="wrkflw-border"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row our-client">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="video-box">
+                    <span class="vidbox-arrow ">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+                <span class="vidbox-title">Convert Buyers to Profits</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="video-box">
+                    <span class="vidbox-arrow ">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+                <span class="vidbox-title">Gold Standard Quality Check</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="video-box">
+                    <span class="vidbox-arrow ">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+                <span class="vidbox-title">Power to Manage your Campaign</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="video-box">
+                    <span class="vidbox-arrow ">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+                <span class="vidbox-title">Category Market Intelligence</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="video-box">
+                    <span class="vidbox-arrow ">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+                <span class="vidbox-title">Custom-made Campaign</span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="video-box">
+                    <span class="vidbox-arrow ">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+                <span class="vidbox-title">Transparency and Accountability</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row-stretch-transparent dwnld-app">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-12">
+                <h5>Manage your business on the go!</h5>
+                <h3><strong>Download The Pakdial Business App</strong></h3>
+                <div class="wrk-no">
+                    <input type="tel" class="mobil-no" placeholder="Enter your mobile number" id="txtappmobno">
+                    <input type="submit" class="submit" value="Send app link" id="btnAppLink">
+                </div>
+                <p class="get-app">Get our free App now!</p>
+                <div class="appicn-wrp">
+                    <div class="app-icn">
+                        <img src="~/PakDial-assets/images/google.png">
+                    </div>
+                    <div class="app-icn">
+                        <img src="~/PakDial-assets/images/apple.png">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-12 wrkmob">
+                <img src="~/PakDial-assets/images/wrkmob.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@await Html.PartialAsync("~/Views/Shared/_ClientLoginLogin.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ClientForgotPassword.cshtml")*@
+@await Html.PartialAsync("~/Views/Shared/_ClientLoginOtpLogin.cshtml")
+@await Html.PartialAsync("~/Views/Shared/_ClientOtpCodeOtp.cshtml")
+@await Html.PartialAsync("~/Views/Shared/_ChangeMobileNumber.cshtml")
+@await Html.PartialAsync("~/Views/Shared/_ClientSignUp.cshtml")
+
+
+@section Scripts{
+    <script src="~/PakDial-assets/assets/Layoutuser1scripts.min.js" asp-append-version="true"></script>
+    <script>
+        $('#hero-videoP').on("click", function () {
+            $(".video-popup").removeClass("hide-vid");
+            $('.video-popup iframe').attr('src', '').attr('src', 'https://www.youtube.com/embed/6tS0MjEHfok')
+        });
+        $("#popClose").click(function (e) {
+            e.stopPropagation();
+            $(".video-popup").addClass("hide-vid");
+            $('.video-popup iframe').attr('src', '').attr('src', 'https://www.youtube.com/embed/6tS0MjEHfok')
+        });
+    </script>
+}
+
+

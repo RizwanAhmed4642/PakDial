@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PAKDial.Domains.DomainModels.CompanyListingTimming>
+
+<div>
+    <div class="calpop1">
+        <div class="calwpr1 dt">
+            <div class="tbcalWpr">
+            </div>
+            <ul class="calnbrwp">
+                @if (Model.Count() > 0 && Model != null)
+                {
+
+                    @foreach (var item in Model)
+                    {
+                <li>
+                    <span class="timecell font15"><strong class="pd-primary-font">@item.DaysName </strong></span>
+                    <span class="sharetime"> @item.TimeFrom - @item.TimeTo</span>
+                </li>
+
+                    }
+                }
+            </ul>
+        </div>
+        <span class="cancelbtn dt" id="btn-modal-cancel" onclick="Hide()">Cancel</span>
+    </div>
+</div>
+

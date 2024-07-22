@@ -1,0 +1,135 @@
+﻿<div class="modal fade text-left show" id="AddSubCategory" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Create Sub Category</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="AddSubCategory_Submit_Form">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <fieldset>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>MainCategory</label>
+                                                    <select id="ASBMCategoryId" name="ASBMCategoryId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>ParentCategory</label>
+                                                    <select id="ASBSCategoryId" name="ASBSCategoryId" class="select2 form-control" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Name</label>
+                                                    <input id="ASBSName" name="ASBSName" type="text" placeholder="Sub Category Name" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Description</label>
+                                                    <textarea id="ASBSDescription" name="ASBSDescription" type="text" placeholder="Description" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Meta Title</label>
+                                                    <input id="ASBSMetaTitle" name="ASBSMetaTitle" type="text" placeholder="Meta Title" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Meta Keyword</label>
+                                                    <textarea id="ASBSMetaKeyword" name="ASBSMetaKeyword" type="text" placeholder="Meta Keyword" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Meta Description</label>
+                                                    <textarea id="ASBSMetaDescription" name="ASBSMetaDescription" type="text" placeholder="Meta Description" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="ASBIsLastNode">
+                                                        <label class="form-check-label" for="ASBIsLastNode">
+                                                            IsLastNode
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="ASBStargetWeb" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Web Icon<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="ASBSimageWeb">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="ASBStargetMobile" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Mobile Icon<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="ASBSimageMobile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="ASBStargetBanner" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Banner Image<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="ASBSimageBannerfiles">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="ASBStargetFeature" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Feature Image<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="ASBSimageFeaturefiles">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="AddSubCategoryShowButtons" class="modal-footer pr-2 pl-2">
+                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                    <div id="AddSubCategoryShowLoader" class="modal-footer pr-2 pl-2" style="display:none">
+                        <button class="btn btn-primary" type="button" disabled="">
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            Results Saving...
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

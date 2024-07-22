@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Landing Slider</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Landing Slider</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Out Source Adds</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        <!-- server-side table -->
+        @await Html.PartialAsync("~/Views/AdminOutSourceAdds/_OutSourceAddsList.cshtml")
+        <!--/ server-side table -->
+    </div>
+
+</div>
+@await Html.PartialAsync("~/Views/AdminOutSourceAdds/_AddOutSourceAdds.cshtml")
+@await Html.PartialAsync("~/Views/AdminOutSourceAdds/_EditOutSourceAdds.cshtml")
+@await Html.PartialAsync("~/Views/AdminOutSourceAdds/_DeleteOutSourceAdds.cshtml")
+
+
+@section scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminOutSourceAddComponent/AdminOutSourceAddsModel.js"></script>
+    <script src="~/assets/js/AdminOutSourceAddComponent/AdminOutSourceAddsViewModel.js"></script>
+}
+

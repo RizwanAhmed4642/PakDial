@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.MainMenuSubMenu>
+
+@if (Model.Count() > 0)
+{
+    @if (Model.FirstOrDefault().CatId == 5)
+    {
+        <li><a data-value="3**Chemists" class="mainmenu">Chemists</a></li>
+        @foreach (var item in Model.Take(3))
+        {
+            <li><a class="submainmenu" data-value="@item.CatId**@item.Id**@item.Name**@item.IsLastNode">@item.Name</a></li>
+        }
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <li><a class="submainmenu" data-value="@item.CatId**@item.Id**@item.Name**@item.IsLastNode">@item.Name</a></li>
+            @*<li><a onclick="LoadSubChildCategory(@item.CatId,@item.Id,'@item.Name','@item.IsLastNode')">@item.Name</a></li>*@
+        }
+    }
+}
+
+
+
+

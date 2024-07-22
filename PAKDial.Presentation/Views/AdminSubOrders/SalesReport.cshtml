@@ -1,0 +1,239 @@
+﻿@model PAKDial.Domains.ResponseModels.SalePersonsOrders.AdminSubOrderReportResponse
+
+@{
+    Layout = null;
+    ViewData["Title"] = "SalesReport";
+    int Counters = 1;
+    decimal GrandTotal = 0;
+    int TrackCounter = 1;
+    decimal Rates = 0;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Pakdial is the product which provide you the facilities to search about anything">
+    <title>@ViewData["Title"]</title>
+    <link rel="apple-touch-icon" href="~/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/app-assets/images/ico/">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/PrintMediaSaleExReport.css" />
+    <!-- END: Custom CSS-->
+    <style>
+    </style>
+</head>
+<body>
+    <div class="app-content content">
+        <div class="content-wrapper" id="PrintSEReport">
+            <div class="content-wrapper-before"></div>
+            <div class="content-body">
+                <section class="card">
+                    <div id="invoice-template" class="card-body">
+                        <!-- Invoice Company Details -->
+                        <div id="invoice-company-details" class="row">
+                            <div class="col-md-6 col-sm-12 text-left text-md-left">
+                                <img id="PrintLogo" src="/app-assets/images/logo/logo.png" alt="company logo" class="mb-2" width="80">
+                                <ul class="px-0 list-unstyled">
+                                    <li class="text-bold-700">Pak Dial</li>
+                                    <li>UG-03 Eden Heights 6,</li>
+                                    <li>Jail Road Main Gulberg,</li>
+                                    <li>Lahore,Pakistan</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center text-md-right">
+                                <h2>INVOICE</h2>
+                                <p># INV-@Model.InvoiceNo</p>
+                                <p>@Model.CreatedDate</p>
+                            </div>
+                        </div>
+                        <!--/ Invoice Company Details -->
+                        <!-- Invoice Customer Details -->
+                        <div id="invoice-customer-details" class="row pt-2">
+                            <div class="col-md-6 col-sm-12">
+                                <p class="text-muted">Contact : @Model.EmailPhone.ContactNo</p>
+                                <p class="text-muted">Sale Person : @Model.EmailPhone.Email</p>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center text-md-right">
+                                <p class="text-muted">Bill To</p>
+                                <ul class="px-0 list-unstyled">
+                                    <li class="text-bold-700">Mr.@Model.BusinessPersonName</li>
+                                    <li>@Model.ListedAddress</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <!--/ Invoice Customer Details -->
+                        <!-- Invoice Items Details -->
+                        <div id="invoice-items-details" class="pt-2">
+                            <div class="row">
+                                <div class="table-responsive col-sm-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>ListingId</th>
+                                                <th>Company &amp; Description</th>
+                                                <th class="text-right">Rate</th>
+                                                <th class="text-right">Months</th>
+
+                                                <th class="text-right">Discount</th>
+                                                <th class="text-right">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var details in Model.OrderDetails)
+                                            {
+                                                Rates = (decimal)(details.Price / details.Months);
+                                            <tr>
+                                                <th scope="row">@Counters</th>
+                                                <th>@details.ListingId</th>
+                                                <td>
+                                                    <p>@details.CompanyDetail</p>
+                                                </td>
+                                                <td class="text-right">Rs @Rates/Month</td>
+                                                <td class="text-right">@details.Months</td>
+                                                @if (details.isDiscount == true)
+                                                {
+                                                    <td class="text-right">@details.Discount</td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="text-right">0</td>
+                                                }
+                                                <td class="text-right">Rs @details.Price</td>
+                                            </tr>
+                                                Counters = Counters + 1;
+                                                GrandTotal = GrandTotal + details.Price;
+                                                Rates = 0;
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 col-sm-12 text-center text-md-left">
+                                    <p class="lead font-weight-bold">Payment Methods:</p>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <table class="table table-borderless table-sm">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Payment Mode:</td>
+                                                        <td class="text-right">@Model.PaymentMode</td>
+                                                    </tr>
+                                                    @if (Model.PaymentMode == "cheque" || Model.PaymentMode == "payorder")
+                                                    {
+                                                        <tr>
+                                                            <td>Bank name:</td>
+                                                            <td class="text-right">@Model.BankName</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cheque no:</td>
+                                                            <td class="text-right">@Model.ChequeNo</td>
+                                                        </tr>
+                                                    }
+                                                    else if (Model.PaymentMode == "onlinepayment")
+                                                    {
+                                                        <tr>
+                                                            <td>Bank name:</td>
+                                                            <td class="text-right">@Model.BankName</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Acc no:</td>
+                                                            <td class="text-right">@Model.AccountNo</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-12">
+                                    <p class="lead">Total</p>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-bold-800">Grand Total</td>
+                                                    <td class="text-bold-800 text-right"> Rs @GrandTotal</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--Order Track Record-->
+                        <div id="invoice-items-details" class="pt-2">
+                            <div class="row">
+                                <div class="col-12 text-center text-md-left">
+                                    <p class="lead font-weight-bold">Order Track Record:</p>
+                                </div>
+                                <div class="table-responsive col-sm-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Role</th>
+                                                <th>Name</th>
+                                                <th>CreatedDate</th>
+                                                <th>UpdatedDate</th>
+                                                <th>Deposited</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var track in Model.OrderTracking)
+                                            {
+                                                <tr>
+                                                    <th>@TrackCounter</th>
+                                                    <td>@track.RoleName</td>
+                                                    <td>@track.EmpName</td>
+                                                    <td>@track.CreatedDateVm</td>
+                                                    <td>@track.UpdatedDateVm</td>
+                                                    <td>@track.AmountDeposited</td>
+                                                    <td>@track.StatusName</td>
+                                                </tr>
+                                                TrackCounter = TrackCounter + 1;
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Invoice Footer -->
+                        <div id="invoice-footer" class="pt-5">
+                            <div class="row">
+                                <div class="col-md-7 col-sm-12">
+                                    <h6 class="font-weight-bold">Terms &amp; Condition</h6>
+                                    <p>Its autogenerated invoice does require any signature.</p>
+                                </div>
+                                <div class="col-md-2 col-sm-12 text-center">
+                                    <button id="SubSaleReportPrintBtnBack" type="button" onclick="location.href='/AdminSubOrders/Index'" class="btn btn-secondary btn-sm">Back</button>
+                                </div>
+                                <div class="col-md-3 col-sm-12 text-center">
+                                    <button id="SubSaleReportPrintBtn" type="button" onclick="javascript:window.print()" class="btn btn-info btn-sm">Print Invoice</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib//@@microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/assets/js/OnlineUsers.js"></script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+﻿@model cloudscribe.Pagination.Models.PagedResult<PAKDial.Domains.SqlViewModels.VHomeListingSearch>
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    Layout = null;
+    ViewData["SbCName"] = ViewBag.SbCNameWithSpace;
+}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @await Component.InvokeAsync("SubCatMetas", new { Location = ViewBag.CtName, SubCatId = ViewBag.SbCId })
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true">
+
+    <link href="~/PakDial-assets/css/Loadcategorydescriptionstyle.min.css" rel="stylesheet" asp-append-version="true" />
+    @*<link href="~/PakDial-assets/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/PakDial-assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/PakDial-assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/extensions/toastr.css">*@
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB8VEQNMVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PB8VEQNMVM');
+    </script>
+</head>
+<body>
+    <input type="hidden" id="Loc" value="@HttpContextAccessor.HttpContext.Session.GetString("Loc")" />
+    <input type="hidden" id="Gen" value="@HttpContextAccessor.HttpContext.Session.GetString("Gen")" />
+    @*<input type="hidden" id="CtName" value="@ViewBag.CtName" />
+        <input type="hidden" id="SbCId" value="@ViewBag.SbCId" />
+        <input type="hidden" id="SbCName" value="@ViewBag.SbCName" />
+        <input type="hidden" id="ArName" value="@ViewBag.ArName" />*@
+    <input type="hidden" id="SbCName" value="@ViewBag.SbCName" />
+    <input type="hidden" id="SbCId" value="@ViewBag.SbCId" />
+    <input type="hidden" id="ArName" value="@ViewBag.ArName" />
+    @Html.AntiForgeryToken()
+    <!--BEGIN: Top Header-->
+    @await Component.InvokeAsync("Commonheader")
+    <input type="hidden" value="@Model.PageNumber" id="ListingPageNumebr" />
+    <input type="hidden" value="@Model.TotalItems" id="ListingTotalItem" />
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 logo-wrapper">
+                    <div class="menu-icon" data-toggle="collapse" data-target="#NavbarOther">
+                        <div class="menu-icon-top pd-primary-bg"></div>
+                        <div class="menu-icon-middle"></div>
+                        <div class="menu-icon-top pd-primary-bg"></div>
+                    </div>
+                    <!--  Menu -->
+                    <ul class="navbar-nav nav-mobile-sec">
+                        <div class="sidebar-sec navbar-collapse collapse" id="NavbarOther">
+                            <img src="~/PakDial-assets/images/arrow-03.png" asp-append-version="true">
+                            <div class="side-nav" id="side-other-nav">
+                                @await Component.InvokeAsync("MainSidebarMenuReplica")
+                            </div>
+                        </div>
+                    </ul>
+                    <!-- end  menu -->
+
+                    <div class="page-logo">
+                        <a href="~/"><img src="~/PakDial-assets/images/page2logo.png" asp-append-version="true" alt="Logo"/></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 header-search">
+                    <div id="searchbar" class="input-group">
+                        <div class="search-city">
+                            <span class="location-icon"><i class="fa fa-map-marker"></i></span>
+                            <input type="search" id="LastCatesearchbycity" class="input-control" value="Lahore">
+                            <span id="LastCatcitylistdrop" class="city-search-drop" style="display: none;">
+                                <ul id="LastUserSubLocation">
+                                    @await Component.InvokeAsync("LoadCities")
+                                </ul>
+                            </span>
+                        </div>
+                        <div class="search-listing">
+                            <input type="text" name="search" value="@ViewBag.SbCNameWithSpace" id="LastCatepdsrchbx" placeholder="Search Anytime Anywhere in Pakistan" class="form-control input-lg">
+                            <a id="LastCatecross_S" class="cross-srch" style="display: none;">×</a>
+                            <div class="pd-srch-rslt">
+                                <span id="LastCatepdsrchbxdrop" style="display: none;">
+                                    <ul id="LastCateauto">
+                                        @*<li class="nav-link">
+                                                <a href="">test</a><br>
+                                                <span class="srch-area-rslt">460 Centres in Mumbai</span>
+                                                <span class="srch-area-more">[+]</span>
+                                            </li>*@
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+
+                        @* Mobile Search *@
+                        <div class="btn-search">
+                            <button type="button" id="search-field-input" value="search" class="icon-search-mobile btn btn-default btn-lg pd-primary-font">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <div id="search-mobile-id" class="search-mobile search input-group form-group d-sm-block d-md-none d-lg-none">
+                                <div class="row search-mobile-wrapper">
+
+                                    <input class="col-4 search-city-mobile form-control" type="text"
+                                           id="MobLastCatesearchbycity" name="MobLastCatesearchbycity" placeholder="Lahore" value="Lahore">
+
+                                    <input class="col-8 search-listing-mobile form-control" type="text" placeholder="Search Anytime Anywhere in Pakistan" value="@ViewBag.SbCNameWithSpace"
+                                           id="MobLastCatepdsrchbx" name="MobFirstCatepdsrchbx">
+                                </div>
+                                <div class="pd-srch-rslt">
+                                    <div id="MobLastCatepdsrchbxdrop" style="display: none;">
+                                        <ul id="MobLastCateauto"></ul>
+                                    </div>
+                                </div>
+                                <div id="MobLastCatcitylistdrop" class="city-search-drop" style="display: none;">
+                                    <ul id="MobLastUserSubLocation">
+                                        @await Component.InvokeAsync("LoadCities")
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="contact-info">
+                        <img src="~/PakDial-assets/images/headoffice.png" asp-append-version="true" alt="head-office">
+                        <div class="office-detail">
+                            <h6>Customer Care</h6>
+                            <span>0304-1111-245</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END: Top Header-->
+    <!-- Banner -->
+    <div class="home-banner">
+        @await Component.InvokeAsync("LoadCategoriesBanner", ViewBag.CatId)
+    </div>
+    <!-- End Banner -->
+    <!--Page Title-->
+    <div class="container-fluid">
+        <div class="breadcrumb-wrapper row">
+            <div class="container">
+                <div class="breadcrumbs">
+                    @if (!string.IsNullOrEmpty(ViewBag.ArName))
+                    {
+                        <p>@ViewBag.SbCNameWithSpace in @ViewBag.ArName, @ViewBag.CtName</p>
+                    }
+                    else
+                    {
+                        <p>@ViewBag.SbCNameWithSpace in @ViewBag.CtName</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Page Title-->
+    <!-- Main Content -->
+
+    <div class="main container ">
+        <div class="pd-row-space"></div>
+        <!-- Filter Bar -->
+        <div class="row">
+            <div class="col-12">
+                <div class="flter-wrapper">
+                    <div class="sort-result">
+                        <span class="text-category">SORT RESULTS BY <i class="sort-icon fa fa-angle-down" aria-label="false"></i></span>
+                        <span class="left-arrow"></span>
+                    </div>
+                    @*string CtName, decimal SbCId, string SbCName,string SortFilter, string ArName, int PageNo = 1*@
+                    <div class="result-container">
+                        <ul class="nav nav-tabs innerTabNavs">
+                            @if (ViewBag.SortFilter == "topResults")
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-Loc="@ViewBag.Loc" asp-route-Gen="@ViewBag.Gen"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="topResults"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName"
+                                       class="active">Top Results</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="topResults"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName">Top Results</a>
+                                </li>
+                            }
+                            @if (ViewBag.SortFilter == "popularity")
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="popularity"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName" class="active">Popularity</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="popularity"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName">Popularity</a>
+                                </li>
+                            }
+                            @if (ViewBag.SortFilter == "location")
+                            {
+                                <li><a data-toggle="modal" data-target="#locationModal" class="active">Location</a> </li>
+                            }
+                            else
+                            {
+                                <li><a data-toggle="modal" data-target="#locationModal">Location</a> </li>
+                            }
+                            @if (ViewBag.SortFilter == "openNow")
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="openNow"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName" class="active">Open Now</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="openNow"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName">Open Now</a>
+                                </li>
+                            }
+                            @if (ViewBag.SortFilter == "ratings")
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="ratings"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName" class="active">Ratings</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-controller="Home"
+                                       asp-action="LoadCategoryDescription"
+                                       asp-route-CtName="@ViewBag.CtName" asp-route-SbCId="@ViewBag.SbCId"
+                                       asp-route-SbCName="@ViewBag.SbCName" asp-route-SortFilter="ratings"
+                                       asp-route-Ratingstatus="@ViewBag.Ratingstatus"
+                                       asp-route-ArName="@ViewBag.ArName">Ratings</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Filter Bar -->
+        <!-- Main section -->
+        <div class="pd-row-space"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 d-lg-block d-md-block d-none">
+                <div class="sidebar list-area-wrapper">
+                    <div class="sidebar-nav">
+                        <h6 class="list-area">Popular Areas</h6>
+                        <ul id="LoadingCityAreaUl" aria-expanded="false">
+                            @await Component.InvokeAsync("CategoryPopularArea", new { CtName = ViewBag.CtName, SbCId = ViewBag.SbCId, SbCName = ViewBag.SbCName, ArName = ViewBag.ArName })
+                        </ul>
+                        <li id="ShowMoreAreas" class="nav-link nav-pop-area more-area"><a role="button" onclick="CategoryPopularArea('@ViewBag.CtName','@ViewBag.SbCId','@ViewBag.SbCName','@ViewBag.ArName')" class="collapsed pd-primary-font" aria-expanded="false" aria-controls="area-text">Show More</a></li>
+                    </div>
+                </div>
+                @*<div class="sidebar list-area-wrapper">
+                        <div class="sidebar-nav">
+                            <h6 class="list-area">Also Use For</h6>
+                            <ul class="collapse" id="area-text-use" aria-expanded="false">
+                                <li class="nav-link nav-pop-area"><a href=""> Placement Services (Candidate)</a></li>
+                                <li class="nav-link nav-pop-area"><a href=""> Car Hire</a></li>
+                                <li class="nav-link nav-pop-area"><a href=""> Placement Services (Candidate)</a></li>
+                                <li class="nav-link nav-pop-area"><a href=""> Car Hire</a></li>
+                                <li class="nav-link nav-pop-area"><a href=""> Placement Services (Candidate)</a></li>
+                                <li class="nav-link nav-pop-area"><a href=""> Car Hire</a></li>
+                                <li class="nav-link nav-pop-area"><a href=""> Rug Cleaning Services in West</a></li>
+                            </ul>
+                            <li class="nav-link nav-pop-area more-area-use"><a role="button" class=" collapsed pd-primary-font" data-toggle="collapse" href="#area-text-use" aria-expanded="false" aria-controls="area-text"></a></li>
+                        </div>
+                    </div>*@
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 mobile-tab">
+                        <div class="row">
+                            <div class="category-tab col-12">
+                                @foreach (var item in Model.Data)
+                                {
+                                    <div class="listing-list box">
+                                        <div class="row">
+                                            <div class="listing-img col-lg-4 col-md-4">
+                                                @if (item.BannerImage != null)
+                                                {
+                                                    <img src="@item.BannerImage" asp-append-version="true" alt="@item.CompanyName">
+                                                }
+                                                else
+                                                {
+                                                    @await Component.InvokeAsync("LoadCategoriesBanner", ViewBag.CatId)
+                                                }
+                                                @if (item.IsPremium == true)
+                                                {
+                                                    <span class="pd-bg-overlay"></span>
+                                                    <span class="pd-bg-tumb"></span>
+                                                }
+
+                                            </div>
+                                            <div class="listing-description col-lg-6 col-md-8">
+                                                <h5 onclick="LoadListingDesc('@item.CityName','@item.CityArea',@item.ListingId,'@item.CompanyName')">@item.CompanyName</h5>
+                                                <span class="listing-rate pd-primary-bg pd-primary-bg">@item.AvgRating.0</span>
+
+                                                @for (var i = 1; i <= item.AvgRating; i++)
+                                                {
+                                                    <img src="~/PakDial-assets/images/starsize-02.png" asp-append-version="true" alt="rating"/>
+                                                }
+                                                @for (var i = (item.AvgRating + 1); i <= 5; i++)
+                                                {
+                                                    <img src="~/PakDial-assets/images/starsize-03.png" asp-append-version="true" alt="rating"/>
+                                                }
+                                                <span> Votes @item.TotalVotes</span>
+                                                <div class="listing-call">
+                                                    <span><i class="fa fa-phone"></i>(+92) @item.ContactNo</span>
+                                                </div>
+                                                <div class="listing-location">
+                                                    <span><i class="fa fa-map-marker fa-lg"></i>@item.ListingAddress</span>
+                                                </div>
+                                                <div class="listing-badge">
+                                                    @if (item.IsTrusted > 0)
+                                                    {
+                                                        <img src="~/PakDial-assets/images/verified.png" asp-append-version="true" alt="verified" />
+                                                        <img src="~/PakDial-assets/images/trusted.png" asp-append-version="true" alt="trusted"/>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 bst-dl">
+                                                <button class="btn btn-primary-lst" id="BestDealQuery" onclick="ShowRequestform(@item.ListingId);">Best Deal</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        <cs-pager cs-paging-pagenumber="(int)Model.PageNumber"
+                                  cs-paging-totalitems="(int)Model.TotalItems"
+                                  cs-paging-pagesize="Model.PageSize"
+                                  cs-pagenumber-param="PageNo"
+                                  asp-route-CtName="@ViewBag.CtName"
+                                  asp-route-SbCId="@ViewBag.SbCId"
+                                  asp-route-SbCName="@ViewBag.SbCName"
+                                  asp-route-ArName="@ViewBag.ArName"
+                                  asp-route-SortFilter="@ViewBag.SortFilter"
+                                  asp-controller="Home"
+                                  asp-action="LoadCategoryDescription"
+                                  cs-pager-li-current-class="page-item active"
+                                  cs-pager-li-other-class="page-item"
+                                  cs-pager-li-non-active-class="page-item disabled"
+                                  cs-pager-link-current-class="page-link"
+                                  cs-pager-link-other-class="page-link">
+                        </cs-pager>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Main section -->
+        <div class="marginDiv"></div>
+    </div>
+    <!-- End Main Content -->
+    <!--Location Popup -->
+    <div class="modal fade" id="locationModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title w-100">
+                        <h5>Sort by Location</h5>
+                        <p>Where in @ViewBag.CtName</p>
+                    </div>
+                    @*data-dismiss="modal"*@
+                    <button type="button" class="close" id="locationmodalclose">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="col form-col">
+                            <span class="modal-location">
+                                <input type="text" onkeyup="myFunction()" class="form-control location-input" id="Lastsearchcityarea" name="Lastsearchcityarea" value="@ViewBag.ArName">
+                                <button type="button" class="location-button pd-primary-bg" onclick="LoadByArea('@ViewBag.CtName',@ViewBag.SbCId,'@ViewBag.SbCName')">GO</button>
+                                <span id="Lastcityareadrop" class="location-search-drop" style="display: none;">
+                                    <ul id="LastUserLocationArea">
+                                        @await Component.InvokeAsync("CityAreaByLocation", ViewBag.CtName)
+                                    </ul>
+                                </span>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Location Popup -->
+    @*Generic Query form*@
+    <partial name="_FillGenericCateDescription" view-data="ViewData">
+        <!-- BEGIN: Footer-->
+        @await Component.InvokeAsync("CommonFooter")
+        @*@await Html.PartialAsync("~/Views/Shared/_ClientLoginLogin.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ClientForgotPassword.cshtml")*@
+        @await Html.PartialAsync("~/Views/Shared/_ClientLoginOtpLogin.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ClientOtpCodeOtp.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ChangeMobileNumber.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ClientSignUp.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_PureChat.cshtml")
+        <script src="~/PakDial-assets/assets/Loadcategorydescriptionscripts.min.js" asp-append-version="true"></script>
+        @*<script src="~/app-assets/js/core/libraries/jquery.min.js"></script>
+        <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+        <script src="~/PakDial-assets/js/bootstrap.min.js"></script>
+        <script src="~/app-assets/vendors/js/extensions/toastr.min.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/FrontEndCommon.js"></script>
+        <script src="~/PakDial-assets/assets/DetailCompanyListingModel.js"></script>
+        <script src="~/PakDial-assets/assets/LastLevelListingSearchPage.js"></script>
+        <script src="~/PakDial-assets/assets/RequestQuerysubmit.js"></script>
+        <script src="~/PakDial-assets/assets/FillGenericCateDescription.js"></script>
+        <script src="~/PakDial-assets/assets/ClientCommonFunction.js"></script>
+        <script src="~/PakDial-assets/assets/ClientLoginModel.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/ClientLoginModelScript.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/ClientForget.js"></script>
+        <script src="~/PakDial-assets/assets/ClientSignUpModel.js"></script>
+        <script src="~/PakDial-assets/assets/ClientSignUpModelScript.js"></script>*@
+
+        <!-- END: Footer-->
+</body>
+
+</html>
+

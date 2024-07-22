@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.CompanyListingSocialMedia>
+@{
+    Layout = null;
+}
+
+<div class="float-sm">
+    @if (Model.Where(c => c.Name.ToLower() == "facebook").FirstOrDefault() != null)
+    {
+        <div class="fl-fl float-fb">
+            <i class="fa fa-facebook-f"></i>
+            <a href="http://@Model.Where(c => c.Name.ToLower() == "facebook").FirstOrDefault().SitePath" target="_blank" class="pd-primary-font"> Like us!</a>
+
+        </div>
+    }
+
+    @if (Model.Where(c => c.Name.ToLower() == "youtube").FirstOrDefault() != null)
+    {
+        <div class="fl-fl float-yt">
+            <i class="fa fa-youtube"></i>
+            <a href="http://@Model.Where(c => c.Name.ToLower() == "youtube").FirstOrDefault().SitePath" target="_blank" class="pd-primary-font"> Subscribe!</a>
+
+        </div>
+    }
+    @if (Model.Where(c => c.Name.ToLower() == "twitter").FirstOrDefault() != null)
+    {
+
+        <div class="fl-fl float-tw">
+            <i class="fa fa-twitter"></i>
+            <a href="http://@Model.Where(c => c.Name.ToLower() == "twitter").FirstOrDefault().SitePath" target="_blank" class="pd-primary-font">Follow us!</a>
+
+        </div>
+    }
+
+    @if (Model.Where(c => c.Name.ToLower() == "instagram").FirstOrDefault() != null)
+    {
+        <div class="fl-fl float-ig">
+            <i class="fa fa-instagram"></i>
+            <a href="http://@Model.Where(c => c.Name.ToLower() == "instagram").FirstOrDefault().SitePath" target="_blank" class="pd-primary-font">Follow Us!</a>
+
+        </div>
+    }
+    @if (Model.Where(c => c.Name.ToLower() == "linkedln").FirstOrDefault() != null)
+    {
+
+        <div class="fl-fl float-ln">
+            <i class="fa fa-linkedin"></i>
+            <a href="http://@Model.Where(c => c.Name.ToLower() == "linkedln").FirstOrDefault().SitePath" target="_blank" class="pd-primary-font">Connect!</a>
+
+        </div>
+    }
+
+</div>

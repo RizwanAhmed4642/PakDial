@@ -1,0 +1,32 @@
+﻿<div class="modal fade" id="ClientChangeNoModel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <div class="user-login">
+                    <div class="modal-title w-100" style="position:absolute;">
+                        <img src="~/PakDial-assets/images/logologin.png" asp-append-version="true">
+                       <span id="NbrWrongpassword" style="display:none" class="text-danger">Please Enter Correct Username & Old Number</span>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <br />
+            <div class="modal-body">
+                <form id="ClientChangeNo_Submit" name="ClientChangeNo_Submit">
+                    <div class="col form-col">
+                        <input type="text" class="form-control" id="ClienchngOtpEmail" name="ClienchngOtpEmail" placeholder="Enter User Name">
+                    </div>
+                    <div class="col form-col">
+                        <input type="text" class="form-control" id="ClientchngOtpNo" name="ClientchngOtpNo" placeholder=" Enter Old Mobile Number">
+                    </div>
+                    <div class="col form-col">
+                        <input type="text" class="form-control" id="ClientchngOtpNewNo" name="ClientchngOtpNewNo" placeholder=" Enter New Mobile Number">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary-lst">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

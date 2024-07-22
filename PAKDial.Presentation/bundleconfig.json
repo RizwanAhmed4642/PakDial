@@ -1,0 +1,360 @@
+[
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Homepagestyle.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css",
+      "wwwroot/PakDial-assets/css/animate.css",
+      "wwwroot/app-assets/vendors/css/tables/datatable/datatables.min.css",
+      "wwwroot/app-assets/vendors/css/forms/selects/select2.min.css",
+      "wwwroot/app-assets/vendors/css/extensions/toastr.css",
+      "wwwroot/app-assets/css/plugins/extensions/toastr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Homepagescripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/PakDial-assets/js/jquery-migrate-3.0.1.min.js",
+      "wwwroot/PakDial-assets/js/jquery.waypoints.min.js",
+      "wwwroot/PakDial-assets/js/jquery.stellar.min.js",
+      "wwwroot/PakDial-assets/js/owl.carousel.min.js",
+      "wwwroot/PakDial-assets/js/aos.js",
+      "wwwroot/PakDial-assets/js/scrollax.min.js",
+      "wwwroot/PakDial-assets/js/main.js",
+      "wwwroot/app-assets/vendors/js/forms/select/select2.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/app-assets/vendors/js/tables/datatable/datatables.min.js",
+      "wwwroot/app-assets/vendors/js/extensions/toastr.min.js",
+      "wwwroot/app-assets/js/scripts/extensions/toastr.js",
+      "wwwroot/PakDial-assets/assets/CommonBottomHeader.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModel.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModelScript.js",
+      "wwwroot/PakDial-assets/assets/ClientForget.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModel.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModelScript.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //UserHomePage Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Homepagescriptsindex.min.js",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/assets/UserHomePage.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Loadsubcategorystyle.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Loadsubcategoryscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/PakDial-assets/assets/SubCategoryPage.js",
+      "wwwroot/PakDial-assets/assets/FrontEndCommon.js",
+      "wwwroot/PakDial-assets/assets/CommonBottomHeader.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModel.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModelScript.js",
+      "wwwroot/PakDial-assets/assets/ClientForget.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModel.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModelScript.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Loadsubchildcategorystyle.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Loadsubchildcategoryscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/PakDial-assets/assets/SecondLevelSubCatePage.js",
+      "wwwroot/PakDial-assets/assets/FrontEndCommon.js",
+      "wwwroot/PakDial-assets/assets/CommonBottomHeader.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModel.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModelScript.js",
+      "wwwroot/PakDial-assets/assets/ClientForget.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModel.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModelScript.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Loadcategorydescriptionstyle.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css",
+      "wwwroot/app-assets/vendors/css/extensions/toastr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Loadcategorydescriptionscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/app-assets/vendors/js/extensions/toastr.min.js",
+      "wwwroot/PakDial-assets/assets/FrontEndCommon.js",
+      "wwwroot/PakDial-assets/assets/DetailCompanyListingModel.js",
+      "wwwroot/PakDial-assets/assets/LastLevelListingSearchPage.js",
+      "wwwroot/PakDial-assets/assets/RequestQuerysubmit.js",
+      "wwwroot/PakDial-assets/assets/FillGenericCateDescription.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModel.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModelScript.js",
+      "wwwroot/PakDial-assets/assets/ClientForget.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModel.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModelScript.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Listingdescriptionstyle.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css",
+      "wwwroot/PakDial-assets/css/animate.css",
+      "wwwroot/app-assets/vendors/css/extensions/toastr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Listingdescriptionscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/PakDial-assets/js/jquery-migrate-3.0.1.min.js",
+      "wwwroot/PakDial-assets/js/jquery.waypoints.min.js",
+      "wwwroot/PakDial-assets/js/jquery.stellar.min.js",
+      "wwwroot/PakDial-assets/js/owl.carousel.min.js",
+      "wwwroot/PakDial-assets/js/aos.js",
+      "wwwroot/PakDial-assets/js/scrollax.min.js",
+      "wwwroot/PakDial-assets/js/main.js",
+      "wwwroot/app-assets/vendors/js/extensions/toastr.min.js",
+      "wwwroot/PakDial-assets/assets/RequestQuerysubmit.js",
+      "wwwroot/PakDial-assets/assets/FillGenericCateDescription.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/PakDial-assets/assets/DetailCompanyListingModel.js",
+      "wwwroot/PakDial-assets/assets/DetailCompanyListingPage.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModel.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModelScript.js",
+      "wwwroot/PakDial-assets/assets/ClientForget.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModel.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModelScript.js",
+      "wwwroot/PakDial-assets/js/tooltipster.bundle.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //LayoutUser1 -- Include Register and Login
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Layoutuser1style.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css",
+      "wwwroot/PakDial-assets/css/animate.css",
+      "wwwroot/app-assets/vendors/css/tables/datatable/datatables.min.css",
+      "wwwroot/app-assets/vendors/css/forms/selects/select2.min.css",
+      "wwwroot/app-assets/vendors/css/extensions/toastr.css",
+      "wwwroot/app-assets/css/plugins/extensions/toastr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Layoutuser1scripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/PakDial-assets/js/jquery-migrate-3.0.1.min.js",
+      "wwwroot/PakDial-assets/js/jquery.waypoints.min.js",
+      "wwwroot/PakDial-assets/js/jquery.stellar.min.js",
+      "wwwroot/PakDial-assets/js/owl.carousel.min.js",
+      "wwwroot/PakDial-assets/js/aos.js",
+      "wwwroot/PakDial-assets/js/scrollax.min.js",
+      "wwwroot/PakDial-assets/js/main.js",
+      "wwwroot/app-assets/vendors/js/forms/select/select2.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/app-assets/vendors/js/tables/datatable/datatables.min.js",
+      "wwwroot/app-assets/vendors/js/extensions/toastr.min.js",
+      "wwwroot/app-assets/js/scripts/extensions/toastr.js",
+      "wwwroot/PakDial-assets/assets/CommonBottomHeader.js",
+      "wwwroot/PakDial-assets/assets/UserCommonRoutes.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModel.js",
+      "wwwroot/PakDial-assets/assets/ClientLoginModelScript.js",
+      "wwwroot/PakDial-assets/assets/ClientForget.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModel.js",
+      "wwwroot/PakDial-assets/assets/ClientSignUpModelScript.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //_Client Layout
+  {
+    "outputFileName": "wwwroot/PakDial-assets/css/Clientlayoutstyle.min.css",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/css/font-awesome.min.css",
+      "wwwroot/PakDial-assets/css/bootstrap.min.css",
+      "wwwroot/PakDial-assets/css/style.css",
+      "wwwroot/PakDial-assets/css/animate.css",
+      "wwwroot/app-assets/vendors/css/tables/datatable/datatables.min.css",
+      "wwwroot/app-assets/vendors/css/forms/selects/select2.min.css",
+      "wwwroot/app-assets/vendors/css/extensions/toastr.css",
+      "wwwroot/app-assets/css/plugins/extensions/toastr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Clientlayoutscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/js/core/libraries/jquery.min.js",
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/js/bootstrap.min.js",
+      "wwwroot/app-assets/vendors/js/forms/select/select2.min.js",
+      "wwwroot/app-assets/vendors/js/tables/datatable/datatables.min.js",
+      "wwwroot/app-assets/vendors/js/extensions/toastr.min.js",
+      "wwwroot/app-assets/js/scripts/extensions/toastr.js",
+      "wwwroot/PakDial-assets/assets/CommonBottomHeader.js",
+      "wwwroot/PakDial-assets/assets/UserCommonRoutes.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //UserProfile Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Userprofilescripts.min.js",
+    "inputFiles": [
+      "wwwroot/assets/js/UserProfile/UserProfile.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //EditCustomer Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Cecustomercripts.min.js",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/assets/js/AdminCustomerComponent/AdminCustomerModel.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientEditCustomer.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //AddClientCompanyListing Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Cacustomerlistingscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientCompanyListingsModal.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientCompanyListingsAddViewModal.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //EditClientCompanyListing Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Cecustomerlistingscripts.min.js",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientCompanyListingsModal.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientCompanyListingsEditViewModal.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //IndexClientCompanyListing Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Cicustomerlistingscripts.min.js",
+    "inputFiles": [
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientCompanyListingsModal.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientCompanyListingsViewModal.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //PaymentMode Min File Generation
+  {
+    "outputFileName": "wwwroot/PakDial-assets/assets/Cpaymentsmodesscripts.min.js",
+    "inputFiles": [
+      "wwwroot/app-assets/vendors/js/forms/validation/jquery.validate.min.js",
+      "wwwroot/PakDial-assets/assets/ClientCommonFunction.js",
+      "wwwroot/assets/js/AdminAssignListingPackageComponent/AdminAssignListingPackageModel.js",
+      "wwwroot/assets/js/ClientCompanyListing/ClientAssignPackageList.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

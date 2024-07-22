@@ -1,0 +1,86 @@
+﻿@model PAKDial.Domains.StoreProcedureModel.Home.SPGetCompnayDetailById
+@{ 
+    ViewData["MEmail"] = Model.Email;
+}
+
+<div class="list-pd-img">
+
+    @if (Model.ImageUrl == string.Empty)
+    {
+        <img src="/app-assets/images/portrait/small/avatar-s-19.jpg" class="img-fluid" asp-append-version="true" alt="@Model.CompanyName">
+    }
+    else
+    {
+        <img src="@Model.ImageUrl" class="img-fluid" asp-append-version="true" alt="@Model.CompanyName">
+    }
+</div>
+
+<div class=" profile-header-info">
+    <div class="profile-title">
+        <h1 class="profile-name">@Model.CompanyName</h1>
+        @if (Model.IsPremium == true)
+        {
+            <div class="listing-location"><img src="~/PakDial-assets/images/thumb-lst.png" asp-append-version="true" data-toggle="modal" data-target="#myModal" alt="verified" /></div>
+        }
+    </div>
+    <div class="profile-rating">
+        @for (var i = 1; i <= Model.AvgRating; i++)
+        {
+            <img src="/PakDial-assets/images/starsize-02.png"  asp-append-version="true" alt="rating"/>
+        }
+        @for (var i = (Model.AvgRating + 1); i <= 5; i++)
+        {
+            <img src="/PakDial-assets/images/starsize-03.png" asp-append-version="true" alt="rating"/>
+        }
+        <span class="pd-star-rate pd-secondary-font">@Model.AvgRating Ratings</span>
+        <span class="pd-star-rate rate__text">@Model.TotalVotes Votes</span>
+    </div>
+    @if (Model.IsTrusted > 0)
+    {
+        <div class="listing-location">
+            <img src="~/PakDial-assets/images/verified.png" asp-append-version="true" alt="verified"/>
+            <img src="~/PakDial-assets/images/trusted.png" data-toggle="modal" data-target="#trustedModal" asp-append-version="true" alt="trusted"/>
+        </div>
+    }
+    <div class="listing-location">
+        <span class="">
+            @await Component.InvokeAsync("CompanyListingAddress", ViewBag.ListingId)
+
+        </span>
+    </div>
+    <ul class="list-pd-company-info">
+        <li> <a class="pd-icn-lst" id="cllTo"> <i class="fa fa-phone fa-2x"></i>Call</a></li>
+        <li id="website-lst" title="www.starlineawnings.com">
+            <a class="pd-icn-lst" href="@Model.Website" target="_blank">
+                <i class="fa fa-globe fa-2x"></i>Website
+            </a>
+        </li>
+        <li><a class="pd-icn-lst" id="payPlan-lst"><img src="~/PakDial-assets/images/note-icon.png" asp-append-version="true" alt="Pay Plan"/>Pay Plan</a></li>
+        <li  onclick="ShowRequestform(@ViewBag.ListingId);"><a class="pd-icn-lst" id="sms-lst"><img src="~/PakDial-assets/images/sms-icn.png" asp-append-version="true" alt="SMS"/>SMS</a></li>
+        <li><a class="pd-icn-lst" id="email-lst"> <i class="fa fa-envelope fa-2x"></i>Email</a></li>
+    </ul>
+</div>
+<!-- company Info Modal -->
+<div id="overlay-pd-mask" class="mask" style="display: none;">
+    <div class="offline_background">
+        <div class="offline_msg"></div>
+    </div>
+</div>
+
+<div class="pf-info-model" id="pf-js-model" style="display:none">
+    @await Component.InvokeAsync("CompanyListingContactMobile", ViewBag.ListingId)
+</div>
+<div class="pf-info-model" id="pf-js-model1" style="display:none">
+    @await Component.InvokeAsync("CompListingModeOfPaymentsMobile", ViewBag.ListingId)
+</div>
+<div class="pf-info-model" id="pf-js-model2" style="display:none">
+    @await Component.InvokeAsync("CompanyListingTimingMobile", ViewBag.ListingId)
+</div>
+<div class="pf-info-model" id="pf-js-model3" style="display:none">
+    <partial name="~/Views/Home/_EmailForMobileView.cshtml" view-data="ViewData" />
+</div>
+
+<div id="_map" onclick="HideMask();" style="position: fixed; top: 0px; left: 0px; height: 100%; width: 100%; visibility: hidden;">
+
+</div>
+<!-- Floating Social Media bar Starts -->

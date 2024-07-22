@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "GetOrders";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Manage Orders</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Manage Orders</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Update Orders</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Update Order</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show">
+                            <div class="child-card">
+                                <form id="UpdateSubOrder_Submit_Form" name="UpdateSubOrder_Submit_Form">
+                                    <input id="AUSubOrderInvoiceId" name="AUSubOrderInvoiceId" type="hidden" value="@ViewBag.Id">
+                                    <input id="USubOrderInvoiceId" name="USubOrderInvoiceId" type="hidden">
+                                    <div class="form-body">
+                                        <div class="card">
+                                            <div class="card-content collapse show">
+                                                <div class="card-body">
+                                                    <div class="form-body">
+                                                        <fieldset>
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Areas:</label>
+                                                                        <input id="USubOrderCombineAreas" name="USubOrderCombineAreas" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Company:</label>
+                                                                        <input id="USubOrderCompanyName" name="USubOrderCompanyName" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Package</label>
+                                                                        <input id="USubOrderPackage" name="USubOrderPackage" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>PaymentMode</label>
+                                                                        <input id="USubOrderPayment" name="USubOrderPayment" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Status</label>
+                                                                        <select id="USubOrderStatusId" name="USubOrderStatusId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top">
+                                                                            <option value="">Please Select</option>
+                                                                            <option value="Approved">Approved</option>
+                                                                            <option value="Rejected">Rejected</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="control-group row" id="USubOrderBankChequeOnlineId" style="display:none">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Bank Name</label>
+                                                                        <input id="USubOrderBankName" name="USubOrderBankName" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6" id="USubBankOnlineId">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Account No</label>
+                                                                        <input id="USubOrderAccNo" name="USubOrderAccNo" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6" id="USubChequeId">
+                                                                    <div class="form-group position-relative">
+                                                                        <label>Cheque No</label>
+                                                                        <input id="USubOrderChqueNo" name="USubOrderChqueNo" readonly type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div id="AddSubOrdersShowButtons" class="modal-footer">
+                                            <button type="reset" class="btn btn-info" onclick="location.href='/AdminSubOrders/Index'">Back to List</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                        <div id="AddSubOrdersShowLoader" class="modal-footer" style="display:none">
+                                            <button class="btn btn-primary" type="button" disabled="">
+                                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                                Updating Orders...
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section scripts {
+<script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+<script src="~/assets/js/CommonFunctions.js"></script>
+<script src="~/assets/js/AdminSubOrdersComponent/AdminSubOrdersModel.js"></script>
+<script src="~/assets/js/AdminSubOrdersComponent/AdminSubOrderUpdateViewModel.js"></script>
+}
+

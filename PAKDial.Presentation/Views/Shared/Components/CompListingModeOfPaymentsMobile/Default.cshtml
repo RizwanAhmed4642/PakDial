@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.CompanyListingPaymentMode>
+<div>
+    <div class="calpop1">
+        <div class="calwpr1 dt">
+            <div class="tbcalWpr">
+            </div>
+            <ul class="calnbrwp">
+                @if (Model.Count() > 0 && Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <span class="icnwdt"><img src="@item.ImageDir" asp-append-version="true"></span>
+                            <span class="sharepopupcell font15">@item.Name</span>
+                        </li>
+                    }
+
+                }
+                else
+                {
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/cash.png" asp-append-version="true" alt="cash"></span>
+                        <span class="sharepopupcell font15">Cash</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/cheque.png" asp-append-version="true" alt="Cheques"></span>
+                        <span class="sharepopupcell font15">Cheques</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/PayOrder.png" asp-append-version="true" alt="Pay Order"></span>
+                        <span class="sharepopupcell font15">Pay Order</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/OnlinePayment.png" asp-append-version="true" alt="Online Payment"></span>
+                        <span class="sharepopupcell font15">Online Payment</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/debit.png" asp-append-version="true" alt="Debit Card<"></span>
+                        <span class="sharepopupcell font15">Debit Card</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/master.png" asp-append-version="true" alt="Master Card"></span>
+                        <span class="sharepopupcell font15">Master Card</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/credit.png" asp-append-version="true" alt="Credit Card"></span>
+                        <span class="sharepopupcell font15">Credit Card</span>
+                    </li>
+                    <li>
+                        <span class="icnwdt"><img src="/PakDial-assets/images/visa.png" asp-append-version="true" alt="Visa Card"></span>
+                        <span class="sharepopupcell font15">Visa Card</span>
+                    </li>
+
+                }
+            </ul>
+            <span class="cancelbtn dt" id="btn-modal-cancel" onclick="Hide()">Cancel</span>
+        </div>
+    </div>
+</div>
+

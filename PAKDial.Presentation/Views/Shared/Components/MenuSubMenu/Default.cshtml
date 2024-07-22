@@ -1,0 +1,80 @@
+﻿@using PAKDial.Presentation.Helpers;
+@model IEnumerable<PAKDial.Domains.ViewModels.VUserLoginRUMenu>
+@{
+    var Selectedmodules = Model.OrderBy(c => c.ModuleId).Select(c => new { c.ModuleId, c.ModuleName,c.ClassName }).Distinct();
+}
+
+<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+    @foreach (var modules in Selectedmodules)
+    {
+        <li class="nav-item">
+            <a href="#"><i class=@modules.ClassName></i><span class="menu-title" data-i18n="">@modules.ModuleName</span></a>
+            <ul class="menu-content">
+
+                @foreach (var controlsroute in Model.Where(c => c.ModuleId == modules.ModuleId && c.IsShown == true))
+                {
+                    <li class='@Html.IsActive(controlsroute.Controller, controlsroute.Action)'>
+                        <a class="menu-item" asp-area="" asp-controller=@controlsroute.Controller asp-action=@controlsroute.Action>@controlsroute.MenuName</a>
+                    </li>
+                }
+            </ul>
+
+        </li>
+    }
+    @*<li class="nav-item">
+            <a href="index.html"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
+            <ul class="menu-content">
+                <li class='@Html.IsActive("AdminDashBoard", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminDashBoard" asp-action="Index">eCommerce</a>
+                </li>
+                <li class='@Html.IsActive("AdminDashBoard", "Analytics")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminDashBoard" asp-action="Analytics">Analytics</a>
+                </li>
+            </ul>
+        </li>*@
+    @*<li class="nav-item">
+            <a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Locations</span></a>
+            <ul class="menu-content">
+                <li class='@Html.IsActive("AdminCountry", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminCountry" asp-action="Index">Countries</a>
+                </li>
+                <li class='@Html.IsActive("AdminProvince", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminProvince" asp-action="Index">States/Provinces</a>
+                </li>
+                <li class='@Html.IsActive("AdminCity", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminCity" asp-action="Index">Cities</a>
+                </li>
+                <li class='@Html.IsActive("AdminCityAreas", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminCityAreas" asp-action="Index">City Areas</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Configurations</span></a>
+            <ul class="menu-content">
+                <li class='@Html.IsActive("AdminDesignation", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminDesignation" asp-action="Index">Designations</a>
+                </li>
+                <li class='@Html.IsActive("AdminModule", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminModule" asp-action="Index">Modules</a>
+                </li>
+                <li class='@Html.IsActive("AdminRouteControl", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminRouteControl" asp-action="Index">Routes Control</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="#"><i class="ft-server"></i><span class="menu-title" data-i18n="">Administration</span></a>
+            <ul class="menu-content">
+                <li class='@Html.IsActive("AdminEmployee", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminEmployee" asp-action="Index">Employees</a>
+                </li>
+                <li class='@Html.IsActive("AdminCustomer", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminCustomer" asp-action="Index">Customers</a>
+                </li>
+                <li class='@Html.IsActive("AdminRoles", "Index")'>
+                    <a class="menu-item" asp-area="" asp-controller="AdminRoles" asp-action="Index">Roles</a>
+                </li>
+            </ul>
+        </li>*@
+</ul>

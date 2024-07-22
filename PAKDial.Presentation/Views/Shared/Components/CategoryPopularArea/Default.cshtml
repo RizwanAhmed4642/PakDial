@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.ShowPopularCatByArea>
+@foreach (var item in Model)
+{
+    <li class="nav-link nav-pop-area">
+        <a asp-controller="Home"
+           asp-action="LoadCategoryDescription"
+           asp-route-CtName="@item.CtName" asp-route-SbCId="@item.SbCId"
+           asp-route-SbCName="@item.SbCName" asp-route-SortFilter="@item.SortFilter"
+           asp-route-Ratingstatus="Asc"
+           asp-route-ArName="@item.ArName">@item.SbCNameReplace in @item.ArName</a>
+    </li>
+}
+

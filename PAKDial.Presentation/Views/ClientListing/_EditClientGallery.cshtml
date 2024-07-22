@@ -1,0 +1,59 @@
+﻿<div class="tab-pane fade" id="Gallery" role="tabpanel" aria-labelledby="contact-tab">
+   
+    <div class="card-body">
+        <div class="form-body">
+            <h6>Gallery </h6>
+            <!--Banner Image-->
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Upload Banner Image</label>
+                </div>
+                <div class="form-col col-md-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="Uimagefiles"
+                               name="Uimagefiles" accept=".jfif,.jpg,.jpeg,.png,.gif">
+                        <label class="lbl-from-col  custom-file-label" for="Uimagefiles">
+                            Upload Banner
+                            Image
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Preview </label>
+                </div>
+                <div class="form-col col-md-9" id="UCLTDeleteBannerImage">
+                    <figure class="col-lg-12 col-md-12 col-sm-12 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                        <div class="parent">
+                            <img class="img-fluid" itemprop="thumbnail" alt="Image description" id="UtargetImg" asp-append-version="true"/>
+                            <button class="close" onclick="RemoveBannerImage()">X</button>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-col col-md-3">
+                    <label>Choose file </label>
+                </div>
+                <div class="form-col col-md-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="UMimagefiles" name="UMimagefiles" multiple accept=".jfif,.jpg,.jpeg,.png,.gif">
+                        <label class="lbl-from-col  custom-file-label" for="UMimagefiles">Choose file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form row">
+                <div class="form-group col-md-3">
+                    <label>Selected Images </label>
+                </div>
+                <div class="form-group col-md-9">
+                    <div class="row" id="UMImageLink" style="margin-left:3px">
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

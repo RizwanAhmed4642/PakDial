@@ -1,0 +1,152 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<div class="header-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 logo-wrapper">
+                <div class="mobile-icon">
+                    <!-- mobile sidebar -->
+                    <nav class="navbar-expand-xl d-lg-none">
+                        <i class="fa fa-bars" data-toggle="collapse" data-target="#collapsingNavbarLg"></i>
+                    </nav>
+                    <ul class="navbar-nav nav-mobile-sec">
+                        <div class="sidebar-sec navbar-collapse collapse" id="collapsingNavbarLg">
+                            <img src="~/PakDial-assets/images/arrow-03.png" asp-append-version="true">
+                            <div class="side-nav" id="side-nav-id">
+                                @await Component.InvokeAsync("MainSidebarMenu")
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <a href="~/"><img src="~/PakDial-assets/images/logo.png" asp-append-version="true" alt="Logo"/></a>
+                </div>
+
+            </div>
+            <div class="col-sm-7 header-search">
+                <div id="searchbar" class="input-group">
+                    <div class="search-city">
+                        <span class="location-icon"><i class="fa fa-map-marker"></i></span>
+                        <input type="text" id="search-by-city" class="input-control" value="Lahore">
+                        <div id="city-list-drop" class="city-search-drop" style="display: none;">
+                            <ul id="UserLocation">
+                                @await Component.InvokeAsync("LoadCities")
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-listing">
+                        <input type="text" name="FirstCatepdsrchbx" id="FirstCatepdsrchbx" placeholder="Search Anytime Anywhere in Pakistan" class="form-control input-lg">
+                        <a id="FirstCatecross_S" class="cross-srch" style="display: none;">×</a>
+                        <div class="pd-srch-rslt">
+                            <div id="FirstCatepdsrchbxdrop" style="display: none;">
+                                <ul id="FirstCateauto"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    @* Mobile Search *@
+                    <div class="btn-search">
+                        <button type="button" id="search-field-input" value="search" class="icon-search-mobile btn btn-default btn-lg pd-primary-font">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <div id="search-mobile-id" class="search-mobile search input-group form-group d-sm-block d-md-none d-lg-none">
+                            <div class="row search-mobile-wrapper">
+
+                                <input class="col-4 search-city-mobile form-control" type="text"
+                                       id="Mobsearch-by-city" placeholder="Lahore" value="Lahore">
+
+                                <input class="col-8 search-listing-mobile form-control" type="text" placeholder="Search Anytime Anywhere in Pakistan"
+                                       id="MobFirstCatepdsrchbx" name="MobFirstCatepdsrchbx">
+                            </div>
+                            <div class="pd-srch-rslt">
+                                <div id="MobFirstCatepdsrchbxdrop" style="display: none;">
+                                    <ul id="MobFirstCateauto"></ul>
+                                </div>
+                            </div>
+                            <div id="Mobcity-list-drop" class="city-search-drop" style="display: none;">
+                                <ul id="MobUserLocation">
+                                    @await Component.InvokeAsync("LoadCities")
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="contact-info">
+                    <img src="~/PakDial-assets/images/headoffice.png" asp-append-version="true" alt="head-office">
+                    <div class="office-detail">
+                        <h6>Customer Care</h6>
+                        <span>0304-1111-245</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Social Media bar Starts -->
+<div class="float-lgHm">
+    <a href="https://www.facebook.com/PakDialMedia" target="_blank">
+        <div class="flbtn-home floaticn-fb">
+            <i class="fa fa-facebook"></i>
+            Like us!
+        </div>
+    </a>
+    <a href="https://www.youtube.com/channel/UCTGPB_t8Qhw2QADwCakBhAA" target="_blank">
+        <div class="flbtn-home floaticn-yt">
+            <i class="fa fa-youtube-play"></i>
+            Subscribe!
+        </div>
+    </a>
+    <a href="https://twitter.com/PakdialMedia" target="_blank">
+        <div class="flbtn-home floaticn-tw">
+            <i class="fa fa-twitter"></i>
+            Follow us!
+        </div>
+    </a>
+    <a href="https://www.linkedin.com/in/pakdial-media-684743198/" target="_blank">
+        <div class="flbtn-home floaticn-ln">
+            <i class="fa fa-linkedin"></i>
+            Connect!
+        </div>
+    </a>
+    <a href="https://www.instagram.com/pakdialmedia/" target="_blank">
+        <div class="flbtn-home floaticn-ig">
+            <i class="fa fa-instagram"></i>
+            Follow us!
+        </div>
+    </a>
+</div>
+<!-- Floating Social Media bar Ends -->
+<!-- desktop sidebar -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 d-lg-block d-none">
+            <div class="menu-loader loader-wrapper">
+                <span class="menu-loader-text">
+                    <span class="pd-primary-bg"><i class="fa fa-bars"></i>Shop By Category</span>
+                </span>
+            </div>
+            <div class="sidebar-sec ">
+                <div class="side-nav slider-wrapper">
+                    @await Component.InvokeAsync("MainSidebarMenu")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end desktop sidebar -->
+<!-- Banner -->
+@await Component.InvokeAsync("HomeSlider")
+<!-- End Banner -->
+<!-- Main Content -->
+@await Component.InvokeAsync("CategorySection")
+<!-- End Main Content -->
+@section Scripts{
+    <script src="~/PakDial-assets/assets/Homepagescriptsindex.min.js" asp-append-version="true"></script>
+}

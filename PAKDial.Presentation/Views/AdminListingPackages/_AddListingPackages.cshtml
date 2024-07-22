@@ -1,0 +1,47 @@
+﻿<div class="modal fade text-left show" id="AddListingPackages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Create Listing Packages</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="AddListingPackages_Submit_Form">
+                <div class="modal-body">
+                    <label>Name: </label>
+                    <div class="form-group position-relative">
+                        <input id="AListingPackagesName" name="AListingPackagesName" type="text" placeholder="Name" class="form-control">
+                    </div>
+
+                    <label>Description: </label>
+                    <div class="form-group position-relative">
+                        <textarea id="AListingPackagesDescrption" name="AListingPackagesDescrption" type="text" placeholder="Description" class="form-control"></textarea>
+                    </div>
+
+                    <label>Months: </label>
+                    <div class="form-group position-relative">
+                        <input id="AListingPackagesMonths" name="AListingPackagesMonths" type="number" placeholder="Months" class="form-control">
+                    </div>
+
+                    <label>Price: </label>
+                    <div class="form-group position-relative">
+                        <input id="AListingPackagesPrice" name="AListingPackagesPrice" type="number" placeholder="Price" class="form-control">
+                    </div>
+
+                </div>
+                <div id="AddListingPackagesShowButtons" class="modal-footer">
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+                <div id="AddListingPackagesShowLoader" class="modal-footer" style="display:none">
+                    <button class="btn btn-primary" type="button" disabled="">
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Results Saving...
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.CompanyListingSubCate>
+@{ 
+    var Counters = Model.Count();
+}
+<li class="profile-location-info pd-primary-font">
+    @if (Model.Count() > 0)
+    {
+
+        <i class="fa fa-plus-circle"></i>
+
+    }<span>
+        @foreach (var item in Model)
+        {
+            if (Counters != 1)
+            {
+                @string.Concat(item.Name, ",")
+            }
+            else
+            {
+                @item.Name
+            }
+            Counters--;
+        }
+    </span>
+</li>
+

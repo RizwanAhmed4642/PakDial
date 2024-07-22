@@ -1,0 +1,165 @@
+﻿@model PAKDial.Domains.UserEndViewModel.GenericLoadSbCategoryModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @await Component.InvokeAsync("MainCatMetas", new { Location = Model.Location, CatId = Model.CatId })
+    @*<link href="~/PakDial-assets/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/PakDial-assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/PakDial-assets/css/style.css">*@
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" asp-append-version="true">
+    <link href="~/PakDial-assets/css/Loadsubcategorystyle.min.css" rel="stylesheet" asp-append-version="true" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB8VEQNMVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PB8VEQNMVM');
+    </script>
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    <!--BEGIN: Top Header-->
+    @await Component.InvokeAsync("Commonheader")
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 logo-wrapper">
+                    <div class="menu-icon" data-toggle="collapse" data-target="#NavbarOther">
+                        <div class="menu-icon-top pd-primary-bg"></div>
+                        <div class="menu-icon-middle"></div>
+                        <div class="menu-icon-top pd-primary-bg"></div>
+                    </div>
+                    <!--  Menu -->
+                    <ul class="navbar-nav nav-mobile-sec">
+                        <div class="sidebar-sec navbar-collapse collapse" id="NavbarOther">
+                            <img src="~/PakDial-assets/images/arrow-03.png" asp-append-version="true">
+                            <div class="side-nav" id="side-other-nav">
+                                @await Component.InvokeAsync("MainSidebarMenuReplica")
+                            </div>
+                        </div>
+                    </ul>
+                    <!-- end  menu -->
+
+                    <div class="page-logo">
+                        <a href="~/"><img src="~/PakDial-assets/images/page2logo.png" asp-append-version="true" /></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 header-search">
+                    <div id="searchbar" class="input-group">
+                        <div class="search-city">
+                            <span class="location-icon"><i class="fa fa-map-marker"></i></span>
+                            <input type="text" id="SubCatesearchbycity" class="input-control" value="@Model.Location">
+                            <span id="SubCatcitylistdrop" class="city-search-drop" style="display: none;">
+                                <ul id="FirstUserSubLocation">
+                                    @await Component.InvokeAsync("LoadCities")
+                                </ul>
+                            </span>
+                        </div>
+                        <div class="search-listing">
+                            <input type="text" name="SecondCatepdsrchbx" id="SecondCatepdsrchbx" placeholder="Search Anytime Anywhere in Pakistan" class="form-control input-lg">
+                            <a id="SecondCatecross_S" class="cross-srch" style="display: none;">×</a>
+                            <div class="pd-srch-rslt">
+                                <span id="SecondCatepdsrchbxdrop" style="display: none;">
+                                    <ul id="SecondCateauto"></ul>
+                                </span>
+                            </div>
+                        </div>
+
+                        @* Mobile Search *@
+                        <div class="btn-search">
+                            <button type="button" id="search-field-input" value="search" class="icon-search-mobile btn btn-default btn-lg pd-primary-font">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <div id="search-mobile-id" class="search-mobile search input-group form-group d-sm-block d-md-none d-lg-none">
+                                <div class="row search-mobile-wrapper">
+
+                                    <input class="col-4 search-city-mobile form-control" type="text"
+                                           id="MobSubCatesearchbycity" placeholder="Lahore" value="@Model.Location">
+
+                                    <input class="col-8 search-listing-mobile form-control" placeholder="Search Anytime Anywhere in Pakistan" type="text"
+                                           id="MobSecondCatepdsrchbx" name="MobSecondCatepdsrchbx">
+                                </div>
+                                <div class="pd-srch-rslt">
+                                    <div id="MobSecondCatepdsrchbxdrop" style="display: none;">
+                                        <ul id="MobSecondCateauto"></ul>
+                                    </div>
+                                </div>
+                                <div id="MobSubCatcitylistdrop" class="city-search-drop" style="display: none;">
+                                    <ul id="MobFirstUserSubLocation">
+                                        @await Component.InvokeAsync("LoadCities")
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="contact-info">
+                        <img src="~/PakDial-assets/images/headoffice.png" asp-append-version="true">
+                        <div class="office-detail">
+                            <h6>Customer Care</h6>
+                            <span>0304-1111-245</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END: Top Header-->
+    <!-- Banner -->
+    <div class="home-banner">
+        @await Component.InvokeAsync("LoadCategoriesBanner", Model.CatId)
+    </div>
+    <!-- End Banner -->
+    <!-- Main Content -->
+    <div class="main container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 ">
+                <div class="box-wrapper">
+                    <ul class="sub-cat-list">
+                        @await Component.InvokeAsync("LoadFirstLevelPopularCategory", Model.CatId)
+                        @await Component.InvokeAsync("LoadFirstLevelCategory", Model.CatId)
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="marginDiv"></div>
+    </div>
+    <!-- End Main Content -->
+    <!-- BEGIN: Footer-->
+    @await Component.InvokeAsync("CommonFooter")
+    @*@await Html.PartialAsync("~/Views/Shared/_ClientLoginLogin.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/_ClientForgotPassword.cshtml")*@
+    @await Html.PartialAsync("~/Views/Shared/_ClientLoginOtpLogin.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ClientOtpCodeOtp.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ChangeMobileNumber.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_ClientSignUp.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_PureChat.cshtml")
+    <script src="~/PakDial-assets/assets/Loadsubcategoryscripts.min.js" asp-append-version="true"></script>
+    @*<script src="~/app-assets/js/core/libraries/jquery.min.js"></script>
+        <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+        <script src="~/PakDial-assets/js/bootstrap.min.js"></script>
+        <script src="~/PakDial-assets/assets/SubCategoryPage.js"></script>
+        <script src="~/PakDial-assets/assets/FrontEndCommon.js"></script>
+        <script src="~/PakDial-assets/assets/ClientCommonFunction.js"></script>
+        <script src="~/PakDial-assets/assets/ClientLoginModel.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/ClientLoginModelScript.js" type="text/javascript"></script>
+        <script src="~/PakDial-assets/assets/ClientForget.js"></script>
+        <script src="~/PakDial-assets/assets/ClientSignUpModel.js"></script>
+        <script src="~/PakDial-assets/assets/ClientSignUpModelScript.js"></script>*@
+    <!-- END: Footer-->
+</body>
+
+</html>
+

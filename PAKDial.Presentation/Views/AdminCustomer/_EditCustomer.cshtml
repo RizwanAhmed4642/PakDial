@@ -1,0 +1,110 @@
+﻿<div class="modal fade text-left show" id="UpdateCustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Edit Customer</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateCustomer_Submit_Form" enctype="multipart/form-data">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <input type="hidden" id="UCustId" />
+                                    <input type="hidden" id="UUserId" />
+                                    <input type="hidden" id="UCIsActive" />
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Profile Image</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-12 d-flex justify-content-center">
+                                                <div class="w-25">
+                                                    @*<img src="~/app-assets/images/portrait/small/avatar-s-19.jpg" />*@
+                                                    @*<img class="border border-primary w-100" src="/mis/Images/Update_Image.png">*@
+                                                    <img class="border border-primary w-100" id="UtargetImg">
+                                                    <label class="btn btn-primary w-100 mt-1" for="Uimagefiles">Thumbnail</label>
+                                                    <input type="file" accept="image/*" class="upload" style="display:none" id="Uimagefiles">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Personal Information</h4></legend>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>First Name<span class="text-danger">*</span></label>
+                                                    <input id="UCustFirstName" name="UCustFirstName" type="text" placeholder="First Name" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Last Name<span class="text-danger">*</span></label>
+                                                    <input id="UCustLastName" name="UCustLastName" type="text" placeholder="Last Name" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Date Of Birth<span class="text-danger">*</span></label>
+                                                    <input id="UCustDob" name="UCustDob" type="date" placeholder="DOB" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="form-group position-relative">
+                                                        <label>CNIC<span class="text-danger">*</span></label>
+                                                        <input id="UCustCnic" name="UCustCnic" type="text" placeholder="00000-0000000-0" class="form-control" maxlength="15">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                    <fieldset class="scheduler-border">
+                                        <legend class="scheduler-border"><h4 class="card-title">Contact Information</h4></legend>
+                                        <div class="control-group row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Contact Number</label>
+                                                    <input id="UCustContactNumber" name="UCustContactNumber" type="text" placeholder="04212345678" class="form-control" maxlength="11">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="position-relative ">
+                                                        <label>Phone Number</label>
+                                                        <input type="text" id="UCustPhoneNumber" name="UCustPhoneNumber" class="form-control" placeholder="03341234567" maxlength="11">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+
+                                </div>
+                                <div id="UpdateCustShowButtons" class="modal-footer employeemodalfooter">
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                                <div id="UpdateCustShowLoader" class="modal-footer employeemodalfooter" style="display:none">
+                                    <button class="btn btn-primary" type="button" disabled="">
+                                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                        Results Saving...
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

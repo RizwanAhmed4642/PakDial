@@ -1,0 +1,9 @@
+﻿@model PAKDial.Domains.UserEndViewModel.CompanyListingContact
+
+    @if (@Model.Address != string.Empty && @Model.Address != null)
+    {
+        <i class="pd-primary-font fa fa-map-marker"></i>
+    }
+    <span>
+        @Model.Address
+    </span>

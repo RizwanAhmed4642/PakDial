@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Administration</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Administration</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Employees</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        <!-- server-side table -->
+        @await Html.PartialAsync("~/Views/AdminEmployee/_EmployeeList.cshtml")
+        <!--/ server-side table -->
+    </div>
+
+</div>
+@await Html.PartialAsync("~/Views/AdminEmployee/_AddEmployee.cshtml")
+@await Html.PartialAsync("~/Views/AdminEmployee/_EditEmployee.cshtml")
+@await Html.PartialAsync("~/Views/AdminEmployee/_ChangePassword.cshtml")
+@await Html.PartialAsync("~/Views/AdminEmployee/_EditOtherManagers.cshtml")
+@await Html.PartialAsync("~/Views/AdminEmployee/_EditRegionalManagers.cshtml")
+@await Html.PartialAsync("~/Views/AdminEmployee/_EditCategoryManagers.cshtml")
+@await Html.PartialAsync("~/Views/AdminEmployee/_EditZoneManagers.cshtml")
+
+@*<partial name="~/Views/AdminEmployee/_AddEmployee.cshtml" />*@
+
+@section scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminEmployeeComponent/AdminEmployeeModel.js"></script>
+    <script src="~/assets/js/AdminEmployeeComponent/AdminEmployeeViewModel.js"></script>
+}
+

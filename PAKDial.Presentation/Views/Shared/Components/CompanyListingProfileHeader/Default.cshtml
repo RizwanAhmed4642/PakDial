@@ -1,0 +1,155 @@
+﻿@model PAKDial.Domains.StoreProcedureModel.Home.SPGetCompnayDetailById
+
+<!--New-->
+
+<div class="pd-profile-header">
+    @if (!string.IsNullOrEmpty(Model.BannerImage))
+    {
+        <div class="listing-banner" style="background-image:url(@Model.BannerImage);background-repeat: no-repeat;background-size: cover;">
+            <div class="pd-cover-photo__overlay"></div>
+        </div>
+    }
+    else
+    {
+        <div class="listing-banner" style="background-image:url('/PakDial-assets/images/DefaultImage1.png');background-repeat: no-repeat;background-size: cover;">
+            <div class="pd-cover-photo__overlay"></div>
+        </div>
+    }
+    <div class="listing-banner-bottom">
+        <div class="container">
+            <div class="row pd-lg-b">
+                <div class="col-3">
+                    <div class="listing-profile-media">
+                        @*<img src="images/dailyneeds.png" class="img-fluid">*@
+                        @if (Model.ImageUrl == string.Empty)
+                        {
+                            <img src="/app-assets/images/portrait/small/avatar-s-19.jpg" class="img-fluid" asp-append-version="true" alt="@Model.CompanyName">
+                        }
+                        else
+                        {
+                            <img src="@Model.ImageUrl" class="img-fluid" asp-append-version="true" alt="@Model.CompanyName">
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-6">
+                    <div class=" profile-header-info">
+                        <div class="profile-title">
+                            <h1 class="profile-name pd-secondary-font">@Model.CompanyName</h1>
+                            @if (Model.IsPremium == true)
+                            {
+                                <div class="listing-location">
+                                    <img src="~/PakDial-assets/images/thumb-lst.png" data-toggle="modal" data-target="#myModal" asp-append-version="true" alt="verified">
+                                </div>
+                            }
+                        </div>
+                        <div class="profile-rating">
+                            @for (var i = 1; i <= Model.AvgRating; i++)
+                            {
+                                <img src="~/PakDial-assets/images/fill-star.png" asp-append-version="true" alt="rating" />
+                            }
+                            @for (var i = (Model.AvgRating + 1); i <= 5; i++)
+                            {
+                                <img src="~/PakDial-assets/images/non-fill-star.png" asp-append-version="true" alt="rating"/>
+                            }
+                            <span class="pd-star-rate pd-secondary-font">@Model.AvgRating.0 Ratings</span>
+                            <span class="pd-star-rate rate__text">@Model.TotalVotes.0 Votes</span>
+                        </div>
+                        @if (Model.IsTrusted > 0)
+                        {
+                            <div class="listing-location">
+                                <img src="~/PakDial-assets/images/verified.png" asp-append-version="true" alt="verified"/>
+                                <img src="~/PakDial-assets/images/trusted.png" data-toggle="modal" data-target="#trustedModal" asp-append-version="true"  alt="trusted"/>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+                @*<div class="col-4">
+                    <ul class="pd-listing-right">
+                        <li><a href="" class="pd-primary-font"><i class="fa fa-map-marker"></i>Map</a></li>
+                        <li onclick="ShowRequestform(@Model.ListingId);"><a class="pd-primary-font"><i class="fa fa-envelope"></i>SMS</a></li>
+                        <li ><a href="" class="pd-primary-font"><i class="fa fa-whatsapp"></i>whatsapp</a></li>
+                        <li><a id="ClientEditListingId" name="ClientEditListingId" data-value="@Model.ListingId"><i class="fa fa-edit"></i>edit</a></li>
+                    </ul>
+
+
+                </div>*@
+				<div class="col-lg-3 col-md-4 col-3">
+                    <div class="pd-lst-contact pd-primary-bg pd-btn" onclick="ShowRequestform(@Model.ListingId);"><a class="pd-secondary-font" >Contact Me</a></div>
+                    <div class="pd-call-web">
+                        <span class="pd-lst-click-call"><i class="fa fa-phone pd-secondary-font" aria-hidden="true"></i><a href="tel:@Model.MobileNo" class="pd-secondary-font">@Model.MobileNo</a></span>
+                        @if (!string.IsNullOrEmpty(Model.Website))
+                        {
+                            <span class="pd-lst-web"><i class="fa fa-globe pd-secondary-font" aria-hidden="true"></i><a href="http://@Model.Website" target="_blank" class="pd-secondary-font">Website</a></span>
+                        }
+                        else
+                        {
+                            <span class="pd-lst-web"><i class="fa fa-globe pd-secondary-font" aria-hidden="true"></i><a href="#" class="pd-secondary-font">Website</a></span>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade show" id="myModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content login-popup">
+            <div class="modal-body pd-popup-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-4  pd-popside-logo">
+                            <img src="/PakDial-assets/images/verified-logo.png" class="login-logo-title badge-logo" alt="verified">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-8 popup-text">
+                            <h6 class="login-head-title">What is PD Verified?</h6>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <strong>“Verified badge”</strong> means that the business/service provider, is authenticated from <strong>Pakdial</strong>. All the important information regarding the address and services has been provided and customers are encourages to select the vendors with hold verification badges.
+                                        <br /><br />For further details, check terms and conditions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade show" id="trustedModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content login-popup">
+            <div class="modal-body pd-popup-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-4 pd-popside-logo">
+                            <img src="/PakDial-assets/images/trusted-logo.png" class="login-logo-title badge-logo" alt="trusted">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-8 popup-text">
+                            <h6 class="login-head-title">What is PD Trusted?</h6>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>
+                                        <strong>Trusted Stamp </strong> from <strong> Pakdial</strong> indicates that all the identification and information regarding the vendor/ service provider is authentic.
+                                        <br /><br />
+                                        This process of involves verifying genuine brand name identity, address confirmation, contact details along with the authenticity regarding the services.
+                                        <br /><br /><strong>Trusted Stamp </strong> is awarded to the businesses with the best rating and the feedback from the customers.
+                                        <br /><br />We encourage the customers to read the reviews and the feedback before contacting any service provider.
+                                        <br /><br />For further information, please review our terms and conditioners.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

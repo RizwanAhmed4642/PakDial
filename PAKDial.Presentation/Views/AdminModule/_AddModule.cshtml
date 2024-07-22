@@ -1,0 +1,35 @@
+﻿<div class="modal fade text-left show" id="AddModule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Create Module</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="AddModule_Submit_Form">
+                <div class="modal-body">
+                    <label>Name: </label>
+                    <div class="form-group position-relative">
+                        <input id="AModuleName" name="AModuleName" type="text" placeholder="Module Name" class="form-control">
+                    </div>
+                    
+                    <label>ClassName: </label>
+                    <div class="form-group position-relative">
+                        <input id="AModuleClassName" name="AModuleClassName" type="text" placeholder="Design Css Class Name" class="form-control">
+                    </div>
+                </div>
+                <div id="AddModuleShowButtons" class="modal-footer">
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+                <div id="AddModuleShowLoader" class="modal-footer" style="display:none">
+                    <button class="btn btn-primary" type="button" disabled="">
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Results Saving...
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

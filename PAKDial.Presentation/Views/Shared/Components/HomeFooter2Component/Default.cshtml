@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.MainSideBarMenu>
+
+<div class="container-fluid foot-box-wrapper pt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <strong>Greetings! </strong>You are right now surfing in Pakdial, your one-stop solution. We are here to assist you with all sorts of services and products.
+                    We are proud to provide you the best customer support, feel free to contact us at; <strong>0304-1111-245</strong> .
+                    We are happy to associate ourselves with all the customers and the business as the only bridge between these two binaries, for the first time, in Pakistan.
+                    <br /><br />Pakdial is a <strong>digital infrastructure </strong> devoted to creating links between consumer base and small to medium enterprises.
+                    Our mission is to increase the global reach of local Pakistani products.
+                    This approach of bringing offline businesses online will be a positive contribution to <strong>Pakistan's GDP growth!</strong>
+                    <br />Our Company immensely emphasizes the vision of expanding Pakistan's <strong>economic growth</strong>  by providing worldwide prominence to our small and medium enterprises.
+                    Our company strives to provide the most economical and effective solutions for customers as well as enterprises.
+                    <br /><br />We are here to assist you with all the products, dealers, and service providers in Pakistan. Through our portal,
+                    you will be able to get <strong>valuable and authentic information</strong>  regarding both online and offline businesses nationwide. Our listing includes various enterprises according to their niche and specifications such as Auto Care, House Keeping, repair, daily needs, on-demand services, emergency services, etc.
+                    <br /><br /> Through the free listing on Pakdial, all types of businesses get the chance to showcase their special products and services. Our company arranges your authentic and verified information through phone, SMS, web, and our upcoming App. Through the free listing, you will be able to create a space for your business on our portal. Hence, this feature will boost your portfolio, resulting in the providence of more customers. Your level of business will automatically increase by selecting <strong>“Pakdial Free listing”</strong>
+                    <br /><br><strong>Here are some of the authenticated niches you can select to learn about the services provider in these specifically; </strong>
+                </p>
+            </div>
+        </div>
+        <div class="row ">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="footer-box">
+                        <div class="foot-img">
+                            <img src="@item.WebDir" asp-append-version="true" alt="@item.Name">
+                        </div>
+                        <div class="footer-text">
+                            <span data-value="@item.Id**@item.Name" class="mainmenu">@item.Name</span>
+                            <p>@Html.Raw((item.Description.Length > 100 ? item.Description.Substring(0, 100) + " " + "<text>...</text>" : item.Description))</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="row">
+            <div class=" col-12 copyright">
+                <span class="">Copyright © 2020. All rights reserved by <a href="" class="pd-hrf pd-primary-font"><strong>Pakdial.com</strong></a></span>
+                <a>Privacy</a> |
+                <a href="/Common/TermsAndCondition" class="pd-page">Terms</a> |
+                <a> Infringement</a> |
+                <span class="pd-primary-font">View PakDial on </span>
+                <a><span>Smartphone</span></a> |
+                <a>Mobile</a>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@model PAKDial.Domains.UserEndViewModel.AdminBarModel
+
+
+@if (Model.UserTypeId == 1)
+{
+    @*<li class="nav-item">
+            <a class="nav-link pd-secondary-font" href="~/Account/SignOut">Sign out</a>
+        </li>*@
+    <div class="dropdown">
+        <li class="nav-item">
+
+            <a class="nav-link pd-secondary-font">
+            Hi! @User.Identity.Name<img src="~/PakDial-assets/images/user-icon.png"  asp-append-version="true" class="login-dropdown" id="login-dropdown" class="btn dropdown-toggle" data-toggle="collapse" data-target="#loginOther" aria-expanded="true"></a>
+            <div class="dropdown-menu pd-box-shadow" id="loginOther">
+                <div class="user-image">
+                    @if (@Model.imageUrl != null)
+                    {
+                        <img width="80px" height="66px" src="@Model.imageUrl" asp-append-version="true"/>
+                    }
+                    else
+                    {
+                        <img src="~/PakDial-assets/images/user-image.png" asp-append-version="true"/>
+
+                    }
+                </div>
+                <div class="user-setting">
+                    <a class="dropdown-item" href="~/Account/SignOut">Logout </a>
+                </div>
+            </div>
+        </li>
+    </div>
+}
+else if (Model.UserTypeId == 2)
+{
+    <div class="dropdown">
+        <li class="nav-item">
+
+            <a class="nav-link pd-secondary-font"> Hi! @User.Identity.Name<img src="~/PakDial-assets/images/user-icon.png" asp-append-version="true" class="login-dropdown" id="login-dropdown" class="btn dropdown-toggle" data-toggle="collapse" data-target="#loginOther" aria-expanded="true"></a>
+            <div class="dropdown-menu pd-box-shadow" id="loginOther">
+                <div class="user-image">
+                    @if (@Model.imageUrl != null)
+                    {
+                        <img width="80px" height="66px" src="@Model.imageUrl" asp-append-version="true"/>
+                    }
+                    else
+                    {
+                        <img src="~/PakDial-assets/images/user-image.png" asp-append-version="true" />
+                        
+                    }
+
+                </div>
+                <div class="user-setting">
+                    <a class="dropdown-item" href="~/profileUser/Profile">Profile</a>
+                    <a class="dropdown-item" href="~/ClientListing/Index">Listings</a>
+                    <a class="dropdown-item" href="~/Account/SignOut">Logout</a>
+                </div>
+            </div>
+        </li>
+    </div>
+
+    @*<li class="nav-item">
+            <a class="nav-link pd-secondary-font" href="#">Your Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link pd-secondary-font" href="~/Account/SignOut">Sign out</a>
+        </li>*@
+}
+
+@*<div class="dropdown">
+    <li class="nav-item">
+
+        <a class="nav-link pd-secondary-font">Hi Zain!<img src="images/user-icon.png" class="login-dropdown" id="login-dropdown" class="btn dropdown-toggle" data-toggle="collapse" data-target="#loginOther" aria-expanded="true"></a>
+        <div class="dropdown-menu pd-box-shadow" id="loginOther">
+            <div class="user-image">
+                <img src="images/user-image.png">
+            </div>
+            <div class="user-setting">
+                <a class="dropdown-item" href="#"><img src="images/arrow-dropdown.png">Profile</a>
+                <a class="dropdown-item" href="#"><img src="images/arrow-dropdown.png">Listings</a>
+                <a class="dropdown-item" href="#"><img src="images/arrow-dropdown.png">Logout</a>
+            </div>
+        </div>
+    </li>
+</div>*@

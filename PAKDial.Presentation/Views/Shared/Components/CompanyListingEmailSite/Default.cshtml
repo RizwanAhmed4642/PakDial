@@ -1,0 +1,19 @@
+﻿@model PAKDial.Domains.UserEndViewModel.CompanyListingContact
+<li class="profile-contact-info pd-primary-font">
+    @if (@Model.Email != string.Empty && @Model.Email!=null)
+    {
+        <i class="fa fa-envelope"></i>
+    }
+
+    <span>
+        @Model.Email
+    </span>
+</li>
+<li class="profile-contact-info pd-primary-font">
+    @if (@Model.Site != string.Empty && @Model.Site != null)
+    {
+        <i class="fa fa-globe"></i>
+    }
+
+        <a href="http://@Model.Site" target="_blank"> <span>@Model.Site</span></a>
+</li>

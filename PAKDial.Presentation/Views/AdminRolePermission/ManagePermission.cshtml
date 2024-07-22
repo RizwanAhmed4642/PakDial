@@ -1,0 +1,165 @@
+﻿@model IEnumerable<PAKDial.Domains.DomainModels.Modules>
+@{
+    List<decimal> rolesRouteControls = ViewBag.SelectedRoles;
+    ViewData["Title"] = "ManagePermission";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.AntiForgeryToken();
+<div class="content-wrapper">
+    <div class="content-wrapper-before"></div>
+    <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Administration</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+                <div class="breadcrumb-wrapper mr-1">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Administration</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Roles</b>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <b>Role Based Permissions</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Role Based Permissions</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show">
+
+                            <section id="basic-form-layouts input-validation">
+                                <!---contact personal information-->
+                                @using (Html.BeginForm(null, null, FormMethod.Get, new { name = "ManageRolePermission_Submit_Form", id = "ManageRolePermission_Submit_Form" }))
+                                {
+                                    <input type="hidden" id="RoleId" name="RoleId" value="@ViewBag.RoleId" />
+                                    <div class="row border-1">
+                                        <div class="col-md-12">
+                                            @foreach (var item in Model)
+                                            {
+                                                <div class="card shadow-none">
+                                                    <div class="card-header skin skin-polaris">
+                                                        <h4 class="card-title" style="font-size:1rem">
+                                                            <label>@item.Name</label>
+                                                        </h4>
+                                                        <a class="heading-elements-toggle">
+                                                            <i class="la la-ellipsis-v font-medium-3"></i>
+                                                        </a>
+                                                        <div class="heading-elements">
+                                                            <ul class="list-inline mb-0">
+                                                                <li>
+                                                                    <a data-action="collapse">
+                                                                        <i class="ft-minus"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-action="reload">
+                                                                        <i class="ft-rotate-cw"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-action="expand">
+                                                                        <i class="ft-maximize"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-action="close">
+
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-content collapse show">
+                                                        <div class="card-body">
+                                                            <div class="form-body">
+                                                                <div class="row skin skin-polaris">
+                                                                    @foreach (var route in item.RouteControls)
+                                                                    {
+                                                                        <div class="col-md-3 col-sm-12">
+                                                                            <div class="skin-polaris">
+                                                                                @if (rolesRouteControls.Contains(route.Id))
+                                                                                {
+                                                                                    <fieldset>
+                                                                                        <input class="@item.Id" type="checkbox" id="@route.Id" name="@route.Id" value="@route.Description" checked="checked">
+                                                                                        <label for="@route.Id"> @route.Description </label>
+                                                                                    </fieldset>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <fieldset>
+                                                                                        <input class="@item.Id" type="checkbox" id="@route.Id" name="@route.Id" value="@route.Description">
+                                                                                        <label for="@route.Id"> @route.Description </label>
+                                                                                    </fieldset>
+                                                                                }
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    }
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <hr />
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div id="ManageRolePermissionShowButtons" class="modal-footer">
+                                        <button type="reset" onclick="RedirecttoRole()" class="btn btn-danger" >Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+
+                                    <div id="ManageRolePermissionShowLoader" class="row mt-2 mb-2 float-right" style="display:none">
+                                        <button class="btn btn-primary" type="button" disabled="">
+                                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                            Results Saving...
+                                        </button>
+                                    </div>
+                                }
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+
+@section Scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminRolePermissionComponent/AdminRolePermissionModel.js"></script>
+    <script src="~/assets/js/AdminRolePermissionComponent/AdminRolePermissionViewModel.js"></script>
+
+}

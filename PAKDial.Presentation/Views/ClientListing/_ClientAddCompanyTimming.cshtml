@@ -1,0 +1,835 @@
+﻿<!--Monday-->
+<div class="info-time row">
+
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName1">Monday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming1" name="ACLstFromTimming1" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming1" name="ACLstToTimming1" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed" value="ACLstToTimmingClosed1" id="ACLstToTimmingClosed1" onchange="GetCheckBoxValue('ACLstToTimmingClosed1')">
+    </div>
+</div>
+<!--Tuesday-->
+<div class="info-time row " id="ACLstPToTimmingClosed2">
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName2">Tuesday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming2" name="ACLstFromTimming2" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming2" name="ACLstToTimming2" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed" value="ACLstToTimmingClosed2" id="ACLstToTimmingClosed2" onchange="GetCheckBoxValue('ACLstToTimmingClosed2')">
+    </div>
+</div>
+<!--Wednesday-->
+<div class="info-time row " id="ACLstPToTimmingClosed3">
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName3">Wednesday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming3" name="ACLstFromTimming3" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming3" name="ACLstToTimming3" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed" value="ACLstToTimmingClosed3" id="ACLstToTimmingClosed3" onchange="GetCheckBoxValue('ACLstToTimmingClosed3')">
+    </div>
+</div>
+<!--Thursday-->
+<div class="info-time row " id="ACLstPToTimmingClosed4">
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName4">Thursday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming4" name="ACLstFromTimming4" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming4" name="ACLstToTimming4" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed4" value="ACLstToTimmingClosed4" id="ACLstToTimmingClosed4" onchange="GetCheckBoxValue('ACLstToTimmingClosed4')">
+    </div>
+</div>
+<!--Friday-->
+<div class="info-time row " id="ACLstPToTimmingClosed5">
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName5">Friday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming5" name="ACLstFromTimming5" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming5" name="ACLstToTimming5" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed5" value="ACLstToTimmingClosed5" id="ACLstToTimmingClosed5" onchange="GetCheckBoxValue('ACLstToTimmingClosed5')">
+    </div>
+</div>
+<!--Saturday-->
+<div class="info-time row " id="ACLstPToTimmingClosed6">
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName6">Saturday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming6" name="ACLstFromTimming6" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming6" name="ACLstToTimming6" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed6" value="ACLstToTimmingClosed6" id="ACLstToTimmingClosed6" onchange="GetCheckBoxValue('ACLstToTimmingClosed6')">
+    </div>
+</div>
+<!--Sunday-->
+<div class="info-time row " id="ACLstPToTimmingClosed7">
+    <div class="col-md-2">
+        <label id="ACLstWeekDaysName7">Sunday</label>
+    </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstFromTimming7" name="ACLstFromTimming7" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-sm-1"> <label>To </label> </div>
+    <div class="form-col col-md-3">
+        <select id="ACLstToTimming7" name="ACLstToTimming7" class="form-control">
+            <option value="Open 24 Hrs">Open 24 Hrs</option>
+            <option value="00:00">00:00</option>
+            <option value="00:30">00:30</option>
+            <option value="01:00">01:00</option>
+            <option value="01:30">01:30</option>
+            <option value="02:00">02:00</option>
+            <option value="02:30">02:30</option>
+            <option value="03:00">03:00</option>
+            <option value="03:30">03:30</option>
+            <option value="04:00">04:00</option>
+            <option value="04:30">04:30</option>
+            <option value="05:00">05:00</option>
+            <option value="05:30">05:30</option>
+            <option value="06:00">06:00</option>
+            <option value="06:30">06:30</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label>Close</label>
+        <input type="checkbox" name="ACLstToTimmingClosed7" value="ACLstToTimmingClosed7" id="ACLstToTimmingClosed7" onchange="GetCheckBoxValue('ACLstToTimmingClosed7')">
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿
+
+@{
+    ViewData["Title"] = "GetCustomerById";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<div class="main container ">
+    <div class="row">
+        <input type="hidden" id="EditCutomerId" value="@ViewBag.Id" />
+        <div class="col-12">
+            <div class="box-wrapper reset-password-wrapper">
+                <div class="pd-form-title">
+                    <h2 class="form-title-head">Edit Profile</h2>
+                </div>
+                <div class="clnt-form-edit row">
+                    <div class="col-lg-4 col-12">
+                        <div class="clnt-form-edit-inner">
+                            <div class="image-upload">
+                                <img class="border" id="UtargetImg" asp-append-version="true"/>
+                            </div>
+                            <div class="btn-upload">
+                                <label class="btn btn-primary-lst" for="Uimagefiles">Upload</label>
+                                <input type="file" accept="image/*" class="upload" style="display:none" id="Uimagefiles">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-12">
+                        <div class="form-wrapper">
+                            <form id="UpdateCustomer_Submit_Form" enctype="multipart/form-data">
+                                <input type="hidden" id="UCustId" />
+                                <input type="hidden" id="UUserId" />
+                                <div class="row">
+                                    <div class="col-lg-6 col-12 form-col">
+                                        <input type="text" class="form-control" id="UCustFirstName" name="UCustFirstName" placeholder="First Name">
+                                    </div>
+                                    <div class="col-lg-6 col-12 form-col">
+                                        <input type="text" class="form-control" id="UCustLastName" name="UCustLastName" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12 form-col">
+                                        <input type="date" class="form-control" id="UCustDob" name="UCustDob" placeholder="Date of Birth">
+                                    </div>
+                                    <div class="col-lg-6 col-12 form-col">
+                                        <input type="text" class="form-control" id="UCustCnic" name="UCustCnic" placeholder="00000-0000000-0" maxlength="15">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-12 form-col">
+                                        <input type="text" class="form-control" id="UCustContactNumber" name="UCustContactNumber" placeholder="04212345678" maxlength="11">
+                                    </div>
+                                    <div class="col-lg-6 col-12 form-col" style="visibility:hidden">
+                                        <input type="text" class="form-control" id="UCustPhoneNumber" name="UCustPhoneNumber" value="03341234567" placeholder="03341234567" maxlength="11">
+                                    </div>
+                                </div>
+                                <div class="row profile-edit-btn">
+                                    <div class="col form-col">
+                                        <button type="submit" class="btn btn-primary-lst" value="Save" name="Button" id="btnSave">Save</button>
+                                        <button type="reset" class="btn btn-danger-lst" value="Close" name="Button" id="btnClose">Back</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="marginDiv"></div>
+
+@section scripts{
+    <script src="~/PakDial-assets/assets/Cecustomercripts.min.js" asp-append-version="true"></script>
+}
+

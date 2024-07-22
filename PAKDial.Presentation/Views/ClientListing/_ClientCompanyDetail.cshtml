@@ -1,0 +1,105 @@
+﻿<div class="tab-pane fade show active" id="CompanyDetails" role="tabpanel" aria-labelledby="home-tab">
+    
+    <div class="card-body">
+        <h6> Company Details</h6>
+        <div class="form-body">
+            <div class="control-group row">
+                <div class="col-md-6">
+                    <div class="form-col position-relative">
+                        <select id="ACLstListingType" name="ACLstListingType" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-col position-relative">
+                        <input id="ACLstCompanyName" name="ACLstCompanyName" type="text"
+                               placeholder="Company Name" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group row">
+                <div class="col-md-6">
+                    <div class="form-col position-relative">
+                        <input id="ACLstFirstName" name="ACLstFirstName" type="text"
+                               placeholder="First Name" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-col position-relative">
+                        <input id="ACLstLastName" name="ACLstLastName" type="text"
+                               placeholder="Last Name" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group row">
+                <div class="col-md-6">
+                    <div class="input-group form-col form-spn-plus" data-repeater-item="" id="MobileNumber" title="MobileNumberId">
+                        <input type="text" placeholder="03xx xxxxxxx" class="form-control" id="ACLstMobileNumber" name="ACLstMobileNumber" maxlength="11">
+                        <span class="input-group-append" id="button-addon2">
+                            <button class="btn btn-add-field-lst" id="btnAddMobile" type="button"
+                                    data-repeater-delete="">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="input-group form-col form-spn-plus" data-repeater-item=""
+                         id="LandLineNumber">
+                        <input type="text" placeholder="042 xxxxxxxx" class="form-control"
+                               id="ACLstLandLineNumber" name="ACLstLandLineNumber" maxlength="11">
+                        <span class="input-group-append" id="button-addon2">
+                            <button class="btn btn-add-field-lst" id="btnAddLandNo" type="button"
+                                    data-repeater-delete="">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group row" id="AddPhoneNoAndLandNo">
+                <div class="col-md-6" id="AddMobileNumber">
+
+                </div>
+                <div class="col-md-6" id="AddLandNumber">
+
+                </div>
+
+            </div>
+
+            <div class="control-group row">
+                <div class="col-md-6">
+                    <div class="form-col position-relative">
+                        <input id="ACLstWebSite" name="ACLstWebSite" type="text"
+                               placeholder="Web Site" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-col position-relative">
+                        <input id="ACLstMetaTitle" name="ACLstMetaTitle" type="text"
+                               placeholder="Meta Title" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group row">
+                <div class="col-12">
+                    <div class="form-col position-relative">
+                        <input id="ACLstMetaKeyword" name="ACLstMetaKeyword" type="text"
+                               placeholder="Meta Keyword" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-col">
+                <textarea id="ACLstMetaDescription" rows="5" class="form-control"
+                          name="ACLstMetaDescription" placeholder="Meta Description"></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>

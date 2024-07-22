@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "PaymentMode";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<div class="container ">
+    <div class="row box-wrapper">
+        <div class="col-12">
+            <div class="pd-form-title">
+                <h2 class="form-title-head"> Payment Details </h2>
+            </div>
+        </div>
+        <input type="hidden" id="clientAssignAPkge" value="@ViewBag.Id" />
+        <div class="col-12">
+            <div class="list-tbl-wrapper table-responsive">
+                <div class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <table id="ClientAssignedListPackages" class="list-tbl table table-borderless dataTable no-footer dtr-inline" role="grid" aria-describedby="ClientCompanyListings_info">
+                                <thead class="pd-primary-bg">
+                                    <tr role="row">
+                                        <th scope="col">Sr #</th>
+                                        <th scope="col">CompanyName</th>
+                                        <th scope="col">PackageName</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">From</th>
+                                        <th scope="col">To</th>
+                                        <th scope="col">IsActive</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="marginDiv"></div>
+    @section scripts {
+        <script src="~/PakDial-assets/assets/Cpaymentsmodesscripts.min.js" asp-append-version="true"></script>
+        <script>
+            $(document).ready(function () {
+
+                $("#ClientAssignedListPackages_length").parent().addClass('form-col');
+                $("#ClientAssignedListPackages_filter").parent().addClass('form-col');
+                $("#ClientAssignedListPackages_info").parent().parent().attr('Id', 'ClientAssignedListPackagesID').after('<div class="row"><div class="col-12 bck-lst-btn-wrapp" ><button class="btn btn-primary-lst" type="button" id="AddCompanyListingsModal" onclick="BackToListing();">Back</button></div ></div >');
+
+
+            });
+            function BackToListing() {
+                window.location.href = "/ClientListing/Index";
+            }
+        </script>
+    }
+

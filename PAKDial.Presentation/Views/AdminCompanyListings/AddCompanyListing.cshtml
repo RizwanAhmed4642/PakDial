@@ -1,0 +1,152 @@
+﻿@{
+    ViewData["Title"] = "AddCompanyListing";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section Style {
+    <style>
+        .inner-card {
+            background-color: #f4f5fa;
+        }
+
+        .child-card {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .form-submit {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .info-time {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .parent {
+            position: relative;
+            display: inline-block;
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #pageloader {
+            background: rgba( 255, 255, 255, 0.8 );
+            /*display: none;*/
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+        }
+
+            #pageloader img {
+                left: 50%;
+                margin-left: -32px;
+                margin-top: -32px;
+                position: fixed;
+                top: 50%;
+            }
+
+    </style>
+}
+@Html.AntiForgeryToken()
+
+    <div class="content-wrapper">
+        <div id="pageloader">
+            <img src="~/app-assets/images/icons/loading.gif" />
+        </div>
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+            <div class="content-header-left col-md-4 col-12 mb-2">
+                <h3 class="content-header-title">Manage Listings</h3>
+            </div>
+            <div class="content-header-right col-md-8 col-12">
+                <div class="breadcrumbs-top float-md-right">
+                    <div class="breadcrumb-wrapper mr-1">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Manage Listings</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <b>Add Company Listing</b>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-content">
+            <section id="MainSection">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Add Company Listing</h4>
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        @*<li><a data-action="reload" id="btnReloadForm"><i class="ft-rotate-cw"></i></a></li>*@
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close" id="btnCrossForm"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="form-check form-check-inline" style="margin-left:55px">
+                                    <input name="inlineRadioOptions" id="inlineRadioNew" class="form-check-input" type="radio" value="New" checked>
+                                    <label class="form-check-label" for="inlineRadio1">New</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="inlineRadioOptions" class="form-check-input" type="radio" value="Exist">
+                                    <label class="form-check-label" for="inlineRadio2">Exist</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="inlineRadioOptions" class="form-check-input" type="radio" value="Generic">
+                                    <label class="form-check-label" for="inlineRadio3">Generic</label>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="child-card">
+
+                                    @*<div class="text-center">
+                                        <div class="spinner-border" id="spinnerborder" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </div>*@
+                                    <form id="AddCompanyListings_Submit_Form" name="AddCompanyListings_Submit_Form">
+                                        <div class="body-content collapse-icon accordion-icon-rotate" id="ListingData">
+                                            @await Html.PartialAsync("~/Views/AdminCompanyListings/_CompanyDetail.cshtml")
+                                            @await Html.PartialAsync("~/Views/AdminCompanyListings/_Keywords.cshtml")
+                                            @await Html.PartialAsync("~/Views/AdminCompanyListings/_LocationInformation.cshtml")
+                                            @await Html.PartialAsync("~/Views/AdminCompanyListings/_OtherInformation.cshtml")
+                                            @await Html.PartialAsync("~/Views/AdminCompanyListings/_CreateYourGallery.cshtml")
+                                        </div>
+                                        <div class="form-actions form-submit">
+
+                                            <button type="submit" class="btn btn-primary" value="SaveNew" name="Button" id="btnSaveNew">SaveNew</button>
+
+                                            <button type="submit" class="btn btn-primary" value="SaveClose" name="Button" id="btnSaveClose">SaveClose</button>
+
+                                            <button type="reset" class="btn btn-danger mr-1" value="Close" name="Button" id="btnClose">Close</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+@section scripts {
+    <script src="~/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="~/assets/js/CommonFunctions.js"></script>
+    <script src="~/assets/js/AdminCompanyListigscomponent/AdminCompanyListingsModal.js"></script>
+    <script src="~/assets/js/AdminCompanyListigscomponent/AdminCompanyListingsAddViewModal.js"></script>
+}

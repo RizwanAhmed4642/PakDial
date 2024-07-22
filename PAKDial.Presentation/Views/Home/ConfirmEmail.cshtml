@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<!-- Header -->
+@await Html.PartialAsync("~/Views/Shared/_CommonBottomHeader.cshtml")
+<!-- End Header -->
+@if (ViewBag.Message == "Success")
+{
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="box-wrapper password-wrapper">
+                    <div class="password-box">
+                        <img src="~/PakDial-assets/images/tick.png" asp-append-version="true">
+                        <h3>Confirm Email!</h3>
+                        <p>Thank you for confirming your email. Please <a href="/Home/Login">Click here to Login</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="marginDiv"></div>
+}
+else
+{
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="box-wrapper password-wrapper">
+                    <div class="password-box">
+                        <img src="~/PakDial-assets/images/cancel.png" asp-append-version="true">
+                        <h3>Confirm email!</h3>
+                        <p>Alert! Your email has not been confirmed. Please <a href="/Home/Login">click here to log in</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="marginDiv"></div>
+}
+

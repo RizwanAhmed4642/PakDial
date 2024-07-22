@@ -1,0 +1,222 @@
+﻿
+/*COVID-19 Css*/
+.covid-body {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.covid-top {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.head-left {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.head-left {
+    text-align: left;
+    width: 10%;
+}
+.head-left img {
+    width: 20px;
+    margin-top: -22px;
+}
+.bckIcon {
+    color: #4f5861;
+}
+.covid-middle {
+    width: 90%;
+    text-align: center;
+    margin: 10px 0 25px;
+}
+.hdrlogo {
+    width: 100px;
+    height: 25px;
+    display: inline-block;
+    background: url('../images/covid-logo.png') no-repeat;
+    background-size: 100%;
+}
+.divider {
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    background: #ccc;
+    height: 1px;
+}
+.covid-link.active::after {
+    content: '' !important;
+    background: #4dbc15 !important;
+    height: 2px !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    width: 28px !important;
+    margin-left: -14px !important;
+}
+.covid-link.active {
+    color: #4dbc15 !important;
+    font-weight: 600;
+    border: none !important;
+    position: relative;
+    display: inline-block;
+}
+.covid-link {
+    color: #231f20 !important;
+    font-weight: 600;
+    border: none !important;
+    position: relative;
+    display: inline-block;
+}
+.covid-tabs {
+    border-bottom: none !important;
+    width: 50% !important;
+}
+.covid19_textbox {
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    background: #fff;
+    padding: 20px;
+    line-height: 1.57;
+    font-weight: 400;
+}
+.covid-content {
+    padding: 20px;
+}
+.helpline {
+    width: 150px;
+    font-weight: 600;
+    border: 1px solid #ccc !important;
+    border-radius: 20px !important;
+    display: flex;
+    text-align:center;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #231f20 !important;
+}
+.helpline.active {
+    background-color: #4dbc15 !important;
+    color: #fff !important;
+}
+.covid19_helplist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 20px 0;
+    border-bottom: none !important;
+}
+.state-list {
+    line-height: 2.8;
+    margin-top: 15px;
+}
+.dolist:nth-child(odd) {
+    border-right: 1px solid #ccc;
+}
+.dolist:nth-of-type(2n+5), .dolist:nth-of-type(2n+6) {
+    border-bottom: none;
+}
+.dorow {
+    padding: 0px 20px;
+}
+.dolist {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    color: #414e5a;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px 8px 20px 8px;
+}
+.dodicn {
+    width: 86px;
+    height: 95px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.washicn, .sneezeicn, .germsicn, .antiicn, .handsicn, .distanceicn, .fevericn, .coughicn, .breathicn {
+    display: block;
+    margin: 0 auto;
+}
+.sneezeicn {
+    background: url('../images/covid/cover-mouth.png') no-repeat;
+}
+.washicn {
+    background: url('../images/covid/wash-hands.png') no-repeat;
+}
+.germsicn {
+    background: url('../images/covid/hands-with-germs.png') no-repeat;
+}
+.antiicn {
+    background: url('../images/covid/anti-baterial.png') no-repeat;
+}
+.fevericn {
+    background: url('../images/covid/fever.png') no-repeat;
+}
+.coughicn {
+    background: url('../images/covid/cough.png') no-repeat;
+}
+.breathicn {
+    background: url('../images/covid/shortness-of-breath.png') no-repeat;
+}
+.symplist {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.symplist:nth-of-type(2n+3) {
+    border-right: none;
+}
+.notp {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.warnlist {
+    line-height: 2.8;
+    margin-top: 15px
+}
+.warnlist li {
+    list-style: disc;
+    margin-left: 20px;
+}
+.md-accordion .card .card-header a:not(.collapsed) .rotate-icon {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.md-accordion .card .fa-angle-down {
+    float: right;
+}
+.covid-card {
+    border: none !important;
+    border-bottom: 1px solid rgba(0,0,0,.125) !important;
+    margin-top:10px;
+}
+.covid-card a:hover{
+    text-decoration:none;
+}
+.covid-card h6 {
+    font-size: 16px;
+}
+.covid-card .card-header {
+    background-color: #fff;
+}
+@media only screen and (min-width: 768px)and (max-width:991px) {
+    .covid-tabs {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width: 767px) {
+    .covid-tabs {
+        width: 100% !important;
+    }
+	.helpline {
+		margin: 0px 5px;
+	}
+}

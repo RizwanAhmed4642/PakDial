@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PAKDial.Domains.UserEndViewModel.CompanyListingPaymentMode>
+
+@if(Model.Count() > 0 && Model != null)
+{
+    @foreach (var item in Model)
+    {
+        <li><img src="@item.ImageDir" asp-append-version="true">@item.Name</li>
+    }
+
+}
+else
+{
+    <li><img src="~/PakDial-assets/images/cash.png" asp-append-version="true" alt="cash">Cash</li>
+    <li><img src="~/PakDial-assets/images/cheque.png" asp-append-version="true" alt="Cheques">Cheques</li>
+    <li><img src="~/PakDial-assets/images/PayOrder.png" asp-append-version="true" alt="Pay Order">Pay Order</li>
+    <li><img src="~/PakDial-assets/images/OnlinePayment.png" asp-append-version="true" alt="Online Payment">Online Payment</li>
+    <li><img src="~/PakDial-assets/images/debit.png" asp-append-version="true" alt="Debit Card">Debit Card</li>
+    <li><img src="~/PakDial-assets/images/master.png" asp-append-version="true" alt="Master Car">Master Card</li>
+    <li><img src="~/PakDial-assets/images/credit.png" asp-append-version="true" alt="Credit Card">Credit Card</li>
+    <li><img src="~/PakDial-assets/images/visa.png" asp-append-version="true" alt="Visa Card">Visa Card</li>
+}
+
+
+
+
+
+

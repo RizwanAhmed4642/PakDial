@@ -1,0 +1,75 @@
+﻿<div id="contactModalQuery" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content login-popup popup-signup-content">
+            
+            <div class="modal-body pd-popup-body popup-signup-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-3 col-4 login-logo">
+                            <div class="popside-wrap">
+                                <img src="~/PakDial-assets/images/pop1.png" class="login-logo-title">
+                                <span class="">Tell us what you need by filling the form</span>
+                            </div>
+                            <div class="popside-wrap">
+                                <img src="~/PakDial-assets/images/pop2.png" class="login-logo-title">
+                                <span class="">Receive Verified supplier details by SMS</span>
+                            </div>
+                            <div class="popside-wrap">
+                                <img src="~/PakDial-assets/images/pop3.png" class="login-logo-title">
+                                <span class="">Compare Quotations andseal the deal</span>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-8">
+                            <div class="modal-header">
+                                <h6 class="modal-title pd-gnric-cat">Fill and submit the below form for more details regarding the   <span class="pd-primary-font"> @ViewData["SbCName"]</span></h6>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+                            <form id="RQueryForm_Submit" name="RQueryForm_Submit">
+
+                                <input type="hidden" id="ListingIdQuery" />
+                                <input type="hidden" id="SbCateIdQuery" />
+                                <input type="hidden" id="SbCateNameQuery" />
+                                <input type="hidden" id="AreaNameQuery" />
+
+                                <div class="row">
+                                    <div class="col form-col">
+                                        <input type="text" class="form-control" id="RProductQuery" name="RProductQuery" placeholder="What are you looking for ?">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col form-col">
+                                        <input type="text" class="form-control" id="RnameQuery" name="RnameQuery" placeholder="Enter name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col form-col">
+                                        <input type="text" class="form-control" id="RnumberQuery" name="RnumberQuery" placeholder="0312XXXXXXX 11-Digits without Dashes">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col form-col">
+                                        <button type="submit" class="btn btn-primary-lst">Submit</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p><span class="contact-popup-info"><i class="fa fa-circle"></i>All the queries are sent to the selected businesses, directly through this portal.</span></p>
+                                        <p><span class="contact-popup-info"><i class="fa fa-circle"></i>Select the services which are suitable for you.</span></p>
+                                        <p><span class="contact-popup-info"><i class="fa fa-circle"></i>The contact info regarding the selected service providers is send at your mobile no. or Email address.</span></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        @*<div class="col-md-9 offset-md-4">
+            <p><span><img src="~/PakDial-assets/images/Bullet04.png"> Your requirement is sent to the selected relevant businesses/ service providers</span></p>
+            <p><span><img src="~/PakDial-assets/images/Bullet04.png"> You choose whichever suits you best</span></p>
+            <p><span><img src="~/PakDial-assets/images/Bullet04.png"> Contact Info sent to you by SMS/Email</span></p>
+        </div>*@
+                    </div>
+                    </div>
+            </div>
+    </div>
+    </div>
+</div>

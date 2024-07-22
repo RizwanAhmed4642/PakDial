@@ -1,0 +1,146 @@
+﻿<div class="modal fade text-left show" id="UpdateSubCategory" role="dialog" aria-labelledby="myModalLabel34" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel34">Edit Sub Category</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="UpdateSubCategory_Submit_Form">
+                <div class="form-body">
+                    <div class="card">
+                        <div class="card-content collapse show">
+                            <div class="card-body">
+                                <div class="form-body">
+                                    <input type="hidden" id="USBSubCategoryId"/>
+                                    <fieldset>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>MainCategory</label>
+                                                    <select disabled id="USBMCategoryId" name="USBMCategoryId" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>ParentCategory</label>
+                                                    <select id="USBSCategoryId" name="USBSCategoryId" class="select2 form-control" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Name</label>
+                                                    <input id="USBSName" name="USBSName" type="text" placeholder="Sub Category Name" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Description</label>
+                                                    <textarea id="USBSDescription" name="USBSDescription" type="text" placeholder="Description" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Meta Title</label>
+                                                    <input id="USBSMetaTitle" name="USBSMetaTitle" type="text" placeholder="Meta Title" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Meta Keyword</label>
+                                                    <textarea id="USBSMetaKeyword" name="USBSMetaKeyword" type="text" placeholder="Meta Keyword" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-12">
+                                                <div class="form-group position-relative">
+                                                    <label>Meta Description</label>
+                                                    <textarea id="USBSMetaDescription" name="USBSMetaDescription" type="text" placeholder="Meta Description" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="USBIsActive">
+                                                        <label class="form-check-label" for="USBIsActive">
+                                                            IsActive
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="USBIsLastNode">
+                                                        <label class="form-check-label" for="USBIsLastNode">
+                                                            IsLastNode
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="USBStargetWeb" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Web Icon<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="USBSimageWeb">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="USBStargetMobile" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Mobile Icon<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="USBSimageMobile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="USBStargetBanner" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Banner Image<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="USBSimageBannerfiles">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <img id="USBStargetFeature" class="border border-primary img-thumbnail" style="width: 362px;height: 158px;">
+                                                    <label>Feature Image<span class="text-danger"></span></label>
+                                                    <input class="form-control upload" type="file" accept="image/*" id="USBSimageFeaturefiles">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="UpdateSubCategoryShowButtons" class="modal-footer pr-2 pl-2">
+                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                    <div id="UpdateSubCategoryShowLoader" class="modal-footer pr-2 pl-2" style="display:none">
+                        <button class="btn btn-primary" type="button" disabled="">
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            Updating Results...
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
